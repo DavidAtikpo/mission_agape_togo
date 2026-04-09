@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 interface ConsentementFormData {
@@ -21,9 +21,42 @@ interface ConsentementFormData {
 
 interface ConsentementFormProps {
   onSubmit: (data: ConsentementFormData) => void;
+  /** Champs repris du formulaire d’inscription (évite de resaisir identité / coordonnées) */
+  prefillFromInscription?: Record<string, unknown>;
 }
 
-export default function ConsentementForm({ onSubmit }: ConsentementFormProps) {
+function buildConsentPrefill(ins: Record<string, unknown> | undefined): Partial<{
+  nomComplet: string;
+  dateNaissance: string;
+  lieuNaissance: string;
+  adresse: string;
+  telephone: string;
+  email: string;
+  signature: string;
+}> {
+  if (!ins || typeof ins !== 'object') return {};
+  const nom = String(ins.nom ?? '').trim();
+  const prenom = String(ins.prenom ?? '').trim();
+  const nomComplet = [prenom, nom].filter(Boolean).join(' ').trim();
+  const dateNaissance = String(ins.dateNaissance ?? '').trim();
+  const lieuNaissance = String(ins.lieuNaissance ?? '').trim();
+  const adresse = String(ins.adresse ?? '').trim();
+  const telephone = String(ins.telephone ?? '').trim();
+  const email = String(ins.email ?? '').trim();
+  const out: ReturnType<typeof buildConsentPrefill> = {};
+  if (nomComplet) {
+    out.nomComplet = nomComplet;
+    out.signature = nomComplet;
+  }
+  if (dateNaissance) out.dateNaissance = dateNaissance;
+  if (lieuNaissance) out.lieuNaissance = lieuNaissance;
+  if (adresse) out.adresse = adresse;
+  if (telephone) out.telephone = telephone;
+  if (email) out.email = email;
+  return out;
+}
+
+export default function ConsentementForm({ onSubmit, prefillFromInscription }: ConsentementFormProps) {
   const [formData, setFormData] = useState({
     nomComplet: '',
     dateNaissance: '',
@@ -38,6 +71,13 @@ export default function ConsentementForm({ onSubmit }: ConsentementFormProps) {
     date: new Date().toISOString().split('T')[0],
     signature: ''
   });
+
+  const prefillKey = JSON.stringify(prefillFromInscription ?? {});
+  useEffect(() => {
+    const patch = buildConsentPrefill(prefillFromInscription);
+    if (Object.keys(patch).length === 0) return;
+    setFormData((prev) => ({ ...prev, ...patch }));
+  }, [prefillKey]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target as HTMLInputElement;
@@ -55,7 +95,6 @@ export default function ConsentementForm({ onSubmit }: ConsentementFormProps) {
       alert('Veuillez accepter le règlement intérieur pour continuer');
       return;
     }
-    console.log('Décharge de consentement soumise:', formData);
     onSubmit(formData as ConsentementFormData);
     alert('Décharge de consentement enregistrée avec succès !');
   };

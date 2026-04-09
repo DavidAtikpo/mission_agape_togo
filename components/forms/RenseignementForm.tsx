@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 interface RenseignementFormData {
@@ -22,26 +22,45 @@ interface RenseignementFormData {
 
 interface RenseignementFormProps {
   onSubmit: (data: RenseignementFormData) => void;
+  initialData?: Partial<Record<string, string>>;
 }
 
-export default function RenseignementForm({ onSubmit }: RenseignementFormProps) {
-  const [formData, setFormData] = useState({
-    situationFamiliale: '',
-    nombreEnfants: '',
-    profession: '',
-    employeur: '',
-    adresseProfessionnelle: '',
-    telephoneProfessionnel: '',
-    personneContact: '',
-    telephoneContact: '',
-    lienParente: '',
-    groupeSanguin: '',
-    allergies: '',
-    traitementMedical: '',
-    experienceChretienne: '',
-    ministeres: '',
-    attentes: ''
-  });
+const emptyRenseignementState = {
+  situationFamiliale: '',
+  nombreEnfants: '',
+  profession: '',
+  employeur: '',
+  adresseProfessionnelle: '',
+  telephoneProfessionnel: '',
+  personneContact: '',
+  telephoneContact: '',
+  lienParente: '',
+  groupeSanguin: '',
+  allergies: '',
+  traitementMedical: '',
+  experienceChretienne: '',
+  ministeres: '',
+  attentes: ''
+};
+
+export default function RenseignementForm({ onSubmit, initialData }: RenseignementFormProps) {
+  const [formData, setFormData] = useState(() => ({
+    ...emptyRenseignementState,
+    ...Object.fromEntries(
+      Object.entries(initialData || {}).filter(([, v]) => v != null && String(v) !== '')
+    )
+  }));
+
+  const initialKey = JSON.stringify(initialData ?? {});
+  useEffect(() => {
+    if (!initialData || Object.keys(initialData).length === 0) return;
+    setFormData((prev) => ({
+      ...prev,
+      ...Object.fromEntries(
+        Object.entries(initialData).filter(([, v]) => v != null && String(v) !== '')
+      )
+    }));
+  }, [initialKey]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -53,7 +72,6 @@ export default function RenseignementForm({ onSubmit }: RenseignementFormProps) 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Formulaire de renseignements soumis:', formData);
     onSubmit(formData);
   };
 

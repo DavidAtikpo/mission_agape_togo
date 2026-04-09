@@ -1,8 +1,5 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/admin/(protected)/inscriptions/[id]/page": "app/admin/(protected)/inscriptions/[id]/page.js",
-  "/admin/(protected)/inscriptions/page": "app/admin/(protected)/inscriptions/page.js",
-  "/api/inscriptions/route": "app/api/inscriptions/route.js",
   "/inscription/page": "app/inscription/page.js",
   "/page": "app/page.js"
 }

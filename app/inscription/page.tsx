@@ -61,19 +61,34 @@ export default function InscriptionPage() {
       id: 'inscription',
       title: "Formulaire d'Inscription",
       description: "Remplissez vos informations personnelles et la formation souhaitée",
-      component: <InscriptionForm onSubmit={(data) => handleFormSubmit('inscription', data)} />
+      component: (
+        <InscriptionForm
+          initialData={formData.inscription as Record<string, string>}
+          onSubmit={(data) => handleFormSubmit('inscription', data)}
+        />
+      )
     },
     {
       id: 'renseignements',
       title: "Fiche de Renseignements",
       description: "Informations personnelles, professionnelles et spirituelles détaillées",
-      component: <RenseignementForm onSubmit={(data) => handleFormSubmit('renseignements', data)} />
+      component: (
+        <RenseignementForm
+          initialData={formData.renseignements as Record<string, string>}
+          onSubmit={(data) => handleFormSubmit('renseignements', data)}
+        />
+      )
     },
     {
       id: 'consentement',
       title: "Décharge de Consentement",
       description: "Engagement et acceptation du règlement intérieur",
-      component: <ConsentementForm onSubmit={(data) => handleFormSubmit('consentement', data)} />
+      component: (
+        <ConsentementForm
+          prefillFromInscription={formData.inscription}
+          onSubmit={(data) => handleFormSubmit('consentement', data)}
+        />
+      )
     }
   ];
 

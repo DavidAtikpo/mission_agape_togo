@@ -125,7 +125,7 @@
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\Thecode2\\Desktop\\MISSION-AGAPE\\mission-agape-togo",
+    "outputFileTracingRoot": "C:\\Users\\Thecode2\\Desktop\\mission_agape_togo\\mission-agape-togo",
     "cacheComponents": false,
     "cacheLife": {
       "default": {
@@ -318,11 +318,11 @@
       "ignoreDuringBuilds": true
     },
     "turbopack": {
-      "root": "C:\\Users\\Thecode2\\Desktop\\MISSION-AGAPE\\mission-agape-togo"
+      "root": "C:\\Users\\Thecode2\\Desktop\\mission_agape_togo\\mission-agape-togo"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "C:\\Users\\Thecode2\\Desktop\\MISSION-AGAPE\\mission-agape-togo",
+  "appDir": "C:\\Users\\Thecode2\\Desktop\\mission_agape_togo\\mission-agape-togo",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",

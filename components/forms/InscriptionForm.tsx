@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 
 interface InscriptionFormData {
@@ -21,23 +21,42 @@ interface InscriptionFormData {
 
 interface InscriptionFormProps {
   onSubmit: (data: InscriptionFormData) => void;
+  /** Données déjà enregistrées (ex. retour à l’étape depuis les étapes suivantes) */
+  initialData?: Partial<InscriptionFormData>;
 }
 
-export default function InscriptionForm({ onSubmit }: InscriptionFormProps) {
-  const [formData, setFormData] = useState({
-    nom: '',
-    prenom: '',
-    dateNaissance: '',
-    lieuNaissance: '',
-    adresse: '',
-    telephone: '',
-    email: '',
-    niveauEtude: '',
-    egliseLocale: '',
-    pasteurResponsable: '',
-    formationSouhaitee: '',
-    motivation: ''
-  });
+const emptyInscriptionState = {
+  nom: '',
+  prenom: '',
+  dateNaissance: '',
+  lieuNaissance: '',
+  adresse: '',
+  telephone: '',
+  email: '',
+  niveauEtude: '',
+  egliseLocale: '',
+  pasteurResponsable: '',
+  formationSouhaitee: '',
+  motivation: ''
+};
+
+export default function InscriptionForm({ onSubmit, initialData }: InscriptionFormProps) {
+  const [formData, setFormData] = useState(() => ({
+    ...emptyInscriptionState,
+    ...Object.fromEntries(
+      Object.entries(initialData || {}).filter(([, v]) => v != null && String(v) !== '')
+    )
+  }));
+
+  useEffect(() => {
+    if (!initialData || Object.keys(initialData).length === 0) return;
+    setFormData((prev) => ({
+      ...prev,
+      ...Object.fromEntries(
+        Object.entries(initialData).filter(([, v]) => v != null && String(v) !== '')
+      )
+    }));
+  }, [JSON.stringify(initialData ?? {})]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -49,7 +68,6 @@ export default function InscriptionForm({ onSubmit }: InscriptionFormProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Formulaire soumis:', formData);
     onSubmit(formData);
   };
 

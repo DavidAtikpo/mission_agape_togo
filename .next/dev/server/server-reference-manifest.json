@@ -7,17 +7,10 @@
           "async": false,
           "exportedName": "logoutAdmin",
           "filename": "app/admin/(protected)/actions.ts"
-        },
-        "app/admin/(protected)/inscriptions/page": {
-          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/inscriptions/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "logoutAdmin",
-          "filename": "app/admin/(protected)/actions.ts"
         }
       },
       "layer": {
-        "app/admin/(protected)/inscriptions/[id]/page": "rsc",
-        "app/admin/(protected)/inscriptions/page": "rsc"
+        "app/admin/(protected)/inscriptions/[id]/page": "rsc"
       },
       "filename": "app/admin/(protected)/actions.ts",
       "exportedName": "logoutAdmin"

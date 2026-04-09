@@ -87,21 +87,34 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 ;
 ;
 ;
-function InscriptionForm({ onSubmit }) {
-    const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        nom: '',
-        prenom: '',
-        dateNaissance: '',
-        lieuNaissance: '',
-        adresse: '',
-        telephone: '',
-        email: '',
-        niveauEtude: '',
-        egliseLocale: '',
-        pasteurResponsable: '',
-        formationSouhaitee: '',
-        motivation: ''
-    });
+const emptyInscriptionState = {
+    nom: '',
+    prenom: '',
+    dateNaissance: '',
+    lieuNaissance: '',
+    adresse: '',
+    telephone: '',
+    email: '',
+    niveauEtude: '',
+    egliseLocale: '',
+    pasteurResponsable: '',
+    formationSouhaitee: '',
+    motivation: ''
+};
+function InscriptionForm({ onSubmit, initialData }) {
+    const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(()=>({
+            ...emptyInscriptionState,
+            ...Object.fromEntries(Object.entries(initialData || {}).filter(([, v])=>v != null && String(v) !== ''))
+        }));
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!initialData || Object.keys(initialData).length === 0) return;
+        setFormData((prev)=>({
+                ...prev,
+                ...Object.fromEntries(Object.entries(initialData).filter(([, v])=>v != null && String(v) !== ''))
+            }));
+    }, [
+        JSON.stringify(initialData ?? {})
+    ]);
     const handleChange = (e)=>{
         const { name, value } = e.target;
         setFormData((prev)=>({
@@ -111,7 +124,6 @@ function InscriptionForm({ onSubmit }) {
     };
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log('Formulaire soumis:', formData);
         onSubmit(formData);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -125,7 +137,7 @@ function InscriptionForm({ onSubmit }) {
                         children: "Formulaire d'Inscription - Mission Agape"
                     }, void 0, false, {
                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                        lineNumber: 59,
+                        lineNumber: 77,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -133,13 +145,13 @@ function InscriptionForm({ onSubmit }) {
                         children: "Veuillez remplir tous les champs obligatoires (*)"
                     }, void 0, false, {
                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                        lineNumber: 62,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                lineNumber: 58,
+                lineNumber: 76,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -157,7 +169,7 @@ function InscriptionForm({ onSubmit }) {
                                         children: "Informations Personnelles"
                                     }, void 0, false, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 71,
+                                        lineNumber: 89,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -168,7 +180,7 @@ function InscriptionForm({ onSubmit }) {
                                                 children: "Nom *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 74,
+                                                lineNumber: 92,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -181,13 +193,13 @@ function InscriptionForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 77,
+                                                lineNumber: 95,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 73,
+                                        lineNumber: 91,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -198,7 +210,7 @@ function InscriptionForm({ onSubmit }) {
                                                 children: "Prénom(s) *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 107,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -211,13 +223,13 @@ function InscriptionForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 92,
+                                                lineNumber: 110,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 106,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -231,7 +243,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Date de naissance *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 105,
+                                                        lineNumber: 123,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -244,13 +256,13 @@ function InscriptionForm({ onSubmit }) {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 108,
+                                                        lineNumber: 126,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 122,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -261,7 +273,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Lieu de naissance *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 119,
+                                                        lineNumber: 137,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -274,25 +286,25 @@ function InscriptionForm({ onSubmit }) {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 122,
+                                                        lineNumber: 140,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 118,
+                                                lineNumber: 136,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 121,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                lineNumber: 70,
+                                lineNumber: 88,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -303,7 +315,7 @@ function InscriptionForm({ onSubmit }) {
                                         children: "Coordonnées"
                                     }, void 0, false, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 137,
+                                        lineNumber: 155,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -314,7 +326,7 @@ function InscriptionForm({ onSubmit }) {
                                                 children: "Adresse complète *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 140,
+                                                lineNumber: 158,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -327,13 +339,13 @@ function InscriptionForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 161,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 139,
+                                        lineNumber: 157,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -347,7 +359,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Téléphone *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 156,
+                                                        lineNumber: 174,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -360,13 +372,13 @@ function InscriptionForm({ onSubmit }) {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 159,
+                                                        lineNumber: 177,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 155,
+                                                lineNumber: 173,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -377,7 +389,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Email *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 170,
+                                                        lineNumber: 188,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -390,31 +402,31 @@ function InscriptionForm({ onSubmit }) {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 173,
+                                                        lineNumber: 191,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 187,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 154,
+                                        lineNumber: 172,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                lineNumber: 136,
+                                lineNumber: 154,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                        lineNumber: 68,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -425,7 +437,7 @@ function InscriptionForm({ onSubmit }) {
                                 children: "Informations Académiques et Spirituelles"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                lineNumber: 189,
+                                lineNumber: 207,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -439,7 +451,7 @@ function InscriptionForm({ onSubmit }) {
                                                 children: "Dernier diplôme obtenu *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 193,
+                                                lineNumber: 211,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -455,7 +467,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Sélectionnez un niveau"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 204,
+                                                        lineNumber: 222,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -463,7 +475,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "BEPC"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 205,
+                                                        lineNumber: 223,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -471,7 +483,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "BAC"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 206,
+                                                        lineNumber: 224,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -479,7 +491,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "BAC+2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 207,
+                                                        lineNumber: 225,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -487,7 +499,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Licence"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 208,
+                                                        lineNumber: 226,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -495,7 +507,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Master"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 209,
+                                                        lineNumber: 227,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -503,19 +515,19 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Doctorat"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 210,
+                                                        lineNumber: 228,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 196,
+                                                lineNumber: 214,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 192,
+                                        lineNumber: 210,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -526,7 +538,7 @@ function InscriptionForm({ onSubmit }) {
                                                 children: "Église locale *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 215,
+                                                lineNumber: 233,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -539,13 +551,13 @@ function InscriptionForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 218,
+                                                lineNumber: 236,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 214,
+                                        lineNumber: 232,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -556,7 +568,7 @@ function InscriptionForm({ onSubmit }) {
                                                 children: "Pasteur responsable *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 230,
+                                                lineNumber: 248,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -569,13 +581,13 @@ function InscriptionForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 233,
+                                                lineNumber: 251,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 229,
+                                        lineNumber: 247,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -586,7 +598,7 @@ function InscriptionForm({ onSubmit }) {
                                                 children: "Formation souhaitée *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 245,
+                                                lineNumber: 263,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -602,7 +614,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Sélectionnez une formation"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 256,
+                                                        lineNumber: 274,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -610,7 +622,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Théologie Fondamentale"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 257,
+                                                        lineNumber: 275,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -618,7 +630,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Discipolat"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 258,
+                                                        lineNumber: 276,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -626,7 +638,7 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "École d'Évangélisation"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 259,
+                                                        lineNumber: 277,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -634,25 +646,25 @@ function InscriptionForm({ onSubmit }) {
                                                         children: "Leadership Chrétien"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                        lineNumber: 260,
+                                                        lineNumber: 278,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                                lineNumber: 248,
+                                                lineNumber: 266,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 262,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                lineNumber: 191,
+                                lineNumber: 209,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -663,7 +675,7 @@ function InscriptionForm({ onSubmit }) {
                                         children: "Motivation (Pourquoi souhaitez-vous suivre cette formation ?) *"
                                     }, void 0, false, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 266,
+                                        lineNumber: 284,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -676,19 +688,19 @@ function InscriptionForm({ onSubmit }) {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                        lineNumber: 269,
+                                        lineNumber: 287,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                lineNumber: 265,
+                                lineNumber: 283,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                        lineNumber: 188,
+                        lineNumber: 206,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -700,7 +712,7 @@ function InscriptionForm({ onSubmit }) {
                                 children: "Annuler"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                lineNumber: 282,
+                                lineNumber: 300,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -709,25 +721,25 @@ function InscriptionForm({ onSubmit }) {
                                 children: "Enregistrer et continuer"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                                lineNumber: 285,
+                                lineNumber: 303,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/InscriptionForm.tsx",
-                        lineNumber: 281,
+                        lineNumber: 299,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/forms/InscriptionForm.tsx",
-                lineNumber: 67,
+                lineNumber: 85,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/forms/InscriptionForm.tsx",
-        lineNumber: 57,
+        lineNumber: 75,
         columnNumber: 5
     }, this);
 }
@@ -746,24 +758,38 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 ;
 ;
 ;
-function RenseignementForm({ onSubmit }) {
-    const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        situationFamiliale: '',
-        nombreEnfants: '',
-        profession: '',
-        employeur: '',
-        adresseProfessionnelle: '',
-        telephoneProfessionnel: '',
-        personneContact: '',
-        telephoneContact: '',
-        lienParente: '',
-        groupeSanguin: '',
-        allergies: '',
-        traitementMedical: '',
-        experienceChretienne: '',
-        ministeres: '',
-        attentes: ''
-    });
+const emptyRenseignementState = {
+    situationFamiliale: '',
+    nombreEnfants: '',
+    profession: '',
+    employeur: '',
+    adresseProfessionnelle: '',
+    telephoneProfessionnel: '',
+    personneContact: '',
+    telephoneContact: '',
+    lienParente: '',
+    groupeSanguin: '',
+    allergies: '',
+    traitementMedical: '',
+    experienceChretienne: '',
+    ministeres: '',
+    attentes: ''
+};
+function RenseignementForm({ onSubmit, initialData }) {
+    const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(()=>({
+            ...emptyRenseignementState,
+            ...Object.fromEntries(Object.entries(initialData || {}).filter(([, v])=>v != null && String(v) !== ''))
+        }));
+    const initialKey = JSON.stringify(initialData ?? {});
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        if (!initialData || Object.keys(initialData).length === 0) return;
+        setFormData((prev)=>({
+                ...prev,
+                ...Object.fromEntries(Object.entries(initialData).filter(([, v])=>v != null && String(v) !== ''))
+            }));
+    }, [
+        initialKey
+    ]);
     const handleChange = (e)=>{
         const { name, value } = e.target;
         setFormData((prev)=>({
@@ -773,7 +799,6 @@ function RenseignementForm({ onSubmit }) {
     };
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log('Formulaire de renseignements soumis:', formData);
         onSubmit(formData);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -787,7 +812,7 @@ function RenseignementForm({ onSubmit }) {
                         children: "Fiche de Renseignements Personnels et Spirituels"
                     }, void 0, false, {
                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                        lineNumber: 63,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -795,13 +820,13 @@ function RenseignementForm({ onSubmit }) {
                         children: "Ces informations resteront strictement confidentielles"
                     }, void 0, false, {
                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                        lineNumber: 66,
+                        lineNumber: 84,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                lineNumber: 62,
+                lineNumber: 80,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -816,7 +841,7 @@ function RenseignementForm({ onSubmit }) {
                                 children: "Situation Familiale et Professionnelle"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 74,
+                                lineNumber: 92,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -830,7 +855,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Situation familiale *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 78,
+                                                lineNumber: 96,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -846,7 +871,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "Sélectionnez votre situation"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 89,
+                                                        lineNumber: 107,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -854,7 +879,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "Célibataire"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 90,
+                                                        lineNumber: 108,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -862,7 +887,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "Marié(e)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 91,
+                                                        lineNumber: 109,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -870,7 +895,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "Divorcé(e)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 92,
+                                                        lineNumber: 110,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -878,19 +903,19 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "Veuf/Veuve"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 93,
+                                                        lineNumber: 111,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 81,
+                                                lineNumber: 99,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 77,
+                                        lineNumber: 95,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -901,7 +926,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Nombre d'enfants à charge"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 98,
+                                                lineNumber: 116,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -914,13 +939,13 @@ function RenseignementForm({ onSubmit }) {
                                                 className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 101,
+                                                lineNumber: 119,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 115,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -931,7 +956,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Profession actuelle *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 113,
+                                                lineNumber: 131,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -944,13 +969,13 @@ function RenseignementForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 116,
+                                                lineNumber: 134,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 112,
+                                        lineNumber: 130,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -961,7 +986,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Employeur actuel"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 146,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -973,13 +998,13 @@ function RenseignementForm({ onSubmit }) {
                                                 className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 131,
+                                                lineNumber: 149,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 127,
+                                        lineNumber: 145,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -991,7 +1016,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Adresse professionnelle"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 142,
+                                                lineNumber: 160,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1003,13 +1028,13 @@ function RenseignementForm({ onSubmit }) {
                                                 className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 163,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 141,
+                                        lineNumber: 159,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1020,7 +1045,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Téléphone professionnel"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 156,
+                                                lineNumber: 174,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1032,25 +1057,25 @@ function RenseignementForm({ onSubmit }) {
                                                 className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 159,
+                                                lineNumber: 177,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 173,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 76,
+                                lineNumber: 94,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                        lineNumber: 73,
+                        lineNumber: 91,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1061,7 +1086,7 @@ function RenseignementForm({ onSubmit }) {
                                 children: "Personne à contacter en cas d'urgence"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 173,
+                                lineNumber: 191,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1075,7 +1100,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Nom et prénoms *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 177,
+                                                lineNumber: 195,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1088,13 +1113,13 @@ function RenseignementForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 180,
+                                                lineNumber: 198,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 176,
+                                        lineNumber: 194,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1105,7 +1130,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Téléphone *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 192,
+                                                lineNumber: 210,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1118,13 +1143,13 @@ function RenseignementForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 195,
+                                                lineNumber: 213,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 191,
+                                        lineNumber: 209,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1135,7 +1160,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Lien de parenté *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 207,
+                                                lineNumber: 225,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1148,25 +1173,25 @@ function RenseignementForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 210,
+                                                lineNumber: 228,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 206,
+                                        lineNumber: 224,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 175,
+                                lineNumber: 193,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                        lineNumber: 172,
+                        lineNumber: 190,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1177,7 +1202,7 @@ function RenseignementForm({ onSubmit }) {
                                 children: "Informations Médicales"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 225,
+                                lineNumber: 243,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1191,7 +1216,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Groupe sanguin"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 229,
+                                                lineNumber: 247,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1206,7 +1231,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "Non renseigné"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 257,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1214,7 +1239,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "A+"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 240,
+                                                        lineNumber: 258,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1222,7 +1247,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "A-"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 241,
+                                                        lineNumber: 259,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1230,7 +1255,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "B+"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 242,
+                                                        lineNumber: 260,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1238,7 +1263,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "B-"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 243,
+                                                        lineNumber: 261,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1246,7 +1271,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "AB+"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 244,
+                                                        lineNumber: 262,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1254,7 +1279,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "AB-"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 245,
+                                                        lineNumber: 263,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1262,7 +1287,7 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "O+"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 246,
+                                                        lineNumber: 264,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1270,19 +1295,19 @@ function RenseignementForm({ onSubmit }) {
                                                         children: "O-"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                        lineNumber: 247,
+                                                        lineNumber: 265,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 232,
+                                                lineNumber: 250,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 228,
+                                        lineNumber: 246,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1294,7 +1319,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Allergies connues"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 252,
+                                                lineNumber: 270,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1307,13 +1332,13 @@ function RenseignementForm({ onSubmit }) {
                                                 className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 255,
+                                                lineNumber: 273,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 251,
+                                        lineNumber: 269,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1325,7 +1350,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Traitement médical en cours"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 267,
+                                                lineNumber: 285,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1338,25 +1363,25 @@ function RenseignementForm({ onSubmit }) {
                                                 className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 270,
+                                                lineNumber: 288,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 266,
+                                        lineNumber: 284,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 227,
+                                lineNumber: 245,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                        lineNumber: 224,
+                        lineNumber: 242,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1367,7 +1392,7 @@ function RenseignementForm({ onSubmit }) {
                                 children: "Vie Spirituelle"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 285,
+                                lineNumber: 303,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1381,7 +1406,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Parlez-nous de votre expérience chrétienne *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 289,
+                                                lineNumber: 307,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1395,13 +1420,13 @@ function RenseignementForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 292,
+                                                lineNumber: 310,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 288,
+                                        lineNumber: 306,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1412,7 +1437,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Dans quels ministères ou services êtes-vous impliqué(e) dans votre église ?"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 305,
+                                                lineNumber: 323,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1425,13 +1450,13 @@ function RenseignementForm({ onSubmit }) {
                                                 className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 308,
+                                                lineNumber: 326,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 304,
+                                        lineNumber: 322,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1442,7 +1467,7 @@ function RenseignementForm({ onSubmit }) {
                                                 children: "Quelles sont vos attentes par rapport à cette formation ? *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 320,
+                                                lineNumber: 338,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1455,25 +1480,25 @@ function RenseignementForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                                lineNumber: 323,
+                                                lineNumber: 341,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 319,
+                                        lineNumber: 337,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 287,
+                                lineNumber: 305,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                        lineNumber: 284,
+                        lineNumber: 302,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1485,7 +1510,7 @@ function RenseignementForm({ onSubmit }) {
                                 children: "Retour"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 337,
+                                lineNumber: 355,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1497,7 +1522,7 @@ function RenseignementForm({ onSubmit }) {
                                         children: "Enregistrer le brouillon"
                                     }, void 0, false, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 341,
+                                        lineNumber: 359,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -1506,31 +1531,31 @@ function RenseignementForm({ onSubmit }) {
                                         children: "Soumettre la fiche"
                                     }, void 0, false, {
                                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                        lineNumber: 344,
+                                        lineNumber: 362,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                                lineNumber: 340,
+                                lineNumber: 358,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/RenseignementForm.tsx",
-                        lineNumber: 336,
+                        lineNumber: 354,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/forms/RenseignementForm.tsx",
-                lineNumber: 71,
+                lineNumber: 89,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/forms/RenseignementForm.tsx",
-        lineNumber: 61,
+        lineNumber: 79,
         columnNumber: 5
     }, this);
 }
@@ -1549,7 +1574,32 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2
 ;
 ;
 ;
-function ConsentementForm({ onSubmit }) {
+function buildConsentPrefill(ins) {
+    if (!ins || typeof ins !== 'object') return {};
+    const nom = String(ins.nom ?? '').trim();
+    const prenom = String(ins.prenom ?? '').trim();
+    const nomComplet = [
+        prenom,
+        nom
+    ].filter(Boolean).join(' ').trim();
+    const dateNaissance = String(ins.dateNaissance ?? '').trim();
+    const lieuNaissance = String(ins.lieuNaissance ?? '').trim();
+    const adresse = String(ins.adresse ?? '').trim();
+    const telephone = String(ins.telephone ?? '').trim();
+    const email = String(ins.email ?? '').trim();
+    const out = {};
+    if (nomComplet) {
+        out.nomComplet = nomComplet;
+        out.signature = nomComplet;
+    }
+    if (dateNaissance) out.dateNaissance = dateNaissance;
+    if (lieuNaissance) out.lieuNaissance = lieuNaissance;
+    if (adresse) out.adresse = adresse;
+    if (telephone) out.telephone = telephone;
+    if (email) out.email = email;
+    return out;
+}
+function ConsentementForm({ onSubmit, prefillFromInscription }) {
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
         nomComplet: '',
         dateNaissance: '',
@@ -1564,6 +1614,17 @@ function ConsentementForm({ onSubmit }) {
         date: new Date().toISOString().split('T')[0],
         signature: ''
     });
+    const prefillKey = JSON.stringify(prefillFromInscription ?? {});
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        const patch = buildConsentPrefill(prefillFromInscription);
+        if (Object.keys(patch).length === 0) return;
+        setFormData((prev)=>({
+                ...prev,
+                ...patch
+            }));
+    }, [
+        prefillKey
+    ]);
     const handleChange = (e)=>{
         const { name, value, type } = e.target;
         const checked = e.target.checked;
@@ -1578,7 +1639,6 @@ function ConsentementForm({ onSubmit }) {
             alert('Veuillez accepter le règlement intérieur pour continuer');
             return;
         }
-        console.log('Décharge de consentement soumise:', formData);
         onSubmit(formData);
         alert('Décharge de consentement enregistrée avec succès !');
     };
@@ -1593,7 +1653,7 @@ function ConsentementForm({ onSubmit }) {
                         children: "Décharge de Consentement et d'Engagement"
                     }, void 0, false, {
                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                        lineNumber: 66,
+                        lineNumber: 105,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1601,13 +1661,13 @@ function ConsentementForm({ onSubmit }) {
                         children: "Mission Agape - École de Formation et de Discipolat Missionnaire"
                     }, void 0, false, {
                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                        lineNumber: 69,
+                        lineNumber: 108,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                lineNumber: 65,
+                lineNumber: 104,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1628,17 +1688,17 @@ function ConsentementForm({ onSubmit }) {
                                     clipRule: "evenodd"
                                 }, void 0, false, {
                                     fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                    lineNumber: 78,
+                                    lineNumber: 117,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 77,
+                                lineNumber: 116,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/forms/ConsentementForm.tsx",
-                            lineNumber: 76,
+                            lineNumber: 115,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1650,30 +1710,30 @@ function ConsentementForm({ onSubmit }) {
                                         children: "Note importante :"
                                     }, void 0, false, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 83,
+                                        lineNumber: 122,
                                         columnNumber: 15
                                     }, this),
                                     " Cette décharge est un document légal. Veuillez la lire attentivement avant de signer."
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 82,
+                                lineNumber: 121,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/forms/ConsentementForm.tsx",
-                            lineNumber: 81,
+                            lineNumber: 120,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/forms/ConsentementForm.tsx",
-                    lineNumber: 75,
+                    lineNumber: 114,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                lineNumber: 74,
+                lineNumber: 113,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1688,7 +1748,7 @@ function ConsentementForm({ onSubmit }) {
                                 children: "Informations Personnelles"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 92,
+                                lineNumber: 131,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1702,7 +1762,7 @@ function ConsentementForm({ onSubmit }) {
                                                 children: "Nom et prénoms complets *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 96,
+                                                lineNumber: 135,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1715,13 +1775,13 @@ function ConsentementForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 138,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 134,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1735,7 +1795,7 @@ function ConsentementForm({ onSubmit }) {
                                                         children: "Date de naissance *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 112,
+                                                        lineNumber: 151,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1748,13 +1808,13 @@ function ConsentementForm({ onSubmit }) {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 115,
+                                                        lineNumber: 154,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 111,
+                                                lineNumber: 150,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1765,7 +1825,7 @@ function ConsentementForm({ onSubmit }) {
                                                         children: "Lieu de naissance *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 165,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1778,19 +1838,19 @@ function ConsentementForm({ onSubmit }) {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 129,
+                                                        lineNumber: 168,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 164,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 110,
+                                        lineNumber: 149,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1801,7 +1861,7 @@ function ConsentementForm({ onSubmit }) {
                                                 children: "Adresse complète *"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 142,
+                                                lineNumber: 181,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1814,13 +1874,13 @@ function ConsentementForm({ onSubmit }) {
                                                 required: true
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 184,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 141,
+                                        lineNumber: 180,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1834,7 +1894,7 @@ function ConsentementForm({ onSubmit }) {
                                                         children: "Téléphone *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 158,
+                                                        lineNumber: 197,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1847,13 +1907,13 @@ function ConsentementForm({ onSubmit }) {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 161,
+                                                        lineNumber: 200,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 157,
+                                                lineNumber: 196,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1864,7 +1924,7 @@ function ConsentementForm({ onSubmit }) {
                                                         children: "Email *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 172,
+                                                        lineNumber: 211,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1877,31 +1937,31 @@ function ConsentementForm({ onSubmit }) {
                                                         required: true
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 175,
+                                                        lineNumber: 214,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 171,
+                                                lineNumber: 210,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 156,
+                                        lineNumber: 195,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 94,
+                                lineNumber: 133,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                        lineNumber: 91,
+                        lineNumber: 130,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1912,7 +1972,7 @@ function ConsentementForm({ onSubmit }) {
                                 children: "Responsable Légal (si participant mineur)"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 191,
+                                lineNumber: 230,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1926,7 +1986,7 @@ function ConsentementForm({ onSubmit }) {
                                                 children: "Nom et prénoms du responsable légal"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 195,
+                                                lineNumber: 234,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1938,13 +1998,13 @@ function ConsentementForm({ onSubmit }) {
                                                 className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 198,
+                                                lineNumber: 237,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 194,
+                                        lineNumber: 233,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1955,7 +2015,7 @@ function ConsentementForm({ onSubmit }) {
                                                 children: "Téléphone du responsable"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 209,
+                                                lineNumber: 248,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1967,25 +2027,25 @@ function ConsentementForm({ onSubmit }) {
                                                 className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 212,
+                                                lineNumber: 251,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 208,
+                                        lineNumber: 247,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 193,
+                                lineNumber: 232,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                        lineNumber: 190,
+                        lineNumber: 229,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1996,7 +2056,7 @@ function ConsentementForm({ onSubmit }) {
                                 children: "Engagements et Consentements"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 226,
+                                lineNumber: 265,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2017,12 +2077,12 @@ function ConsentementForm({ onSubmit }) {
                                                     required: true
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                    lineNumber: 231,
+                                                    lineNumber: 270,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 230,
+                                                lineNumber: 269,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2034,7 +2094,7 @@ function ConsentementForm({ onSubmit }) {
                                                         children: "J'accepte le règlement intérieur de l'école *"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 242,
+                                                        lineNumber: 281,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2042,19 +2102,19 @@ function ConsentementForm({ onSubmit }) {
                                                         children: "Je m'engage à respecter les règles de vie en communauté, les horaires des cours et toutes les dispositions du règlement intérieur de l'école."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 245,
+                                                        lineNumber: 284,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 241,
+                                                lineNumber: 280,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 229,
+                                        lineNumber: 268,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2071,12 +2131,12 @@ function ConsentementForm({ onSubmit }) {
                                                     className: "h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                    lineNumber: 253,
+                                                    lineNumber: 292,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 252,
+                                                lineNumber: 291,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2088,7 +2148,7 @@ function ConsentementForm({ onSubmit }) {
                                                         children: "Autorisation d'utilisation de l'image"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 263,
+                                                        lineNumber: 302,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2096,19 +2156,19 @@ function ConsentementForm({ onSubmit }) {
                                                         children: "J'autorise Mission Agape à utiliser mon image (photos, vidéos) à des fins de promotion et de communication de l'école."
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                        lineNumber: 266,
+                                                        lineNumber: 305,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 262,
+                                                lineNumber: 301,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 251,
+                                        lineNumber: 290,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2119,7 +2179,7 @@ function ConsentementForm({ onSubmit }) {
                                                 children: "Décharge de responsabilité :"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 273,
+                                                lineNumber: 312,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2127,7 +2187,7 @@ function ConsentementForm({ onSubmit }) {
                                                 children: "Je déclare que les informations fournies sont exactes et complètes. Je comprends que toute fausse déclaration peut entraîner l'annulation de mon inscription. Je m'engage à participer activement à la formation et à respecter les valeurs chrétiennes de l'école."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 274,
+                                                lineNumber: 313,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2135,25 +2195,25 @@ function ConsentementForm({ onSubmit }) {
                                                 children: "Je reconnais avoir pris connaissance du programme, des conditions de formation et des modalités de paiement. Je m'engage à respecter les règles de l'école et à m'acquitter des frais de formation selon les modalités convenues."
                                             }, void 0, false, {
                                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                                lineNumber: 277,
+                                                lineNumber: 316,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                        lineNumber: 272,
+                                        lineNumber: 311,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 228,
+                                lineNumber: 267,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                        lineNumber: 225,
+                        lineNumber: 264,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2169,7 +2229,7 @@ function ConsentementForm({ onSubmit }) {
                                             children: "Fait à (ville) *"
                                         }, void 0, false, {
                                             fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                            lineNumber: 288,
+                                            lineNumber: 327,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2181,13 +2241,13 @@ function ConsentementForm({ onSubmit }) {
                                             className: "w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-50"
                                         }, void 0, false, {
                                             fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                            lineNumber: 291,
+                                            lineNumber: 330,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                    lineNumber: 287,
+                                    lineNumber: 326,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2198,7 +2258,7 @@ function ConsentementForm({ onSubmit }) {
                                             children: "Le *"
                                         }, void 0, false, {
                                             fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                            lineNumber: 302,
+                                            lineNumber: 341,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2211,13 +2271,13 @@ function ConsentementForm({ onSubmit }) {
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                            lineNumber: 305,
+                                            lineNumber: 344,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                    lineNumber: 301,
+                                    lineNumber: 340,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2229,7 +2289,7 @@ function ConsentementForm({ onSubmit }) {
                                             children: "Signature (tapez votre nom complet) *"
                                         }, void 0, false, {
                                             fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                            lineNumber: 317,
+                                            lineNumber: 356,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -2243,24 +2303,24 @@ function ConsentementForm({ onSubmit }) {
                                             required: true
                                         }, void 0, false, {
                                             fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                            lineNumber: 320,
+                                            lineNumber: 359,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                    lineNumber: 316,
+                                    lineNumber: 355,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/forms/ConsentementForm.tsx",
-                            lineNumber: 286,
+                            lineNumber: 325,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                        lineNumber: 285,
+                        lineNumber: 324,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2272,7 +2332,7 @@ function ConsentementForm({ onSubmit }) {
                                 children: "Retour"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 335,
+                                lineNumber: 374,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -2282,25 +2342,25 @@ function ConsentementForm({ onSubmit }) {
                                 children: "Valider et signer la décharge"
                             }, void 0, false, {
                                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                                lineNumber: 338,
+                                lineNumber: 377,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/forms/ConsentementForm.tsx",
-                        lineNumber: 334,
+                        lineNumber: 373,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/forms/ConsentementForm.tsx",
-                lineNumber: 89,
+                lineNumber: 128,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/forms/ConsentementForm.tsx",
-        lineNumber: 64,
+        lineNumber: 103,
         columnNumber: 5
     }, this);
 }
@@ -2549,11 +2609,12 @@ function InscriptionPage() {
             title: "Formulaire d'Inscription",
             description: "Remplissez vos informations personnelles et la formation souhaitée",
             component: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$forms$2f$InscriptionForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                initialData: formData.inscription,
                 onSubmit: (data)=>handleFormSubmit('inscription', data)
             }, void 0, false, {
                 fileName: "[project]/app/inscription/page.tsx",
-                lineNumber: 64,
-                columnNumber: 18
+                lineNumber: 65,
+                columnNumber: 9
             }, this)
         },
         {
@@ -2561,11 +2622,12 @@ function InscriptionPage() {
             title: "Fiche de Renseignements",
             description: "Informations personnelles, professionnelles et spirituelles détaillées",
             component: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$forms$2f$RenseignementForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                initialData: formData.renseignements,
                 onSubmit: (data)=>handleFormSubmit('renseignements', data)
             }, void 0, false, {
                 fileName: "[project]/app/inscription/page.tsx",
-                lineNumber: 70,
-                columnNumber: 18
+                lineNumber: 76,
+                columnNumber: 9
             }, this)
         },
         {
@@ -2573,11 +2635,12 @@ function InscriptionPage() {
             title: "Décharge de Consentement",
             description: "Engagement et acceptation du règlement intérieur",
             component: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$forms$2f$ConsentementForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                prefillFromInscription: formData.inscription,
                 onSubmit: (data)=>handleFormSubmit('consentement', data)
             }, void 0, false, {
                 fileName: "[project]/app/inscription/page.tsx",
-                lineNumber: 76,
-                columnNumber: 18
+                lineNumber: 87,
+                columnNumber: 9
             }, this)
         }
     ];
@@ -2642,7 +2705,7 @@ function InscriptionPage() {
                             children: "Inscription aux Formations"
                         }, void 0, false, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 132,
+                            lineNumber: 147,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2650,13 +2713,13 @@ function InscriptionPage() {
                             children: "Veuillez remplir tous les formulaires requis pour finaliser votre inscription"
                         }, void 0, false, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 135,
+                            lineNumber: 150,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/inscription/page.tsx",
-                    lineNumber: 131,
+                    lineNumber: 146,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2673,18 +2736,18 @@ function InscriptionPage() {
                                                 className: "w-6 h-6"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/inscription/page.tsx",
-                                                lineNumber: 153,
+                                                lineNumber: 168,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: index + 1
                                             }, void 0, false, {
                                                 fileName: "[project]/app/inscription/page.tsx",
-                                                lineNumber: 155,
+                                                lineNumber: 170,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/app/inscription/page.tsx",
-                                            lineNumber: 145,
+                                            lineNumber: 160,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2692,13 +2755,13 @@ function InscriptionPage() {
                                             children: form.title
                                         }, void 0, false, {
                                             fileName: "[project]/app/inscription/page.tsx",
-                                            lineNumber: 158,
+                                            lineNumber: 173,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, form.id, true, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 144,
+                                    lineNumber: 159,
                                     columnNumber: 15
                                 }, this)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2710,23 +2773,23 @@ function InscriptionPage() {
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 162,
+                                    lineNumber: 177,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/inscription/page.tsx",
-                                lineNumber: 161,
+                                lineNumber: 176,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/inscription/page.tsx",
-                        lineNumber: 142,
+                        lineNumber: 157,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/app/inscription/page.tsx",
-                    lineNumber: 141,
+                    lineNumber: 156,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2738,7 +2801,7 @@ function InscriptionPage() {
                             children: submitError
                         }, void 0, false, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 175,
+                            lineNumber: 190,
                             columnNumber: 13
                         }, this) : null,
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2749,7 +2812,7 @@ function InscriptionPage() {
                                     children: forms[currentStep].title
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 183,
+                                    lineNumber: 198,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2757,13 +2820,13 @@ function InscriptionPage() {
                                     children: forms[currentStep].description
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 186,
+                                    lineNumber: 201,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 182,
+                            lineNumber: 197,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2771,7 +2834,7 @@ function InscriptionPage() {
                             children: forms[currentStep].component
                         }, void 0, false, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 192,
+                            lineNumber: 207,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2786,14 +2849,14 @@ function InscriptionPage() {
                                             className: "h-4 w-4 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/app/inscription/page.tsx",
-                                            lineNumber: 207,
+                                            lineNumber: 222,
                                             columnNumber: 15
                                         }, this),
                                         "Précédent"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 198,
+                                    lineNumber: 213,
                                     columnNumber: 13
                                 }, this),
                                 currentStep < forms.length - 1 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2807,20 +2870,20 @@ function InscriptionPage() {
                                             children: "Suivant"
                                         }, void 0, false, {
                                             fileName: "[project]/app/inscription/page.tsx",
-                                            lineNumber: 218,
+                                            lineNumber: 233,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                             className: "h-4 w-4 ml-2"
                                         }, void 0, false, {
                                             fileName: "[project]/app/inscription/page.tsx",
-                                            lineNumber: 219,
+                                            lineNumber: 234,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 212,
+                                    lineNumber: 227,
                                     columnNumber: 15
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>void handleNext(),
@@ -2832,13 +2895,13 @@ function InscriptionPage() {
                                             className: "h-5 w-5 mr-2 animate-spin"
                                         }, void 0, false, {
                                             fileName: "[project]/app/inscription/page.tsx",
-                                            lineNumber: 229,
+                                            lineNumber: 244,
                                             columnNumber: 19
                                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
                                             className: "h-5 w-5 mr-2"
                                         }, void 0, false, {
                                             fileName: "[project]/app/inscription/page.tsx",
-                                            lineNumber: 231,
+                                            lineNumber: 246,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2846,25 +2909,25 @@ function InscriptionPage() {
                                             children: submitting ? 'Enregistrement…' : "Finaliser l'inscription"
                                         }, void 0, false, {
                                             fileName: "[project]/app/inscription/page.tsx",
-                                            lineNumber: 233,
+                                            lineNumber: 248,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 222,
+                                    lineNumber: 237,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 197,
+                            lineNumber: 212,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/inscription/page.tsx",
-                    lineNumber: 173,
+                    lineNumber: 188,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2874,7 +2937,7 @@ function InscriptionPage() {
                             className: "w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 mr-3 flex-shrink-0"
                         }, void 0, false, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 243,
+                            lineNumber: 258,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2884,7 +2947,7 @@ function InscriptionPage() {
                                     children: "Besoin d'aide ?"
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 245,
+                                    lineNumber: 260,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2901,32 +2964,32 @@ function InscriptionPage() {
                                                     className: "w-4 h-4 mr-1"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/inscription/page.tsx",
-                                                    lineNumber: 255,
+                                                    lineNumber: 270,
                                                     columnNumber: 17
                                                 }, this),
                                                 "contact@missionagape.org"
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/inscription/page.tsx",
-                                            lineNumber: 249,
+                                            lineNumber: 264,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 246,
+                                    lineNumber: 261,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 244,
+                            lineNumber: 259,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/inscription/page.tsx",
-                    lineNumber: 242,
+                    lineNumber: 257,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2940,14 +3003,14 @@ function InscriptionPage() {
                                     children: "Notre Équipe"
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 265,
+                                    lineNumber: 280,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "w-20 h-1 bg-primary mx-auto mb-6"
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 266,
+                                    lineNumber: 281,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2955,13 +3018,13 @@ function InscriptionPage() {
                                     children: "Découvrez les personnes dévouées qui font vivre la Mission Agapé Togo"
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 267,
+                                    lineNumber: 282,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 264,
+                            lineNumber: 279,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2973,7 +3036,7 @@ function InscriptionPage() {
                                     imageSrc: "/images/WhatsApp Image 2025-12-25 at 12.43.40.jpeg"
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 273,
+                                    lineNumber: 288,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$TeamMember$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2983,7 +3046,7 @@ function InscriptionPage() {
                                     className: "md:mt-8"
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 278,
+                                    lineNumber: 293,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$TeamMember$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -2992,13 +3055,13 @@ function InscriptionPage() {
                                     imageSrc: "/images/WhatsApp Image 2025-12-25 at 12.43.40 (1).jpeg"
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 284,
+                                    lineNumber: 299,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 272,
+                            lineNumber: 287,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -3009,7 +3072,7 @@ function InscriptionPage() {
                                     children: "Notre Mission"
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 292,
+                                    lineNumber: 307,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -3017,30 +3080,30 @@ function InscriptionPage() {
                                     children: "La Mission Agapé Togo s'engage à apporter l'espoir et le soutien aux communautés à travers l'éducation, la formation et l'accompagnement spirituel. Notre équipe dévouée travaille sans relâche pour faire une différence dans la vie des personnes les plus vulnérables."
                                 }, void 0, false, {
                                     fileName: "[project]/app/inscription/page.tsx",
-                                    lineNumber: 293,
+                                    lineNumber: 308,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/app/inscription/page.tsx",
-                            lineNumber: 291,
+                            lineNumber: 306,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/inscription/page.tsx",
-                    lineNumber: 263,
+                    lineNumber: 278,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/inscription/page.tsx",
-            lineNumber: 130,
+            lineNumber: 145,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/inscription/page.tsx",
-        lineNumber: 129,
+        lineNumber: 144,
         columnNumber: 5
     }, this);
 }
