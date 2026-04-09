@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../.next-internal/server/app/admin/%28protected%29/inscriptions/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {logoutAdmin as '00c3abbc83e23b17a5723abf65b2f04dd9b0cc5273'} from 'ACTIONS_MODULE0'\n"],"names":[],"mappings":"uCAAA,IAAA,EAAA,EAAA,CAAA,CAAA"}

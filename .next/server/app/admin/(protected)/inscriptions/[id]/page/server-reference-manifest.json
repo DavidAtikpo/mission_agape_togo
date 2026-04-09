@@ -1,0 +1,20 @@
+{
+  "node": {
+    "00c3abbc83e23b17a5723abf65b2f04dd9b0cc5273": {
+      "workers": {
+        "app/admin/(protected)/inscriptions/[id]/page": {
+          "moduleId": 16179,
+          "async": false,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/inscriptions/[id]/page": "rsc"
+      },
+      "exportedName": "logoutAdmin",
+      "filename": "app/admin/(protected)/actions.ts"
+    }
+  },
+  "edge": {}
+}

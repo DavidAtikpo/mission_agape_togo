@@ -1,0 +1,37 @@
+// https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  // Nécessaire si tu utilises ?schema=missionagape dans DATABASE_URL (Neon)
+  schemas  = ["public", "missionagape"]
+}
+
+/// Inscription complète (3 étapes) — champs principaux indexés pour l’admin
+model Inscription {
+  id                   String   @id @default(cuid())
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+  email                String
+  nom                  String
+  prenom               String
+  telephone            String
+  formationSouhaitee   String?
+  /// Étape 1 — JSON brut du formulaire d’inscription
+  inscriptionData      Json
+  /// Étape 2 — fiche renseignements
+  renseignementsData   Json
+  /// Étape 3 — consentement
+  consentementData     Json
+  /// NOUVELLE | EN_COURS | TRAITEE (suivi admin)
+  status               String   @default("NOUVELLE")
+
+  @@schema("missionagape")
+  @@index([email])
+  @@index([createdAt])
+  @@index([status])
+}

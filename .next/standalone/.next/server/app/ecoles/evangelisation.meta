@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/ecoles/layout,_N_T_/ecoles/evangelisation/layout,_N_T_/ecoles/evangelisation/page,_N_T_/ecoles/evangelisation"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/ecoles/evangelisation/__PAGE__",
+    "/ecoles/evangelisation",
+    "/ecoles",
+    "/_index",
+    "/_head"
+  ]
+}

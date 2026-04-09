@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Thecode2/Desktop/MISSION-AGAPE/mission-agape-togo/.next-internal/server/app/admin/%28protected%29/inscriptions/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {logoutAdmin as '00df5f5890f34fa95f103b2ce8424cc156022107d5'} from 'ACTIONS_MODULE0'\n"],"names":[],"mappings":";AAAA"}}]
+}

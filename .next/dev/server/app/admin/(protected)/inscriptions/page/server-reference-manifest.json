@@ -1,0 +1,20 @@
+{
+  "node": {
+    "00df5f5890f34fa95f103b2ce8424cc156022107d5": {
+      "workers": {
+        "app/admin/(protected)/inscriptions/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/inscriptions/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/inscriptions/page": "rsc"
+      },
+      "exportedName": "logoutAdmin",
+      "filename": "app/admin/(protected)/actions.ts"
+    }
+  },
+  "edge": {}
+}
