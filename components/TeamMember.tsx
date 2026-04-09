@@ -17,9 +17,9 @@ export default function TeamMember({ name, role, imageSrc, className = '' }: Tea
       whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-56 lg:h-56 mb-2 sm:mb-5 md:mb-6 group">
+      <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-2 sm:mb-4 md:mb-6 group">
         {/* Image avec effet de superposition */}
-        <div className="absolute inset-0 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl group-hover:shadow-2xl transition-all duration-300">
+        <div className="absolute inset-0 rounded-full overflow-hidden border-[3px] md:border-4 border-white dark:border-gray-800 shadow-lg md:shadow-xl group-hover:shadow-2xl transition-all duration-300">
           <Image 
             src={imageSrc}
             alt={name}
@@ -34,7 +34,7 @@ export default function TeamMember({ name, role, imageSrc, className = '' }: Tea
       </div>
       
       <div className="space-y-1 sm:space-y-2">
-        <h3 className="text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+        <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
           {name}
         </h3>
         <div className="h-1 w-12 bg-primary mx-auto rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-md:hidden" />

@@ -4,9 +4,11 @@ import { Image as ImageIcon } from "lucide-react";
 
 export default function Edition14Gallery() {
   return (
-    <div className="py-12">
-      <h2 className="text-3xl font-bold text-primary mb-8">Galerie de la 14ème Édition</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="py-6 md:py-12">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-8">
+        Galerie de la 14ème Édition
+      </h2>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
         {Array.from({ length: 12 }).map((_, index) => {
           const imageNumber = index + 1;
           return (

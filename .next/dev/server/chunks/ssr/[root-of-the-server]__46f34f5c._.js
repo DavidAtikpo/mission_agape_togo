@@ -60,36 +60,39 @@ function EFDMPage() {
     const content = [
         "L'École de Formation et de Discipolat Missionnaire (EFDM) est une institution chrétienne qui a pour mission de former des disciples de Jésus-Christ engagés à répandre l'Évangile.",
         "Notre vision est de voir des hommes et des femmes équipés pour le service dans le Royaume de Dieu, munis d'une solide fondation biblique et d'une passion pour l'évangélisation.",
-        {
-            type: 'image',
-            src: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80',
-            alt: 'Bâtiment de l\'EFDM',
-            className: 'max-w-2xl mx-auto rounded-lg shadow-lg',
-            width: 800,
-            height: 500
-        },
-        "L'EFDM propose plusieurs programmes de formation, notamment :",
+        /* Images désactivées pour l’instant — décommenter pour réafficher
+    {
+      type: 'image' as const,
+      src: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80',
+      alt: 'Bâtiment de l\'EFDM',
+      className: 'max-w-2xl mx-auto rounded-lg shadow-lg',
+      width: 800,
+      height: 500
+    },
+    */ "L'EFDM propose plusieurs programmes de formation, notamment :",
         "- Formation biblique approfondie",
         "- Formation au discipolat",
         "- Formation missionnaire",
         "- Développement du leadership chrétien",
-        {
-            type: 'image',
-            src: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
-            alt: 'Séance de formation en classe',
-            className: 'max-w-2xl mx-auto rounded-xl shadow-lg'
-        },
-        "Nos valeurs fondamentales incluent l'intégrité, l'excellence, le service et l'amour inconditionnel.",
+        /*
+    {
+      type: 'image' as const,
+      src: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80',
+      alt: 'Séance de formation en classe',
+      className: 'max-w-2xl mx-auto rounded-xl shadow-lg'
+    },
+    */ "Nos valeurs fondamentales incluent l'intégrité, l'excellence, le service et l'amour inconditionnel.",
         "Nous croyons en la puissance transformatrice de la Parole de Dieu et en l'importance d'une relation personnelle avec Jésus-Christ.",
-        {
-            type: 'image',
-            src: 'https://images.unsplash.com/photo-1522071820081-009c01201c29?w=800&q=80',
-            alt: 'Notre équipe encadrante',
-            className: 'max-w-3xl mx-auto rounded-lg shadow-lg',
-            width: 1000,
-            height: 600
-        },
-        "Pour plus d'informations sur nos programmes et nos activités, n'hésitez pas à nous contacter."
+        /*
+    {
+      type: 'image' as const,
+      src: 'https://images.unsplash.com/photo-1522071820081-009c01201c29?w=800&q=80',
+      alt: 'Notre équipe encadrante',
+      className: 'max-w-3xl mx-auto rounded-lg shadow-lg',
+      width: 1000,
+      height: 600
+    },
+    */ "Pour plus d'informations sur nos programmes et nos activités, n'hésitez pas à nous contacter."
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         className: "min-h-screen bg-background",
@@ -99,12 +102,12 @@ function EFDMPage() {
             className: "py-16"
         }, void 0, false, {
             fileName: "[project]/app/documents/efdm/page.tsx",
-            lineNumber: 41,
+            lineNumber: 47,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/documents/efdm/page.tsx",
-        lineNumber: 40,
+        lineNumber: 46,
         columnNumber: 5
     }, this);
 }

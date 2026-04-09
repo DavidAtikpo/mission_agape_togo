@@ -1,5 +1,15 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/admin/(protected)/inscriptions/[id]/page": "app/admin/(protected)/inscriptions/[id]/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/documents/efdm/page": "app/documents/efdm/page.js",
+  "/documents/formulaires/page": "app/documents/formulaires/page.js",
+  "/documents/informations/page": "app/documents/informations/page.js",
+  "/documents/page": "app/documents/page.js",
+  "/documents/prospectus/page": "app/documents/prospectus/page.js",
+  "/documents/statuts/page": "app/documents/statuts/page.js",
+  "/ecoles/formation-en-cours/page": "app/ecoles/formation-en-cours/page.js",
+  "/editions/page": "app/editions/page.js",
   "/inscription/page": "app/inscription/page.js",
   "/page": "app/page.js"
 }

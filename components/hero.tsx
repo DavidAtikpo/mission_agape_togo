@@ -8,14 +8,13 @@ export default function Hero() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-0 pb-2 md:py-2">
         <div className="">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-primary leading-tight">
-            Mission Agape
+            Mission Agapé Togo
           </h1>
           <p className="mt-2 text-base sm:text-lg md:text-2xl text-foreground/80 leading-snug sm:leading-relaxed">
-            Transformez votre foi à travers des écoles de formation biblique et spirituelle
+            Connaitre Dieu pour mieux le servir.
           </p>
           <p className="mt-2 text-sm sm:text-base md:text-lg text-foreground/60 leading-relaxed">
-            Au cœur du Togo, nous proposons des programmes d'excellence pour développer votre connaissance biblique, vos
-            compétences en communication et votre capacité à servir
+            Au cœur du Togo, nous proposons des programmes d'excellence pour développer votre connaissance biblique.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4 sm:pt-6">
             <a 

@@ -593,10 +593,10 @@ function TeamMember({ name, role, imageSrc, className = '' }) {
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-56 lg:h-56 mb-2 sm:mb-5 md:mb-6 group",
+                className: "relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-2 sm:mb-4 md:mb-6 group",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl group-hover:shadow-2xl transition-all duration-300",
+                        className: "absolute inset-0 rounded-full overflow-hidden border-[3px] md:border-4 border-white dark:border-gray-800 shadow-lg md:shadow-xl group-hover:shadow-2xl transition-all duration-300",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             src: imageSrc,
                             alt: name,
@@ -630,7 +630,7 @@ function TeamMember({ name, role, imageSrc, className = '' }) {
                 className: "space-y-1 sm:space-y-2",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                        className: "text-lg sm:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300",
+                        className: "text-base sm:text-lg md:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300",
                         children: name
                     }, void 0, false, {
                         fileName: "[project]/components/TeamMember.tsx",

@@ -11,10 +11,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-3 sm:space-y-4 min-w-0">
             <h3 className="text-xl sm:text-2xl font-bold text-white">
-              <span className="text-blue-400">Mission</span> Agapé
+              <span className="text-blue-400">Mission</span> Agapé Togo
             </h3>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-              Transformez votre vie à travers la formation biblique et spirituelle.
+              Connaitre Dieu pour mieux le servir.
             </p>
             <div className="flex flex-wrap gap-3 sm:gap-4 pt-1 sm:pt-2">
               <a 
@@ -123,7 +123,7 @@ export default function Footer() {
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-gray-300 text-sm sm:text-base leading-snug">Rue principale, Quartier Gbétsogbé</p>
+                  <p className="text-gray-300 text-sm sm:text-base leading-snug">Rue internationnale N°2 Lome-Cotonou, Quartier Kpota</p>
                   <p className="text-gray-400 text-xs sm:text-sm mt-0.5">Aného, Togo</p>
                 </div>
               </li>
@@ -140,7 +140,7 @@ export default function Footer() {
                   <Mail className="w-4 h-4" />
                 </div>
                 <a href="mailto:info@missionagape.tg" className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors break-all">
-                  info@missionagape.tg
+                  info@missionagape-tg.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-gray-400 text-xs sm:text-sm pt-1 sm:pt-2">

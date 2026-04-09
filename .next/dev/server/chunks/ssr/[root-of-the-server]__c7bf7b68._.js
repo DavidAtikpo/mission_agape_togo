@@ -171,7 +171,7 @@ function Footer() {
                                             lineNumber: 14,
                                             columnNumber: 15
                                         }, this),
-                                        " Agapé"
+                                        " Agapé Togo"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/footer.tsx",
@@ -180,7 +180,7 @@ function Footer() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-gray-300 text-sm sm:text-base leading-relaxed",
-                                    children: "Transformez votre vie à travers la formation biblique et spirituelle."
+                                    children: "Connaitre Dieu pour mieux le servir."
                                 }, void 0, false, {
                                     fileName: "[project]/components/footer.tsx",
                                     lineNumber: 16,
@@ -505,7 +505,7 @@ function Footer() {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             className: "text-gray-300 text-sm sm:text-base leading-snug",
-                                                            children: "Rue principale, Quartier Gbétsogbé"
+                                                            children: "Rue internationnale N°2 Lome-Cotonou, Quartier Kpota"
                                                         }, void 0, false, {
                                                             fileName: "[project]/components/footer.tsx",
                                                             lineNumber: 126,
@@ -583,7 +583,7 @@ function Footer() {
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                     href: "mailto:info@missionagape.tg",
                                                     className: "text-sm sm:text-base text-gray-300 hover:text-white transition-colors break-all",
-                                                    children: "info@missionagape.tg"
+                                                    children: "info@missionagape-tg.com"
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/footer.tsx",
                                                     lineNumber: 142,

@@ -43,7 +43,7 @@ function Hero() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                             className: "text-3xl sm:text-4xl md:text-6xl font-bold text-primary leading-tight",
-                            children: "Mission Agape"
+                            children: "Mission Agapé Togo"
                         }, void 0, false, {
                             fileName: "[project]/components/hero.tsx",
                             lineNumber: 10,
@@ -51,7 +51,7 @@ function Hero() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "mt-2 text-base sm:text-lg md:text-2xl text-foreground/80 leading-snug sm:leading-relaxed",
-                            children: "Transformez votre foi à travers des écoles de formation biblique et spirituelle"
+                            children: "Connaitre Dieu pour mieux le servir."
                         }, void 0, false, {
                             fileName: "[project]/components/hero.tsx",
                             lineNumber: 13,
@@ -59,7 +59,7 @@ function Hero() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "mt-2 text-sm sm:text-base md:text-lg text-foreground/60 leading-relaxed",
-                            children: "Au cœur du Togo, nous proposons des programmes d'excellence pour développer votre connaissance biblique, vos compétences en communication et votre capacité à servir"
+                            children: "Au cœur du Togo, nous proposons des programmes d'excellence pour développer votre connaissance biblique."
                         }, void 0, false, {
                             fileName: "[project]/components/hero.tsx",
                             lineNumber: 16,
@@ -74,7 +74,7 @@ function Hero() {
                                     children: "Découvrir les écoles"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 21,
+                                    lineNumber: 20,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -83,13 +83,13 @@ function Hero() {
                                     children: "Nous contacter"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
-                                    lineNumber: 27,
+                                    lineNumber: 26,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/hero.tsx",
-                            lineNumber: 20,
+                            lineNumber: 19,
                             columnNumber: 11
                         }, this)
                     ]

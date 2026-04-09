@@ -1,9 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { CheckCircle, AlertCircle, ArrowLeft, ArrowRight, Check, Mail, Loader2 } from 'lucide-react';
+import { CheckCircle, AlertCircle, ArrowLeft, Check, Mail, Loader2 } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
 import InscriptionForm from '@/components/forms/InscriptionForm';
 import RenseignementForm from '@/components/forms/RenseignementForm';
 import ConsentementForm from '@/components/forms/ConsentementForm';
@@ -64,7 +63,11 @@ export default function InscriptionPage() {
       component: (
         <InscriptionForm
           initialData={formData.inscription as Record<string, string>}
-          onSubmit={(data) => handleFormSubmit('inscription', data)}
+          onSubmit={(data) => {
+            handleFormSubmit('inscription', data);
+            setSubmitError(null);
+            setCurrentStep(1);
+          }}
         />
       )
     },
@@ -75,7 +78,11 @@ export default function InscriptionPage() {
       component: (
         <RenseignementForm
           initialData={formData.renseignements as Record<string, string>}
-          onSubmit={(data) => handleFormSubmit('renseignements', data)}
+          onSubmit={(data) => {
+            handleFormSubmit('renseignements', data);
+            setSubmitError(null);
+            setCurrentStep(2);
+          }}
         />
       )
     },
@@ -141,39 +148,41 @@ export default function InscriptionPage() {
 
 
   return (
-    <main className="min-h-screen bg-background py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+    <main className="min-h-screen bg-background py-8 md:py-14 lg:py-16">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="text-center mb-6 md:mb-10 lg:mb-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-2 md:mb-4 leading-tight">
             Inscription aux Formations
           </h1>
-          <p className="text-xl text-foreground/80">
+          <p className="text-sm sm:text-base md:text-lg text-foreground/80 max-w-xl mx-auto">
             Veuillez remplir tous les formulaires requis pour finaliser votre inscription
           </p>
         </div>
 
         {/* Progress Steps */}
-        <div className="mb-12">
-          <div className="flex items-center justify-between relative">
+        <div className="mb-6 md:mb-10 lg:mb-12">
+          <div className="flex items-center justify-between relative px-0.5">
             {forms.map((form, index) => (
-              <div key={form.id} className="flex flex-col items-center z-10">
-                <div 
-                  className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                    currentStep >= index 
-                      ? 'bg-primary text-white' 
+              <div key={form.id} className="flex flex-col items-center z-10 max-w-[32%]">
+                <div
+                  className={`w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-xs sm:text-sm ${
+                    currentStep >= index
+                      ? 'bg-primary text-white'
                       : 'bg-gray-200 text-gray-600'
                   }`}
                 >
                   {isFormComplete(form.id) ? (
-                    <CheckCircle className="w-6 h-6" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   ) : (
                     <span>{index + 1}</span>
                   )}
                 </div>
-                <span className="text-sm mt-2 text-center">{form.title}</span>
+                <span className="text-[10px] leading-tight sm:text-xs md:text-sm mt-1.5 md:mt-2 text-center px-0.5">
+                  {form.title}
+                </span>
               </div>
             ))}
-            <div className="absolute top-6 left-0 right-0 h-1 bg-gray-200 -z-10">
+            <div className="absolute top-[1.125rem] sm:top-5 md:top-6 left-0 right-0 h-0.5 md:h-1 bg-gray-200 -z-10">
               <div 
                 className="h-full bg-primary transition-all duration-300"
                 style={{
@@ -185,80 +194,73 @@ export default function InscriptionPage() {
         </div>
 
         {/* Form Container */}
-        <div className="bg-white dark:bg-card rounded-xl shadow-lg p-6 md:p-8">
+        <div className="bg-white dark:bg-card rounded-lg md:rounded-xl shadow-md md:shadow-lg p-4 sm:p-5 md:p-8">
           {submitError ? (
             <div
-              className="mb-4 rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-3 text-sm text-destructive"
+              className="mb-3 md:mb-4 rounded-md md:rounded-lg border border-destructive/50 bg-destructive/10 px-3 py-2 md:px-4 md:py-3 text-xs md:text-sm text-destructive"
               role="alert"
             >
               {submitError}
             </div>
           ) : null}
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold text-foreground mb-2">
+          <div className="mb-4 md:mb-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1 md:mb-2">
               {forms[currentStep].title}
             </h2>
-            <p className="text-foreground/70">
+            <p className="text-sm md:text-base text-foreground/70">
               {forms[currentStep].description}
             </p>
           </div>
 
           {/* Formulaire actif */}
-          <div className="mb-6">
+          <div className="mb-4 md:mb-6">
             {forms[currentStep].component}
           </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex justify-between pt-6 border-t border-gray-200">
+          {/* Navigation : une seule barre — pas de doublon avec les boutons des formulaires */}
+          <div
+            className={`flex pt-4 md:pt-6 border-t border-gray-200 ${
+              currentStep < forms.length - 1 ? 'justify-start' : 'justify-between'
+            }`}
+          >
             <button
               onClick={handlePrevious}
               disabled={currentStep === 0}
-              className={`inline-flex items-center px-4 py-2 rounded-md ${
-                currentStep === 0 
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+              className={`inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 text-sm rounded-md ${
+                currentStep === 0
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                   : 'bg-gray-100 hover:bg-gray-200 text-foreground'
               } transition-colors`}
+              type="button"
             >
-              <ArrowLeft className="h-4 w-4 mr-2" />
+              <ArrowLeft className="h-3.5 w-3.5 md:h-4 md:w-4 mr-1.5 md:mr-2" />
               Précédent
             </button>
-            
-            {currentStep < forms.length - 1 ? (
+
+            {currentStep === forms.length - 1 ? (
               <button
                 onClick={() => void handleNext()}
                 disabled={submitting}
-                className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-md transition-colors touch-manipulation active:scale-95 disabled:opacity-50"
-                type="button"
-              >
-                <span className="text-base">Suivant</span>
-                <ArrowRight className="h-4 w-4 ml-2" />
-              </button>
-            ) : (
-              <button
-                onClick={() => void handleNext()}
-                disabled={submitting}
-                className="inline-flex items-center px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors touch-manipulation active:scale-95 disabled:opacity-50"
+                className="inline-flex items-center px-4 py-1.5 md:px-6 md:py-2 text-sm md:text-base bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors touch-manipulation active:scale-95 disabled:opacity-50"
                 type="button"
               >
                 {submitting ? (
-                  <Loader2 className="h-5 w-5 mr-2 animate-spin" />
+                  <Loader2 className="h-4 w-4 md:h-5 md:w-5 mr-1.5 md:mr-2 animate-spin" />
                 ) : (
-                  <Check className="h-5 w-5 mr-2" />
+                  <Check className="h-4 w-4 md:h-5 md:w-5 mr-1.5 md:mr-2" />
                 )}
-                <span className="text-base">
-                  {submitting ? 'Enregistrement…' : "Finaliser l'inscription"}
-                </span>
+                <span>{submitting ? 'Enregistrement…' : "Finaliser l'inscription"}</span>
               </button>
-            )}
+            ) : null}
           </div>
         </div>
 
         {/* Help Section */}
-        <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex items-start">
-          <AlertCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 mr-3 flex-shrink-0" />
-          <div>
-            <h3 className="font-medium text-foreground">Besoin d'aide ?</h3>
-            <p className="text-sm text-foreground/70 mt-1">
+        <div className="mt-5 md:mt-8 p-3 md:p-4 bg-blue-50 dark:bg-blue-900/20 rounded-md md:rounded-lg flex items-start gap-2 md:gap-3">
+          <AlertCircle className="w-4 h-4 md:w-5 md:h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
+          <div className="min-w-0">
+            <h3 className="text-sm md:text-base font-medium text-foreground">Besoin d'aide ?</h3>
+            <p className="text-xs md:text-sm text-foreground/70 mt-1">
               Si vous rencontrez des difficultés pour remplir les formulaires, 
               n'hésitez pas à nous contacter à l'adresse 
               <Link 
@@ -267,45 +269,20 @@ export default function InscriptionPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Mail className="w-4 h-4 mr-1" />
-                contact@missionagape.org
+                <Mail className="w-3.5 h-3.5 md:w-4 md:h-4 mr-1 shrink-0" />
+                contact@missionagape-tg.com
               </Link>
             </p>
           </div>
         </div>
 
         {/* Section À propos */}
-        <div className="mt-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Notre Équipe</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-foreground/80 max-w-2xl mx-auto">
-              Découvrez les personnes dévouées qui font vivre la Mission Agapé Togo
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 mt-12">
-            <TeamMember
-              name="Le Directeur"
-              role="Directeur de la Mission"
-              imageSrc="/images/WhatsApp Image 2025-12-25 at 12.43.40.jpeg"
-            />
-            <TeamMember
-              name="La Directrice"
-              role="Directrice Adjointe"
-              imageSrc="/images/WhatsApp Image 2025-12-25 at 13.23.49.jpeg"
-              className="md:mt-8"
-            />
-            <TeamMember
-              name="Le Conseiller"
-              role="Conseiller Spirituel"
-              imageSrc="/images/WhatsApp Image 2025-12-25 at 12.43.40 (1).jpeg"
-            />
-          </div>
-
-          <div className="mt-16 bg-primary/5 p-8 rounded-xl text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Notre Mission</h3>
-            <p className="text-foreground/80 max-w-3xl mx-auto">
+        <div className="mt-12 md:mt-16 lg:mt-20">
+          <div className="mt-10 md:mt-16 bg-primary/5 p-5 md:p-8 rounded-lg md:rounded-xl text-center">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2 md:mb-4">
+              Notre Mission
+            </h3>
+            <p className="text-sm md:text-base text-foreground/80 max-w-3xl mx-auto leading-relaxed">
               La Mission Agapé Togo s'engage à apporter l'espoir et le soutien aux communautés à travers l'éducation, 
               la formation et l'accompagnement spirituel. Notre équipe dévouée travaille sans relâche pour faire une différence 
               dans la vie des personnes les plus vulnérables.

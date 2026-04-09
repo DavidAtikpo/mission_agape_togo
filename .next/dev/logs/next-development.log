@@ -24,3 +24,247 @@
 [00:17:27.542] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/admin/inscriptions/cmnrp2f020000fcvk1velq9qy color: rgb(120, 120, 120) color: inherit {"dp":"/admin/inscriptions/[id]","o":"http://localhost:3000/admin/inscriptions/cmnrp2f020000fcvk1velq9qy","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775762689896} /_vercel/insights/view
 [00:45:28.544] Server  LOG      ✓ Compiled in 1038ms
 [00:45:55.504] Server  LOG      ✓ Compiled in 126ms
+[00:48:36.292] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:48:36.485] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:48:36.485] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/inscription","route":"/inscription"}
+[00:48:36.485] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/inscription color: rgb(120, 120, 120) color: inherit {"dp":"/inscription","o":"http://localhost:3000/inscription","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775764559002} /_vercel/insights/view
+[00:50:25.122] Server  LOG      ✓ Compiled in 162ms
+[00:50:26.805] Server  LOG      ✓ Compiled in 164ms
+[00:55:32.660] Server  LOG      ✓ Compiled in 1259ms
+[00:55:34.239] Server  LOG      ✓ Compiled in 102ms
+[00:55:36.386] Server  LOG      ✓ Compiled in 107ms
+[00:55:38.055] Server  LOG      ✓ Compiled in 198ms
+[00:55:42.760] Server  LOG      ✓ Compiled in 135ms
+[00:56:29.736] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775765032225} /_vercel/insights/view
+[00:57:46.231] Server  LOG      ✓ Compiled in 94ms
+[00:57:56.664] Server  LOG      ✓ Compiled in 85ms
+[00:58:07.615] Server  LOG      ✓ Compiled in 95ms
+[00:58:10.034] Server  LOG      ✓ Compiled in 84ms
+[00:58:17.384] Server  LOG      ✓ Compiled in 86ms
+[00:58:18.727] Server  LOG      ✓ Compiled in 104ms
+[00:58:21.267] Server  LOG      ✓ Compiled in 84ms
+[00:58:24.654] Server  LOG      ✓ Compiled in 129ms
+[00:58:25.710] Server  LOG      ✓ Compiled in 93ms
+[00:58:27.767] Server  LOG      ✓ Compiled in 96ms
+[00:58:29.369] Server  LOG      ✓ Compiled in 81ms
+[00:58:32.909] Server  LOG      ✓ Compiled in 93ms
+[00:58:34.671] Server  LOG      ✓ Compiled in 103ms
+[00:58:39.350] Server  LOG      ✓ Compiled in 86ms
+[00:58:41.769] Server  LOG      ✓ Compiled in 81ms
+[00:58:43.349] Server  LOG      ✓ Compiled in 81ms
+[00:58:44.516] Server  LOG      ✓ Compiled in 88ms
+[00:58:51.802] Server  LOG      ✓ Compiled in 84ms
+[00:58:54.219] Server  LOG      ✓ Compiled in 83ms
+[00:58:56.705] Server  LOG      ✓ Compiled in 91ms
+[00:58:58.418] Server  LOG      ✓ Compiled in 87ms
+[00:59:05.442] Server  LOG      ✓ Compiled in 79ms
+[00:59:08.217] Server  LOG      ✓ Compiled in 202ms
+[00:59:28.469] Server  LOG      ✓ Compiled in 92ms
+[00:59:30.388] Server  LOG      ✓ Compiled in 95ms
+[00:59:34.250] Server  LOG      ✓ Compiled in 88ms
+[00:59:37.750] Server  LOG      ✓ Compiled in 109ms
+[00:59:41.469] Server  LOG      ✓ Compiled in 76ms
+[00:59:48.380] Server  LOG      ✓ Compiled in 137ms
+[01:04:10.466] Server  LOG      ✓ Compiled in 125ms
+[01:04:15.719] Server  LOG      ✓ Compiled in 432ms
+[01:04:36.710] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:36.949] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:04:36.949] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/contact","route":"/contact"}
+[01:04:36.949] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775765519463} /_vercel/insights/view
+[01:06:16.388] Server  LOG      ✓ Compiled in 495ms
+[01:06:17.666] Server  LOG      ✓ Compiled in 237ms
+[01:06:58.223] Server  LOG      ✓ Compiled in 208ms
+[01:51:22.341] Server  LOG      ✓ Compiled in 1003ms
+[01:51:27.761] Server  LOG      ✓ Compiled in 453ms
+[01:51:31.424] Server  LOG      ✓ Compiled in 502ms
+[01:51:35.197] Server  LOG      ✓ Compiled in 296ms
+[01:51:39.877] Server  LOG      ✓ Compiled in 276ms
+[01:51:43.602] Server  LOG      ✓ Compiled in 327ms
+[01:51:46.055] Server  LOG      ✓ Compiled in 297ms
+[01:51:49.116] Server  LOG      ✓ Compiled in 178ms
+[01:51:51.626] Server  LOG      ✓ Compiled in 111ms
+[01:51:54.296] Server  LOG      ✓ Compiled in 98ms
+[01:51:57.208] Server  LOG      ✓ Compiled in 290ms
+[01:52:03.028] Server  LOG      ✓ Compiled in 289ms
+[01:52:05.696] Server  LOG      ✓ Compiled in 191ms
+[01:52:07.941] Server  LOG      ✓ Compiled in 143ms
+[01:52:11.150] Server  LOG      ✓ Compiled in 277ms
+[01:52:13.945] Server  LOG      ✓ Compiled in 208ms
+[01:53:59.833] Server  LOG      ✓ Compiled in 165ms
+[01:56:46.149] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ecoles/formation-en-cours color: rgb(120, 120, 120) color: inherit {"dp":"/ecoles/formation-en-cours","o":"http://localhost:3000/ecoles/formation-en-cours","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775768648662} /_vercel/insights/view
+[01:58:17.427] Server  LOG      ✓ Compiled in 508ms
+[01:58:28.383] Server  LOG      ✓ Compiled in 210ms
+[02:29:48.942] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/inscription color: rgb(120, 120, 120) color: inherit {"dp":"/inscription","o":"http://localhost:3000/inscription","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775770631442} /_vercel/insights/view
+[02:30:50.706] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775770693217} /_vercel/insights/view
+[02:30:58.972] Server  LOG      ○ Compiling /editions ...
+[02:31:00.077] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/editions color: rgb(120, 120, 120) color: inherit {"dp":"/editions","o":"http://localhost:3000/editions","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775770702262} /_vercel/insights/view
+[02:31:12.898] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:31:13.220] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:31:13.220] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/documents","route":"/documents"}
+[02:31:13.220] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents color: rgb(120, 120, 120) color: inherit {"dp":"/documents","o":"http://localhost:3000/documents","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775770715723} /_vercel/insights/view
+[02:31:31.208] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents/formulaires color: rgb(120, 120, 120) color: inherit {"dp":"/documents/formulaires","o":"http://localhost:3000/documents/formulaires","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775770733721} /_vercel/insights/view
+[02:31:52.678] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents color: rgb(120, 120, 120) color: inherit {"dp":"/documents","o":"http://localhost:3000/documents","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775770755185} /_vercel/insights/view
+[02:31:56.725] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents/efdm color: rgb(120, 120, 120) color: inherit {"dp":"/documents/efdm","o":"http://localhost:3000/documents/efdm","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775770759229} /_vercel/insights/view
+[02:31:58.164] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1522071820081-009c01201c29?w=800&q=80" 404
+[02:33:33.578] Server  LOG      ✓ Compiled in 1461ms
+[02:33:36.594] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:33:36.595] Browser ERROR   Image is missing required "src" property: <img>
+[02:33:46.039] Server  LOG      ✓ Compiled in 512ms
+[02:33:48.547] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:33:48.547] Browser ERROR   Image is missing required "src" property: <img>
+[02:34:01.546] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:34:01.546] Browser ERROR   Image is missing required "src" property: <img>
+[02:34:01.546] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[02:34:14.511] Server  LOG      ✓ Compiled in 595ms
+[02:35:14.191] Server  LOG      ✓ Compiled in 361ms
+[02:35:15.547] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:35:15.547] Browser ERROR   Image is missing required "src" property: <img>
+[02:35:15.547] Browser ERROR   Image is missing required "alt" property. Please add Alternative Text to describe the image for screen readers and search engines.
+[02:35:20.550] Browser ERROR   ./app/documents/efdm/page.tsx:11:7
+Parsing ecmascript source code failed
+   9 |       // src: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80',
+  10 |       // alt: 'Bâtiment de l\'EFDM',
+> 11 |       className: 'max-w-2xl mx-auto rounded-lg shadow-lg',
+     |       ^^^^^^^^^
+  12 |       width: 800,
+  13 |       height: 500
+  14 |     },
+
+Expected ',', got 'className'
+[02:35:20.551] Browser ERROR   ./app/documents/efdm/page.tsx:11:7
+Parsing ecmascript source code failed
+   9 |       // src: 'https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80',
+  10 |       // alt: 'Bâtiment de l\'EFDM',
+> 11 |       className: 'max-w-2xl mx-auto rounded-lg shadow-lg',
+     |       ^^^^^^^^^
+  12 |       width: 800,
+  13 |       height: 500
+  14 |     },
+
+Expected ',', got 'className'
+[02:35:50.594] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:35:50.595] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:00.269] Server  LOG      ✓ Compiled in 387ms
+[02:36:01.551] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:36:01.551] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:07.495] Server  ERROR    ⨯ "upstream image response failed for" "https://images.unsplash.com/photo-1522071820081-009c01201c29?w=800&q=80" 404
+[02:36:07.552] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:36:07.552] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:18.409] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+[02:36:18.420] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+[02:36:18.427] Server  ERROR   An empty string ("") was passed to the src attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to src instead of an empty string.
+[02:36:18.938] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:36:19.368] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:36:19.368] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:36:19.368] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:36:19.368] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:19.368] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:19.368] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:19.368] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:36:19.368] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:36:19.368] Browser ERROR   An empty string ("") was passed to the %s attribute. This may cause the browser to download the whole page again over the network. To fix this, either do not render the element at all or pass null to %s instead of an empty string. src src
+[02:36:19.368] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:19.368] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:19.368] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:19.368] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:19.368] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:19.368] Browser ERROR   Image is missing required "src" property: <img>
+[02:36:19.368] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[02:36:19.368] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/documents/efdm","route":"/documents/efdm"}
+[02:36:19.368] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents/efdm color: rgb(120, 120, 120) color: inherit {"dp":"/documents/efdm","o":"http://localhost:3000/documents/efdm","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775771021833} /_vercel/insights/view
+[02:37:58.005] Server  LOG      ✓ Compiled in 342ms
+[02:38:02.105] Server  LOG      ✓ Compiled in 361ms
+[02:41:02.718] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents color: rgb(120, 120, 120) color: inherit {"dp":"/documents","o":"http://localhost:3000/documents","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775771305227} /_vercel/insights/view
+[02:41:04.989] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents/statuts color: rgb(120, 120, 120) color: inherit {"dp":"/documents/statuts","o":"http://localhost:3000/documents/statuts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775771307491} /_vercel/insights/view
+[02:47:12.069] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/inscription color: rgb(120, 120, 120) color: inherit {"dp":"/inscription","o":"http://localhost:3000/inscription","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775771674573} /_vercel/insights/view
+[02:48:16.170] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775771738677} /_vercel/insights/view
+[02:48:43.515] Browser WARN    Image with src "/images/editions/edition14-1.jpeg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[02:48:43.515] Browser WARN    Image with src "/images/editions/edition14-3.jpeg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[02:48:43.515] Browser WARN    Image with src "/images/editions/edition14-2.jpeg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[02:48:56.170] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents color: rgb(120, 120, 120) color: inherit {"dp":"/documents","o":"http://localhost:3000/documents","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775771778675} /_vercel/insights/view
+[02:49:00.454] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/editions color: rgb(120, 120, 120) color: inherit {"dp":"/editions","o":"http://localhost:3000/editions","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775771782967} /_vercel/insights/view
+[02:49:17.307] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ecoles/formation-en-cours color: rgb(120, 120, 120) color: inherit {"dp":"/ecoles/formation-en-cours","o":"http://localhost:3000/ecoles/formation-en-cours","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775771799805} /_vercel/insights/view
+[02:50:44.012] Server  LOG      ✓ Compiled in 330ms
+[02:52:53.809] Server  LOG      ✓ Compiled in 281ms
+[02:52:56.569] Server  LOG      ✓ Compiled in 471ms
+[02:52:57.635] Server  LOG      ✓ Compiled in 298ms
+[02:53:00.293] Server  LOG      ✓ Compiled in 233ms
+[02:53:06.535] Server  LOG      ✓ Compiled in 343ms
+[02:55:09.208] Server  LOG      ✓ Compiled in 844ms
+[02:56:08.269] Server  LOG      ✓ Compiled in 366ms
+[02:56:34.411] Server  LOG      ✓ Compiled in 330ms
+[02:56:44.504] Server  LOG      ✓ Compiled in 205ms
+[02:57:27.129] Server  LOG      ✓ Compiled in 355ms
+[02:59:49.345] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/inscription color: rgb(120, 120, 120) color: inherit {"dp":"/inscription","o":"http://localhost:3000/inscription","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772431852} /_vercel/insights/view
+[03:01:10.691] Server  LOG      ✓ Compiled in 527ms
+[03:01:13.125] Server  LOG      ✓ Compiled in 321ms
+[03:03:10.165] Server  LOG      ✓ Compiled in 1316ms
+[03:03:16.129] Server  LOG      ✓ Compiled in 1058ms
+[03:03:26.391] Server  LOG      ✓ Compiled in 903ms
+[03:03:32.709] Server  LOG      ✓ Compiled in 766ms
+[03:03:36.084] Server  LOG      ✓ Compiled in 528ms
+[03:03:44.002] Server  LOG      ✓ Compiled in 1428ms
+[03:03:45.742] Server  LOG      ✓ Compiled in 706ms
+[03:03:46.384] Server  LOG      ✓ Compiled in 377ms
+[03:03:53.276] Server  LOG      ✓ Compiled in 709ms
+[03:03:54.479] Server  LOG      ✓ Compiled in 787ms
+[03:03:57.985] Server  LOG      ✓ Compiled in 291ms
+[03:03:59.150] Server  LOG      ✓ Compiled in 389ms
+[03:04:04.408] Server  LOG      ✓ Compiled in 240ms
+[03:04:05.319] Server  LOG      ✓ Compiled in 277ms
+[03:04:08.934] Server  LOG      ✓ Compiled in 316ms
+[03:04:10.673] Server  LOG      ✓ Compiled in 342ms
+[03:04:15.276] Server  LOG      ✓ Compiled in 258ms
+[03:04:17.229] Server  LOG      ✓ Compiled in 226ms
+[03:04:22.283] Server  LOG      ✓ Compiled in 241ms
+[03:04:25.035] Server  LOG      ✓ Compiled in 438ms
+[03:04:25.793] Server  LOG      ✓ Compiled in 206ms
+[03:04:27.480] Server  LOG      ✓ Compiled in 370ms
+[03:04:39.472] Server  LOG      ✓ Compiled in 562ms
+[03:04:43.195] Server  LOG      ✓ Compiled in 479ms
+[03:04:47.471] Server  LOG      ✓ Compiled in 471ms
+[03:04:50.354] Server  LOG      ✓ Compiled in 206ms
+[03:05:06.473] Server  LOG      ✓ Compiled in 334ms
+[03:05:07.607] Server  LOG      ✓ Compiled in 302ms
+[03:05:11.952] Server  LOG      ✓ Compiled in 275ms
+[03:05:13.103] Server  LOG      ✓ Compiled in 240ms
+[03:05:15.651] Server  LOG      ✓ Compiled in 267ms
+[03:05:18.460] Server  LOG      ✓ Compiled in 382ms
+[03:05:25.139] Server  LOG      ✓ Compiled in 656ms
+[03:05:28.717] Server  LOG      ✓ Compiled in 1362ms
+[03:05:37.274] Server  LOG      ✓ Compiled in 493ms
+[03:05:42.748] Server  LOG      ✓ Compiled in 711ms
+[03:05:51.402] Server  LOG      ✓ Compiled in 431ms
+[03:06:05.935] Server  LOG      ✓ Compiled in 550ms
+[03:06:07.663] Server  LOG      ✓ Compiled in 1166ms
+[03:06:11.443] Server  LOG      ✓ Compiled in 575ms
+[03:06:17.844] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ecoles/formation-en-cours color: rgb(120, 120, 120) color: inherit {"dp":"/ecoles/formation-en-cours","o":"http://localhost:3000/ecoles/formation-en-cours","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772820286} /_vercel/insights/view
+[03:06:22.700] Server  LOG      ✓ Compiled in 56ms
+[03:06:30.128] Server  LOG      ✓ Compiled in 737ms
+[03:06:56.297] Server  LOG      ✓ Compiled in 425ms
+[03:06:58.763] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:06:59.553] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[03:06:59.553] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/ecoles/formation-en-cours","route":"/ecoles/formation-en-cours"}
+[03:06:59.553] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ecoles/formation-en-cours color: rgb(120, 120, 120) color: inherit {"dp":"/ecoles/formation-en-cours","o":"http://localhost:3000/ecoles/formation-en-cours","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772861826} /_vercel/insights/view
+[03:07:27.767] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents color: rgb(120, 120, 120) color: inherit {"dp":"/documents","o":"http://localhost:3000/documents","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772890276} /_vercel/insights/view
+[03:07:32.176] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents/efdm color: rgb(120, 120, 120) color: inherit {"dp":"/documents/efdm","o":"http://localhost:3000/documents/efdm","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772894676} /_vercel/insights/view
+[03:07:37.869] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents color: rgb(120, 120, 120) color: inherit {"dp":"/documents","o":"http://localhost:3000/documents","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772900371} /_vercel/insights/view
+[03:07:39.501] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents/statuts color: rgb(120, 120, 120) color: inherit {"dp":"/documents/statuts","o":"http://localhost:3000/documents/statuts","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772902009} /_vercel/insights/view
+[03:07:43.221] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents color: rgb(120, 120, 120) color: inherit {"dp":"/documents","o":"http://localhost:3000/documents","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772905734} /_vercel/insights/view
+[03:07:46.784] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents/prospectus color: rgb(120, 120, 120) color: inherit {"dp":"/documents/prospectus","o":"http://localhost:3000/documents/prospectus","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772909293} /_vercel/insights/view
+[03:07:50.902] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents color: rgb(120, 120, 120) color: inherit {"dp":"/documents","o":"http://localhost:3000/documents","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772913413} /_vercel/insights/view
+[03:07:54.167] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents/informations color: rgb(120, 120, 120) color: inherit {"dp":"/documents/informations","o":"http://localhost:3000/documents/informations","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775772916675} /_vercel/insights/view
+[03:09:58.021] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/documents color: rgb(120, 120, 120) color: inherit {"dp":"/documents","o":"http://localhost:3000/documents","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775773040522} /_vercel/insights/view
+[03:10:26.514] Server  LOG      ✓ Compiled in 707ms
+[03:10:36.320] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775773078803} /_vercel/insights/view
+[03:11:06.647] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/editions color: rgb(120, 120, 120) color: inherit {"dp":"/editions","o":"http://localhost:3000/editions","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775773109152} /_vercel/insights/view
+[03:12:03.784] Server  LOG      ✓ Compiled in 329ms
+[03:13:08.823] Server  LOG      ✓ Compiled in 920ms
+[03:13:13.888] Server  LOG      ✓ Compiled in 1044ms
+[03:13:15.513] Server  LOG      ✓ Compiled in 353ms
+[03:20:12.875] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/#ecoles color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#ecoles","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1775773655372} /_vercel/insights/view
+[03:20:13.070] Browser WARN    Image with src "/images/editions/edition14-1.jpeg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[03:20:13.070] Browser WARN    Image with src "/images/editions/edition14-2.jpeg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[03:20:13.070] Browser WARN    Image with src "/images/editions/edition14-3.jpeg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[03:21:49.136] Server  LOG      ✓ Compiled in 256ms
+[03:23:35.942] Server  LOG      ✓ Compiled in 541ms

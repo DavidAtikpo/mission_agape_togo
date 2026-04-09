@@ -23,12 +23,12 @@ export default function DocumentsPage() {
       href: "/documents/prospectus",
       icon: <FileTextIcon className="w-8 h-8 text-primary" />
     },
-    {
-      title: "Informations et Logo",
-      description: "Ressources graphiques et informations générales sur l'école",
-      href: "/documents/informations",
-      icon: <FileIcon className="w-8 h-8 text-primary" />
-    },
+    // {
+    //   title: "Informations et Logo",
+    //   description: "Ressources graphiques et informations générales sur l'école",
+    //   href: "/documents/informations",
+    //   icon: <FileIcon className="w-8 h-8 text-primary" />
+    // },
     {
       title: "Formulaires",
       description: "Tous les formulaires à télécharger et à remplir",
