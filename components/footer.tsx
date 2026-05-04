@@ -60,6 +60,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/inscription" className="text-sm sm:text-base text-blue-300 hover:text-white transition-colors font-semibold">
+                  S&apos;inscrire
+                </Link>
+              </li>
+              <li>
                 <Link href="/a-propos" className="text-sm sm:text-base text-gray-400 hover:text-white transition-colors">
                   À propos
                 </Link>

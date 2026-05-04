@@ -74,7 +74,7 @@ export default function BibleInductive() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-background to-blue-50/30">
       {/* Back Button */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-4 md:pt-8">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-3 md:pt-6">
         <Link
           href="/ecoles"
           className="inline-flex items-center gap-1.5 md:gap-2 text-sm md:text-base text-primary hover:text-primary/80 transition mb-4 md:mb-8"
@@ -85,16 +85,20 @@ export default function BibleInductive() {
       </div>
 
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-6 md:py-12">
-        <div className="space-y-3 md:space-y-6">
+      <section className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-5 md:py-9">
+        <div className="space-y-3 md:space-y-5">
           <div className="flex flex-wrap items-center gap-2 md:gap-4">
             <div className="text-2xl md:text-4xl leading-none" aria-hidden>
               📖
             </div>
             <div className="flex flex-wrap gap-1.5 md:gap-2">
-              <span className="inline-flex items-center gap-1 bg-amber-100 text-amber-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full">
+              <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full">
                 <Clock className="w-3 h-3 md:w-4 md:h-4 shrink-0" />
-                 En phase pratique
+                Formation terminée
+              </span>
+              <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full">
+                <Calendar className="w-3 h-3 md:w-4 md:h-4 shrink-0" />
+                Prochaine rentrée : 5 septembre 2026
               </span>
               {/* <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full">
                 <Calendar className="w-3 h-3 md:w-4 md:h-4 shrink-0" />
@@ -102,20 +106,20 @@ export default function BibleInductive() {
               </span> */}
             </div>
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-primary leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary leading-tight">
             École d'Évangélisation 2025-2026
           </h1>
-          <p className="text-sm sm:text-base md:text-xl text-foreground/80 leading-relaxed max-w-4xl">
+          <p className="text-sm sm:text-base md:text-[1.05rem] text-foreground/80 leading-relaxed max-w-4xl">
             Connaitre Dieu pour mieux le servir.
           </p>
         </div>
       </section>
 
       {/* Content */}
-      <section className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-6 md:py-12 space-y-8 md:space-y-16 pb-10 md:pb-12">
+      <section className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-5 md:py-9 space-y-7 md:space-y-10 pb-10 md:pb-12">
         {/* Current Status */}
-        <div className="bg-white rounded-lg md:rounded-xl shadow-md p-4 sm:p-5 md:p-2 border border-blue-100">
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6 flex items-center gap-2">
+        <div className="bg-white rounded-lg md:rounded-xl shadow-md p-4 sm:p-5 md:p-6 border border-blue-100">
+          <h2 className="text-base sm:text-lg md:text-xl font-bold text-primary mb-3 md:mb-4 flex items-center gap-2">
             <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-green-500 shrink-0" />
             État actuel de la formation
           </h2>
@@ -143,23 +147,23 @@ export default function BibleInductive() {
               </div>
 
               <div>
-                <h3 className="text-sm md:text-base font-semibold text-foreground/90 mb-1.5 md:mb-2">En phase pratique</h3>
-                <p className="text-xs md:text-sm text-amber-700 bg-amber-50 p-3 md:p-4 rounded-lg border border-amber-100 leading-relaxed">
-                  Les étudiants sont en phase pratique.
+                <h3 className="text-sm md:text-base font-semibold text-foreground/90 mb-1.5 md:mb-2">Statut</h3>
+                <p className="text-xs md:text-sm text-emerald-700 bg-emerald-50 p-3 md:p-4 rounded-lg border border-emerald-100 leading-relaxed">
+                  L’école de cette année est déjà finie.
                 </p>
               </div>
             </div>
 
             <div className="bg-blue-50 p-4 md:p-6 rounded-lg border border-blue-100">
-              <h3 className="text-sm md:text-base font-semibold text-foreground/90 mb-3 md:mb-4">Prochaine étape</h3>
+              <h3 className="text-sm md:text-base font-semibold text-foreground/90 mb-3 md:mb-4">Prochaine rentrée</h3>
               <div className="space-y-3 md:space-y-4">
                 <div className="flex items-start gap-2 md:gap-3">
                   <div className="bg-blue-100 p-1.5 md:p-2 rounded-md md:rounded-lg text-blue-600 shrink-0">
                     <Calendar className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm md:text-base font-medium">Phase théorique</p>
-                    <p className="text-foreground/70 text-xs md:text-sm">Septembre a Décembre</p>
+                    <p className="text-sm md:text-base font-medium">Date</p>
+                    <p className="text-foreground/70 text-xs md:text-sm">5 septembre 2026</p>
                   </div>
                 </div>
 
@@ -168,8 +172,8 @@ export default function BibleInductive() {
                     <Users className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm md:text-base font-medium">Phase pratique</p>
-                    <p className="text-foreground/70 text-xs md:text-sm">Janvier a Avril</p>
+                    <p className="text-sm md:text-base font-medium">École</p>
+                    <p className="text-foreground/70 text-xs md:text-sm">Évangélisation</p>
                   </div>
                 </div>
 
@@ -189,10 +193,10 @@ export default function BibleInductive() {
 
         {/* Thèmes des cours */}
         <div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-8">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-3 md:mb-5">
             Thèmes des cours (13 modules)
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
             {courses.map((course, index) => (
               <div
                 key={index}
@@ -214,7 +218,7 @@ export default function BibleInductive() {
         {/* <Edition14Gallery /> */}
 
         {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 pt-4 md:pt-8">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 pt-3 md:pt-6">
           <Link
             href="/inscription"
             className="px-5 py-2.5 md:px-8 md:py-3 text-sm md:text-base bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition text-center"

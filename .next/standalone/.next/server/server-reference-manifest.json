@@ -1,6 +1,6 @@
 {
   "node": {
-    "00c3abbc83e23b17a5723abf65b2f04dd9b0cc5273": {
+    "00881806943599ee77b77cc4092a4da9c6bd728cee": {
       "workers": {
         "app/admin/(protected)/inscriptions/[id]/page": {
           "moduleId": 16179,
@@ -24,5 +24,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "VdraTMEoTxe+fcUuUSVoIxVn6ojkboy+rTyOwjmouMA="
+  "encryptionKey": "o0A33f8e7QI3YChaFyBGMPIxbSdYxjXUmym5oopTMv4="
 }

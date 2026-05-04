@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Poppins, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
@@ -43,6 +44,15 @@ export default function RootLayout({
           </footer>
           <div className="print:hidden">
             <WhatsAppButton />
+          </div>
+          <div className="print:hidden">
+            <div id="container-079b172066bdbf0435820f6f662228f0" />
+            <Script
+              async
+              data-cfasync="false"
+              src="https://pl29334649.profitablecpmratenetwork.com/079b172066bdbf0435820f6f662228f0/invoke.js"
+              strategy="afterInteractive"
+            />
           </div>
           <Analytics />
         </div>

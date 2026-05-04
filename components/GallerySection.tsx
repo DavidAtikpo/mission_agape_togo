@@ -54,26 +54,26 @@ export default function GallerySection() {
   };
 
   return (
-    <section className="w-full pt-10 pb-14 sm:pt-12 sm:pb-16 md:pt-14 md:pb-20 bg-background">
+    <section className="w-full pt-7 pb-10 sm:pt-9 sm:pb-12 md:pt-10 md:pb-14 bg-background">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full min-w-0">
-        <div className="text-center mb-8 sm:mb-10 max-w-3xl mx-auto px-0 sm:px-2">
-          <span className="inline-block text-primary font-bold text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-2 sm:mb-3">
+        <div className="text-center mb-6 sm:mb-8 max-w-3xl mx-auto px-0 sm:px-2">
+          <span className="inline-block text-primary font-bold text-[0.7rem] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-1.5 sm:mb-2">
             Galeries Photos
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-5 md:mb-6 leading-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-foreground mb-2 sm:mb-3 md:mb-4 leading-tight">
             Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Éditions</span>
           </h2>
-          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full" />
-          <p className="text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed font-medium">
+          <div className="w-14 sm:w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-2.5 sm:mb-4 md:mb-5 rounded-full" />
+          <p className="text-foreground/80 text-sm sm:text-base md:text-[1.05rem] leading-relaxed font-medium">
             Revivez les moments forts de nos 14 éditions de formation et explorez les éditions passées.
           </p>
 
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-3 sm:gap-4 w-full max-w-xl sm:max-w-none mx-auto">
+          <div className="mt-4 sm:mt-5 flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-2.5 sm:gap-3 w-full max-w-xl sm:max-w-none mx-auto">
             <div className="relative group w-full sm:w-auto">
               <button
                 type="button"
                 onClick={toggleAllEditions}
-                className={`w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-all duration-300 ${
+                className={`w-full sm:w-auto px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
                   showAllEditions
                     ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30'
                     : 'bg-white/5 hover:bg-white/10 text-foreground border border-white/10 hover:border-primary/30'
@@ -85,12 +85,12 @@ export default function GallerySection() {
             </div>
 
             <div className="relative w-full sm:w-auto min-w-0">
-              <div className="flex items-center justify-between sm:justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/30 rounded-xl px-3 sm:px-4 py-2.5 sm:py-3 transition-all duration-300">
-                <span className="text-foreground/80 text-sm shrink-0">Édition</span>
+              <div className="flex items-center justify-between sm:justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/30 rounded-xl px-3 sm:px-3.5 py-2 sm:py-2.5 transition-all duration-300">
+                <span className="text-foreground/80 text-xs sm:text-sm shrink-0">Édition</span>
                 <select
                   value={selectedEdition}
                   onChange={(e) => setSelectedEdition(Number(e.target.value))}
-                  className="min-w-0 flex-1 sm:flex-initial bg-transparent border-none focus:ring-0 text-foreground text-sm sm:text-base cursor-pointer text-right sm:text-left"
+                  className="min-w-0 flex-1 sm:flex-initial bg-transparent border-none focus:ring-0 text-foreground text-sm cursor-pointer text-right sm:text-left"
                 >
                   {editions.map((edition) => (
                     <option key={edition} value={edition} className="bg-background text-foreground">
@@ -105,20 +105,20 @@ export default function GallerySection() {
         </div>
 
         {/* Instructions pour l'ajout d'images */}
-        <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/10 p-4 sm:p-6 rounded-lg sm:rounded-xl mb-6 sm:mb-8 border border-blue-200 dark:border-blue-800 shadow-sm w-full min-w-0">
-          <div className="text-center space-y-4 sm:space-y-6">
-            <h3 className="text-base sm:text-lg md:text-2xl font-bold text-blue-800 dark:text-blue-100 leading-snug px-1">
+        <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/10 p-3.5 sm:p-5 rounded-lg sm:rounded-xl mb-5 sm:mb-7 border border-blue-200 dark:border-blue-800 shadow-sm w-full min-w-0">
+          <div className="text-center space-y-3 sm:space-y-5">
+            <h3 className="text-sm sm:text-base md:text-xl font-bold text-blue-800 dark:text-blue-100 leading-snug px-1">
               Allez dans tout le monde entier et proclamez la Bonne Nouvelle à toute la création
             </h3>
-            <p className="text-blue-700 dark:text-blue-300 italic text-sm sm:text-base md:text-lg px-2">
+            <p className="text-blue-700 dark:text-blue-300 italic text-xs sm:text-sm md:text-base px-2">
               « Allez dans le monde entier, proclamez l&apos;Évangile à toute la création. » — Marc 16:15
             </p>
 
-            <div className="max-w-2xl mx-auto bg-white/80 dark:bg-blue-900/30 p-4 sm:p-6 rounded-lg sm:rounded-xl border border-blue-100 dark:border-blue-700 shadow-sm text-left sm:text-center">
-              <h4 className="text-lg sm:text-xl font-semibold text-blue-800 dark:text-blue-200 mb-2 sm:mb-3">
+            <div className="max-w-2xl mx-auto bg-white/80 dark:bg-blue-900/30 p-3.5 sm:p-5 rounded-lg sm:rounded-xl border border-blue-100 dark:border-blue-700 shadow-sm text-left sm:text-center">
+              <h4 className="text-base sm:text-lg font-semibold text-blue-800 dark:text-blue-200 mb-2 sm:mb-2.5">
                 Partagez votre lumière avec le monde
               </h4>
-              <p className="text-blue-700 dark:text-blue-300 text-sm sm:text-base leading-relaxed">
+              <p className="text-blue-700 dark:text-blue-300 text-xs sm:text-sm leading-relaxed">
                 Témoignez de la gloire de Dieu en partageant vos moments de grâce et de louange avec nos frères et sœurs du monde entier.
               </p>
             </div>
@@ -126,25 +126,25 @@ export default function GallerySection() {
         </div>
 
         {/* Galerie d'images */}
-        <div className="space-y-8 sm:space-y-10 md:space-y-12 w-full min-w-0">
+        <div className="space-y-7 sm:space-y-9 md:space-y-10 w-full min-w-0">
           {/* Édition sélectionnée */}
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-3.5 sm:space-y-5">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-              <h3 className="text-xl sm:text-2xl font-bold text-foreground leading-tight">
+              <h3 className="text-lg sm:text-xl font-bold text-foreground leading-tight">
                 Édition {selectedEdition}
                 {selectedEdition === TOTAL_EDITIONS && (
-                  <span className="block sm:inline font-semibold text-foreground/80 sm:text-foreground sm:font-bold text-base sm:text-2xl mt-0.5 sm:mt-0">
+                  <span className="block sm:inline font-semibold text-foreground/80 sm:text-foreground sm:font-bold text-sm sm:text-xl mt-0.5 sm:mt-0">
                     {' '}
                     (Dernière édition)
                   </span>
                 )}
               </h3>
-              <span className="self-start sm:self-auto px-3 py-1 bg-primary/10 text-primary text-xs sm:text-sm font-medium rounded-full whitespace-nowrap">
+              <span className="self-start sm:self-auto px-2.5 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full whitespace-nowrap">
                 {filteredImages.length} photos
               </span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 w-full min-w-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 w-full min-w-0">
               {filteredImages.length > 0 ? (
                 filteredImages.map((image) => (
                     <div 
@@ -152,15 +152,15 @@ export default function GallerySection() {
                       className="group relative overflow-hidden rounded-xl sm:rounded-2xl aspect-square cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
                       onClick={() => setSelectedImage(image)}
                     >
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col justify-between p-5">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col justify-between p-4">
                         <div className="flex justify-end">
                           <span className="px-3 py-1 bg-black/50 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                             Édition {image.edition}
                           </span>
                         </div>
                         <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                          <p className="text-white font-medium text-lg mb-1">Édition {image.edition}</p>
-                          <p className="text-white/80 text-sm">Photo {image.id % 3 || 3}</p>
+                          <p className="text-white font-medium text-base mb-0.5">Édition {image.edition}</p>
+                          <p className="text-white/80 text-xs">Photo {image.id % 3 || 3}</p>
                         </div>
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30 group-hover:bg-black/40 transition-all duration-300 z-0"></div>
@@ -191,24 +191,24 @@ export default function GallerySection() {
           
           {/* Toutes les éditions (si activé) */}
           {showAllEditions && (
-            <div className="space-y-4 sm:space-y-6">
-              <h3 className="text-xl sm:text-2xl font-bold text-foreground">Toutes les éditions</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 w-full min-w-0">
+            <div className="space-y-3.5 sm:space-y-5">
+              <h3 className="text-lg sm:text-xl font-bold text-foreground">Toutes les éditions</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 w-full min-w-0">
                 {allEditionsImages.map((image) => (
                   <div 
                     key={image.id} 
                     className="group relative overflow-hidden rounded-xl sm:rounded-2xl aspect-square cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
                     onClick={() => setSelectedImage(image)}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col justify-between p-5">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col justify-between p-4">
                       <div className="flex justify-end">
                         <span className="px-3 py-1 bg-black/50 backdrop-blur-sm text-white text-xs font-medium rounded-full">
                           Édition {image.edition}
                         </span>
                       </div>
                       <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <p className="text-white font-medium text-lg mb-1">Édition {image.edition}</p>
-                        <p className="text-white/80 text-sm">Photo {image.id % 3 || 3}</p>
+                        <p className="text-white font-medium text-base mb-0.5">Édition {image.edition}</p>
+                        <p className="text-white/80 text-xs">Photo {image.id % 3 || 3}</p>
                       </div>
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30 group-hover:bg-black/40 transition-all duration-300 z-0"></div>
@@ -259,8 +259,8 @@ export default function GallerySection() {
                 />
               </div>
               <div className="mt-3 sm:mt-4 text-center text-white px-2">
-                <p className="text-base sm:text-lg font-medium">Édition {selectedImage.edition}</p>
-                <p className="text-white/70 text-sm sm:text-base">Photo {selectedImage.id % 3 || 3}</p>
+                <p className="text-sm sm:text-base font-medium">Édition {selectedImage.edition}</p>
+                <p className="text-white/70 text-xs sm:text-sm">Photo {selectedImage.id % 3 || 3}</p>
               </div>
             </div>
           </div>

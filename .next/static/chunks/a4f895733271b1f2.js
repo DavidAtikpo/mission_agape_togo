@@ -1,6 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,21554,e=>{"use strict";var l=e.i(43476);function r(){return(0,l.jsxs)("div",{className:"py-12",children:[(0,l.jsx)("h2",{className:"text-3xl font-bold text-primary mb-8",children:"Galerie de la 14ème Édition"}),(0,l.jsx)("div",{className:"grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4",children:Array.from({length:12}).map((e,r)=>{let t=r+1;return(0,l.jsx)("div",{className:"relative aspect-square overflow-hidden rounded-lg bg-gray-100 group",children:(0,l.jsx)("img",{src:`/images/editions/edition14-${t}.jpeg`,alt:`\xc9dition 14 - Image ${t}`,className:"w-full h-full object-cover hover:scale-105 transition-transform duration-300",loading:"lazy",onError:e=>{let l=e.target.parentElement;l&&(l.innerHTML=`
-                      <div class="w-full h-full flex flex-col items-center justify-center bg-gray-100 text-gray-400 p-4 text-center">
-                        <ImageIcon class="w-8 h-8 mb-2" />
-                        <span class="text-sm">Image ${t} non disponible</span>
-                      </div>
-                    `)}})},r)})})]})}e.s(["default",()=>r])}]);

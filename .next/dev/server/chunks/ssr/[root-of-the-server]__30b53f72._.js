@@ -20,7 +20,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 ;
 function Hero() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "relative w-full min-h-0 bg-gradient-to-b from-primary/10 to-background flex items-start justify-center overflow-hidden pt-6 pb-10 md:pt-8 md:pb-16",
+        className: "relative w-full min-h-0 bg-gradient-to-b from-primary/10 to-background flex items-start justify-center overflow-hidden pt-4 pb-8 md:pt-6 md:pb-12",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl -z-10"
@@ -37,12 +37,12 @@ function Hero() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-0 pb-2 md:py-2",
+                className: "max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-0 pb-2 md:py-1",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-3xl sm:text-4xl md:text-6xl font-bold text-primary leading-tight",
+                            className: "text-3xl sm:text-4xl md:text-5xl font-bold text-primary leading-tight",
                             children: "Mission Agapé Togo"
                         }, void 0, false, {
                             fileName: "[project]/components/hero.tsx",
@@ -66,21 +66,21 @@ function Hero() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center pt-4 sm:pt-6",
+                            className: "flex flex-col sm:flex-row gap-2.5 sm:gap-3 justify-center pt-3 sm:pt-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "#ecoles",
-                                    className: "inline-flex items-center justify-center px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-semibold text-white bg-primary hover:bg-primary/90 transition-all duration-200 ease-in-out transform hover:scale-105 rounded-lg shadow-lg hover:shadow-xl border-2 border-transparent",
-                                    children: "Découvrir les écoles"
+                                    href: "/inscription",
+                                    className: "inline-flex items-center justify-center px-6 py-2.5 sm:px-7 sm:py-2.5 text-sm sm:text-base font-semibold text-white bg-primary hover:bg-primary/90 transition-all duration-200 ease-in-out transform hover:scale-105 rounded-lg shadow-lg hover:shadow-xl border-2 border-transparent",
+                                    children: "S'inscrire"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
                                     lineNumber: 20,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                    href: "#contact",
-                                    className: "inline-flex items-center justify-center px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-semibold text-primary hover:text-primary/90 transition-all duration-200 ease-in-out transform hover:scale-105 rounded-lg border-2 border-primary bg-transparent hover:bg-primary/10 shadow-sm",
-                                    children: "Nous contacter"
+                                    href: "#ecoles",
+                                    className: "inline-flex items-center justify-center px-6 py-2.5 sm:px-7 sm:py-2.5 text-sm sm:text-base font-semibold text-primary hover:text-primary/90 transition-all duration-200 ease-in-out transform hover:scale-105 rounded-lg border-2 border-primary bg-transparent hover:bg-primary/10 shadow-sm",
+                                    children: "Découvrir les écoles"
                                 }, void 0, false, {
                                     fileName: "[project]/components/hero.tsx",
                                     lineNumber: 26,
@@ -272,15 +272,15 @@ function Schools() {
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         id: "ecoles",
-        className: "w-full pt-10 pb-14 sm:pt-12 sm:pb-16 md:pt-14 md:pb-20 bg-muted/30",
+        className: "w-full pt-7 pb-10 sm:pt-9 sm:pb-12 md:pt-10 md:pb-14 bg-muted/30",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center mb-8 sm:mb-12 md:mb-14 max-w-3xl mx-auto px-0 sm:px-2",
+                    className: "text-center mb-6 sm:mb-9 md:mb-10 max-w-3xl mx-auto px-0 sm:px-2",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4 leading-tight",
+                            className: "text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-primary mb-2.5 sm:mb-3 leading-tight",
                             children: "Nos Écoles de Formation"
                         }, void 0, false, {
                             fileName: "[project]/components/schools.tsx",
@@ -413,15 +413,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$TeamMember$2e$
 ;
 function TeamSection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "w-full pt-10 pb-14 sm:pt-12 sm:pb-16 md:pt-14 md:pb-20 bg-background",
+        className: "w-full pt-7 pb-10 sm:pt-9 sm:pb-12 md:pt-10 md:pb-14 bg-background",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center mb-8 sm:mb-12 md:mb-14 max-w-3xl mx-auto px-0 sm:px-2",
+                    className: "text-center mb-6 sm:mb-9 md:mb-10 max-w-3xl mx-auto px-0 sm:px-2",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "inline-block text-primary font-bold text-xs sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-2 sm:mb-3",
+                            className: "inline-block text-primary font-bold text-[0.7rem] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-1.5 sm:mb-2",
                             children: "Notre Équipe"
                         }, void 0, false, {
                             fileName: "[project]/components/TeamSection.tsx",
@@ -429,7 +429,7 @@ function TeamSection() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                            className: "text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-5 md:mb-6 leading-tight",
+                            className: "text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-foreground mb-2 sm:mb-3 md:mb-4 leading-tight",
                             children: [
                                 "Rencontrez Notre ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -447,14 +447,14 @@ function TeamSection() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-16 sm:w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full"
+                            className: "w-14 sm:w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-2.5 sm:mb-4 md:mb-5 rounded-full"
                         }, void 0, false, {
                             fileName: "[project]/components/TeamSection.tsx",
                             lineNumber: 14,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed font-medium max-w-2xl mx-auto",
+                            className: "text-foreground/80 text-sm sm:text-base md:text-[1.05rem] leading-relaxed font-medium max-w-2xl mx-auto",
                             children: [
                                 "Découvrez les ",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -479,7 +479,7 @@ function TeamSection() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-10 w-full min-w-0",
+                    className: "grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 lg:gap-7 w-full min-w-0",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$TeamMember$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                             name: "Le Directeur",
@@ -516,15 +516,15 @@ function TeamSection() {
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mt-10 sm:mt-14 md:mt-16 lg:mt-20 bg-gradient-to-r from-primary/5 to-accent/5 p-5 sm:p-8 md:p-10 lg:p-12 rounded-xl sm:rounded-2xl text-center max-w-5xl mx-auto border border-primary/10 shadow-sm w-full min-w-0",
+                    className: "mt-7 sm:mt-9 md:mt-10 lg:mt-12 bg-gradient-to-r from-primary/5 to-accent/5 p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl text-center max-w-5xl mx-auto border border-primary/10 shadow-sm w-full min-w-0",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "max-w-3xl mx-auto min-w-0",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 sm:gap-0 mb-4 sm:mb-6",
+                                className: "flex flex-col sm:flex-row sm:items-center sm:justify-center gap-2 sm:gap-0 mb-3 sm:mb-4",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-primary font-bold text-xs sm:text-sm uppercase tracking-wider sm:mr-3",
+                                        className: "text-primary font-bold text-[0.7rem] sm:text-xs uppercase tracking-wider sm:mr-3",
                                         children: "Notre Engagement"
                                     }, void 0, false, {
                                         fileName: "[project]/components/TeamSection.tsx",
@@ -545,7 +545,7 @@ function TeamSection() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 sm:mb-6 leading-tight",
+                                className: "text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3 sm:mb-4 leading-tight",
                                 children: [
                                     "Notre ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -563,7 +563,7 @@ function TeamSection() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed font-medium mb-4 sm:mb-6 px-0",
+                                className: "text-foreground/80 text-sm sm:text-base md:text-[1.05rem] leading-relaxed font-medium mb-3 sm:mb-4 px-0",
                                 children: [
                                     "La Mission Agapé Togo s'engage à apporter ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -591,16 +591,16 @@ function TeamSection() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 mt-6 sm:mt-8 text-left",
+                                className: "grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-5 mt-5 sm:mt-6 text-left",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "bg-white/5 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl border border-white/5 min-w-0",
+                                        className: "bg-white/5 p-3.5 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border border-white/5 min-w-0",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                className: "font-bold text-base sm:text-lg text-foreground mb-1.5 sm:mb-2 flex items-start gap-2 sm:gap-3",
+                                                className: "font-bold text-sm sm:text-base text-foreground mb-1.5 flex items-start gap-2 sm:gap-3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "w-6 h-6 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs sm:text-sm",
+                                                        className: "w-5.5 h-5.5 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[0.7rem] sm:text-xs",
                                                         children: "1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/TeamSection.tsx",
@@ -622,7 +622,7 @@ function TeamSection() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-foreground/70 text-xs sm:text-sm pl-8 sm:pl-9",
+                                                className: "text-foreground/70 text-xs pl-7 sm:pl-8 leading-relaxed",
                                                 children: "Formation de qualité pour tous les âges"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/TeamSection.tsx",
@@ -636,13 +636,13 @@ function TeamSection() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "bg-white/5 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl border border-white/5 min-w-0",
+                                        className: "bg-white/5 p-3.5 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border border-white/5 min-w-0",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                className: "font-bold text-base sm:text-lg text-foreground mb-1.5 sm:mb-2 flex items-start gap-2 sm:gap-3",
+                                                className: "font-bold text-sm sm:text-base text-foreground mb-1.5 flex items-start gap-2 sm:gap-3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "w-6 h-6 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs sm:text-sm",
+                                                        className: "w-5.5 h-5.5 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[0.7rem] sm:text-xs",
                                                         children: "2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/TeamSection.tsx",
@@ -664,7 +664,7 @@ function TeamSection() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-foreground/70 text-xs sm:text-sm pl-8 sm:pl-9",
+                                                className: "text-foreground/70 text-xs pl-7 sm:pl-8 leading-relaxed",
                                                 children: "Développement des compétences pratiques"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/TeamSection.tsx",
@@ -678,13 +678,13 @@ function TeamSection() {
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "bg-white/5 p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl border border-white/5 min-w-0",
+                                        className: "bg-white/5 p-3.5 sm:p-4 md:p-5 rounded-lg sm:rounded-xl border border-white/5 min-w-0",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                className: "font-bold text-base sm:text-lg text-foreground mb-1.5 sm:mb-2 flex items-start gap-2 sm:gap-3",
+                                                className: "font-bold text-sm sm:text-base text-foreground mb-1.5 flex items-start gap-2 sm:gap-3",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "w-6 h-6 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xs sm:text-sm",
+                                                        className: "w-5.5 h-5.5 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center text-[0.7rem] sm:text-xs",
                                                         children: "3"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/TeamSection.tsx",
@@ -706,7 +706,7 @@ function TeamSection() {
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-foreground/70 text-xs sm:text-sm pl-8 sm:pl-9",
+                                                className: "text-foreground/70 text-xs pl-7 sm:pl-8 leading-relaxed",
                                                 children: "Soutien spirituel et personnel"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/TeamSection.tsx",

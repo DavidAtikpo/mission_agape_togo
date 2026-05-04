@@ -43,10 +43,10 @@ export default function Schools() {
   ]
 
   return (
-    <section id="ecoles" className="w-full pt-10 pb-14 sm:pt-12 sm:pb-16 md:pt-14 md:pb-20 bg-muted/30">
+    <section id="ecoles" className="w-full pt-7 pb-10 sm:pt-9 sm:pb-12 md:pt-10 md:pb-14 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
-        <div className="text-center mb-8 sm:mb-12 md:mb-14 max-w-3xl mx-auto px-0 sm:px-2">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4 leading-tight">
+        <div className="text-center mb-6 sm:mb-9 md:mb-10 max-w-3xl mx-auto px-0 sm:px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-primary mb-2.5 sm:mb-3 leading-tight">
             Nos Écoles de Formation
           </h2>
           <p className="text-base sm:text-lg text-foreground/60 max-w-2xl mx-auto leading-relaxed">

@@ -79,7 +79,7 @@ export default function Contact() {
       initial="hidden"
       animate="show"
       variants={fadeIn}
-      className="min-h-screen bg-gradient-to-b from-background to-blue-50/30 text-foreground pt-4 pb-10 md:pt-12 md:pb-20"
+      className="min-h-screen bg-gradient-to-b from-background to-blue-50/30 text-foreground pt-3 pb-8 md:pt-8 md:pb-14"
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         {/* Back Button */}
@@ -96,12 +96,12 @@ export default function Contact() {
         {/* Hero */}
         <motion.div 
           variants={fadeInUp}
-          className="text-center mb-8 md:mb-16 max-w-3xl mx-auto"
+          className="text-center mb-7 md:mb-12 max-w-3xl mx-auto"
         >
           <span className="inline-block px-3 py-1 md:px-4 md:py-2 bg-blue-100 text-blue-700 rounded-full text-xs md:text-sm font-medium mb-3 md:mb-4">
             Contactez-nous
           </span>
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 mb-3 md:mb-6 leading-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 mb-2.5 md:mb-5 leading-tight">
             Parlons de votre projet
           </h1>
           <p className="text-sm sm:text-base md:text-xl text-foreground/80 leading-relaxed px-1">

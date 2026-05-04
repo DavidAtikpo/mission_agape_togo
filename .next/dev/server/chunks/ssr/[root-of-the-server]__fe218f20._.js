@@ -191,7 +191,7 @@ function BibleInductive() {
         className: "min-h-screen bg-gradient-to-b from-background to-blue-50/30",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-4 md:pt-8",
+                className: "max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-3 md:pt-6",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                     href: "/ecoles",
                     className: "inline-flex items-center gap-1.5 md:gap-2 text-sm md:text-base text-primary hover:text-primary/80 transition mb-4 md:mb-8",
@@ -216,9 +216,9 @@ function BibleInductive() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-6 md:py-12",
+                className: "max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-5 md:py-9",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "space-y-3 md:space-y-6",
+                    className: "space-y-3 md:space-y-5",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "flex flex-wrap items-center gap-2 md:gap-4",
@@ -234,24 +234,43 @@ function BibleInductive() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex flex-wrap gap-1.5 md:gap-2",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "inline-flex items-center gap-1 bg-amber-100 text-amber-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
-                                                className: "w-3 h-3 md:w-4 md:h-4 shrink-0"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                lineNumber: 96,
-                                                columnNumber: 17
-                                            }, this),
-                                            "En phase pratique"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                        lineNumber: 95,
-                                        columnNumber: 15
-                                    }, this)
-                                }, void 0, false, {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__["Clock"], {
+                                                    className: "w-3 h-3 md:w-4 md:h-4 shrink-0"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
+                                                    lineNumber: 96,
+                                                    columnNumber: 17
+                                                }, this),
+                                                "Formation terminée"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
+                                            lineNumber: 95,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__["Calendar"], {
+                                                    className: "w-3 h-3 md:w-4 md:h-4 shrink-0"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
+                                                    lineNumber: 100,
+                                                    columnNumber: 17
+                                                }, this),
+                                                "Prochaine rentrée : 5 septembre 2026"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
+                                            lineNumber: 99,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
                                     lineNumber: 94,
                                     columnNumber: 13
@@ -263,19 +282,19 @@ function BibleInductive() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-2xl sm:text-3xl md:text-5xl font-bold text-primary leading-tight",
+                            className: "text-2xl sm:text-3xl md:text-4xl font-bold text-primary leading-tight",
                             children: "École d'Évangélisation 2025-2026"
                         }, void 0, false, {
                             fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                            lineNumber: 105,
+                            lineNumber: 109,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-sm sm:text-base md:text-xl text-foreground/80 leading-relaxed max-w-4xl",
+                            className: "text-sm sm:text-base md:text-[1.05rem] text-foreground/80 leading-relaxed max-w-4xl",
                             children: "Connaitre Dieu pour mieux le servir."
                         }, void 0, false, {
                             fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                            lineNumber: 108,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, this)
                     ]
@@ -290,26 +309,26 @@ function BibleInductive() {
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-6 md:py-12 space-y-8 md:space-y-16 pb-10 md:pb-12",
+                className: "max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-5 md:py-9 space-y-7 md:space-y-10 pb-10 md:pb-12",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-white rounded-lg md:rounded-xl shadow-md p-4 sm:p-5 md:p-2 border border-blue-100",
+                        className: "bg-white rounded-lg md:rounded-xl shadow-md p-4 sm:p-5 md:p-6 border border-blue-100",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-lg sm:text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6 flex items-center gap-2",
+                                className: "text-base sm:text-lg md:text-xl font-bold text-primary mb-3 md:mb-4 flex items-center gap-2",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
                                         className: "w-5 h-5 md:w-6 md:h-6 text-green-500 shrink-0"
                                     }, void 0, false, {
                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 123,
                                         columnNumber: 13
                                     }, this),
                                     "État actuel de la formation"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                lineNumber: 118,
+                                lineNumber: 122,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -325,7 +344,7 @@ function BibleInductive() {
                                                         children: "Phase théorique terminée"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 130,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -338,34 +357,11 @@ function BibleInductive() {
                                                                         className: "w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 flex-shrink-0"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                        lineNumber: 131,
-                                                                        columnNumber: 21
-                                                                    }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        children: "3 mois de formation intensive en salle"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                        lineNumber: 132,
-                                                                        columnNumber: 21
-                                                                    }, this)
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                lineNumber: 130,
-                                                                columnNumber: 19
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                className: "flex items-start gap-2",
-                                                                children: [
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
-                                                                        className: "w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 flex-shrink-0"
-                                                                    }, void 0, false, {
-                                                                        fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
                                                                         lineNumber: 135,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        children: "Enseignements bibliques fondamentaux"
+                                                                        children: "3 mois de formation intensive en salle"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
                                                                         lineNumber: 136,
@@ -388,7 +384,7 @@ function BibleInductive() {
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                        children: "Ateliers pratiques d'évangélisation"
+                                                                        children: "Enseignements bibliques fondamentaux"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
                                                                         lineNumber: 140,
@@ -399,47 +395,70 @@ function BibleInductive() {
                                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
                                                                 lineNumber: 138,
                                                                 columnNumber: 19
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "flex items-start gap-2",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
+                                                                        className: "w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 flex-shrink-0"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
+                                                                        lineNumber: 143,
+                                                                        columnNumber: 21
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        children: "Ateliers pratiques d'évangélisation"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
+                                                                        lineNumber: 144,
+                                                                        columnNumber: 21
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
+                                                                lineNumber: 142,
+                                                                columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                        lineNumber: 129,
+                                                        lineNumber: 133,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 129,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                         className: "text-sm md:text-base font-semibold text-foreground/90 mb-1.5 md:mb-2",
-                                                        children: "En phase pratique"
+                                                        children: "Statut"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                        lineNumber: 146,
+                                                        lineNumber: 150,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                        className: "text-xs md:text-sm text-amber-700 bg-amber-50 p-3 md:p-4 rounded-lg border border-amber-100 leading-relaxed",
-                                                        children: "Les étudiants sont en phase pratique."
+                                                        className: "text-xs md:text-sm text-emerald-700 bg-emerald-50 p-3 md:p-4 rounded-lg border border-emerald-100 leading-relaxed",
+                                                        children: "L’école de cette année est déjà finie."
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                        lineNumber: 147,
+                                                        lineNumber: 151,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                lineNumber: 145,
+                                                lineNumber: 149,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 128,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -447,10 +466,10 @@ function BibleInductive() {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                 className: "text-sm md:text-base font-semibold text-foreground/90 mb-3 md:mb-4",
-                                                children: "Prochaine étape"
+                                                children: "Prochaine rentrée"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                lineNumber: 154,
+                                                lineNumber: 158,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -465,12 +484,12 @@ function BibleInductive() {
                                                                     className: "w-4 h-4 md:w-5 md:h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                    lineNumber: 158,
+                                                                    lineNumber: 162,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                lineNumber: 157,
+                                                                lineNumber: 161,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -478,30 +497,30 @@ function BibleInductive() {
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-sm md:text-base font-medium",
-                                                                        children: "Phase théorique"
+                                                                        children: "Date"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                        lineNumber: 161,
+                                                                        lineNumber: 165,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-foreground/70 text-xs md:text-sm",
-                                                                        children: "Septembre a Décembre"
+                                                                        children: "5 septembre 2026"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                        lineNumber: 162,
+                                                                        lineNumber: 166,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                lineNumber: 160,
+                                                                lineNumber: 164,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                        lineNumber: 156,
+                                                        lineNumber: 160,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -513,12 +532,12 @@ function BibleInductive() {
                                                                     className: "w-4 h-4 md:w-5 md:h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                    lineNumber: 168,
+                                                                    lineNumber: 172,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                lineNumber: 167,
+                                                                lineNumber: 171,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -526,30 +545,30 @@ function BibleInductive() {
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-sm md:text-base font-medium",
-                                                                        children: "Phase pratique"
+                                                                        children: "École"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                        lineNumber: 171,
+                                                                        lineNumber: 175,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                         className: "text-foreground/70 text-xs md:text-sm",
-                                                                        children: "Janvier a Avril"
+                                                                        children: "Évangélisation"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                        lineNumber: 172,
+                                                                        lineNumber: 176,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                lineNumber: 170,
+                                                                lineNumber: 174,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 170,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -561,12 +580,12 @@ function BibleInductive() {
                                                                     className: "w-4 h-4 md:w-5 md:h-5"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                    lineNumber: 178,
+                                                                    lineNumber: 182,
                                                                     columnNumber: 21
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                lineNumber: 177,
+                                                                lineNumber: 181,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -577,7 +596,7 @@ function BibleInductive() {
                                                                         children: "Lieu"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                        lineNumber: 181,
+                                                                        lineNumber: 185,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -585,57 +604,57 @@ function BibleInductive() {
                                                                         children: "Aného, Togo"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                        lineNumber: 182,
+                                                                        lineNumber: 186,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                                lineNumber: 180,
+                                                                lineNumber: 184,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                        lineNumber: 176,
+                                                        lineNumber: 180,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                lineNumber: 155,
+                                                lineNumber: 159,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 157,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                lineNumber: 123,
+                                lineNumber: 127,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                        lineNumber: 117,
+                        lineNumber: 121,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4 md:mb-8",
+                                className: "text-lg sm:text-xl md:text-2xl font-bold text-primary mb-3 md:mb-5",
                                 children: "Thèmes des cours (13 modules)"
                             }, void 0, false, {
                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                lineNumber: 192,
+                                lineNumber: 196,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6",
+                                className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5",
                                 children: courses.map((course, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "border border-primary/20 rounded-lg p-3 sm:p-4 md:p-6 bg-white shadow-sm hover:shadow-md transition-shadow",
                                         children: [
@@ -647,7 +666,7 @@ function BibleInductive() {
                                                         children: course.icon
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                        lineNumber: 202,
+                                                        lineNumber: 206,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -655,13 +674,13 @@ function BibleInductive() {
                                                         children: course.title
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                        lineNumber: 205,
+                                                        lineNumber: 209,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                lineNumber: 201,
+                                                lineNumber: 205,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -669,28 +688,28 @@ function BibleInductive() {
                                                 children: course.description
                                             }, void 0, false, {
                                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                                lineNumber: 207,
+                                                lineNumber: 211,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, index, true, {
                                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                        lineNumber: 197,
+                                        lineNumber: 201,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                lineNumber: 195,
+                                lineNumber: 199,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                        lineNumber: 191,
+                        lineNumber: 195,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 pt-4 md:pt-8",
+                        className: "flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 pt-3 md:pt-6",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/inscription",
@@ -698,7 +717,7 @@ function BibleInductive() {
                                 children: "Rejoindre le prochain cycle"
                             }, void 0, false, {
                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                lineNumber: 218,
+                                lineNumber: 222,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
@@ -707,19 +726,19 @@ function BibleInductive() {
                                 children: "Retour aux écoles"
                             }, void 0, false, {
                                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                                lineNumber: 224,
+                                lineNumber: 228,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                        lineNumber: 217,
+                        lineNumber: 221,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/ecoles/formation-en-cours/page.tsx",
-                lineNumber: 115,
+                lineNumber: 119,
                 columnNumber: 7
             }, this)
         ]
