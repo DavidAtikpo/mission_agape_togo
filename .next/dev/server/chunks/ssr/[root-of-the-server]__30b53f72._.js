@@ -59,7 +59,7 @@ function Hero() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "mt-2 text-sm sm:text-base md:text-lg text-foreground/60 leading-relaxed",
-                            children: "Au cœur du Togo, nous proposons des programmes d'excellence pour développer votre connaissance biblique."
+                            children: "AGAPE MISSION est une mission internationale et interdénominationnel qui forme des ouvriers, en particulier des missionnaires. En son sein, il y a des écoles : évangélisation, communication, étude inductive de la Bible, relation d’aide et intercession"
                         }, void 0, false, {
                             fileName: "[project]/components/hero.tsx",
                             lineNumber: 16,

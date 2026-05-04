@@ -139,3 +139,29 @@
     -webkit-print-color-adjust: exact;
   }
 }
+
+/* Adsterra */
+.adsterra-slot {
+  max-height: 70px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+/* Some Adsterra creatives inject an iframe with a large fixed height */
+.adsterra-slot iframe,
+.adsterra-slot ins,
+.adsterra-slot > div {
+  max-height: 70px !important;
+}
+
+@media (min-width: 768px) {
+  .adsterra-slot {
+    max-height: 90px;
+  }
+  .adsterra-slot iframe,
+  .adsterra-slot ins,
+  .adsterra-slot > div {
+    max-height: 90px !important;
+  }
+}

@@ -14,7 +14,7 @@ export default function Hero() {
             Connaitre Dieu pour mieux le servir.
           </p>
           <p className="mt-2 text-sm sm:text-base md:text-lg text-foreground/60 leading-relaxed">
-            Au cœur du Togo, nous proposons des programmes d'excellence pour développer votre connaissance biblique.
+          AGAPE MISSION est une mission internationale et interdénominationnel qui forme des ouvriers, en particulier des missionnaires. En son sein, il y a des écoles : évangélisation, communication, étude inductive de la Bible, relation d’aide et intercession
           </p>
           <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 justify-center pt-3 sm:pt-4">
             <a 

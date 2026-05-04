@@ -176,7 +176,7 @@ export default function Contact() {
                       href="mailto:info@missionagape-tg.com" 
                       className="text-sm md:text-base text-blue-600 hover:text-blue-800 transition-colors mt-0.5 md:mt-1 block"
                     >
-                      info@missionagape-tg.com
+                      agapemission2014@mail.com
                     </a>
                   </div>
                 </div>
@@ -210,7 +210,9 @@ export default function Contact() {
                 <h3 className="text-base md:text-lg font-semibold text-gray-900 mb-3 md:mb-4">Suivez-nous</h3>
                 <div className="flex gap-2 md:gap-3">
                   <a
-                    href="#"
+                    href="https://web.facebook.com/profile.php?id=61588857197799"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label="Facebook"
                     className="w-9 h-9 md:w-10 md:h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
                   >

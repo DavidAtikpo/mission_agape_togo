@@ -760,10 +760,538 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
 ;
-var _s = __turbopack_context__.k.signature();
+var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature();
 'use client';
 ;
 ;
+/** Première ligne desktop = 5 photos ; 2 lignes visibles au départ */ const PHOTOS_INITIAL = 10;
+const PHOTOS_STEP = 10;
+const BLUR_DATA = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
+/** Mobile : pile « album » centrée + bandeau scrollable + swipe pour parcourir */ function AlbumStack({ images, onOpen }) {
+    _s();
+    const [topIndex, setTopIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
+    const touchStart = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const thumbRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "AlbumStack.useEffect": ()=>{
+            setTopIndex({
+                "AlbumStack.useEffect": (i)=>Math.min(i, Math.max(0, images.length - 1))
+            }["AlbumStack.useEffect"]);
+        }
+    }["AlbumStack.useEffect"], [
+        images
+    ]);
+    const scrollThumbIntoView = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "AlbumStack.useCallback[scrollThumbIntoView]": (index)=>{
+            const el = thumbRef.current?.querySelector(`[data-thumb-index="${index}"]`);
+            el?.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'nearest'
+            });
+        }
+    }["AlbumStack.useCallback[scrollThumbIntoView]"], []);
+    if (images.length === 0) return null;
+    const maxLayers = 5;
+    const total = images.length;
+    const safeTop = Math.min(topIndex, Math.max(0, total - 1));
+    const stack = images.slice(safeTop, safeTop + Math.min(maxLayers, total - safeTop));
+    const reversed = [
+        ...stack
+    ].reverse();
+    const goNext = ()=>{
+        setTopIndex((i)=>{
+            const n = Math.min(i + 1, total - 1);
+            queueMicrotask(()=>scrollThumbIntoView(n));
+            return n;
+        });
+    };
+    const goPrev = ()=>{
+        setTopIndex((i)=>{
+            const n = Math.max(i - 1, 0);
+            queueMicrotask(()=>scrollThumbIntoView(n));
+            return n;
+        });
+    };
+    const onStackTouchStart = (e)=>{
+        const t = e.changedTouches[0];
+        touchStart.current = {
+            x: t.clientX,
+            y: t.clientY
+        };
+    };
+    const onStackTouchEnd = (e)=>{
+        if (!touchStart.current || total <= 1) return;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - touchStart.current.x;
+        const dy = t.clientY - touchStart.current.y;
+        touchStart.current = null;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+        if (dx < 0) goNext();
+        else goPrev();
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "relative mx-auto w-full max-w-[min(100%,280px)] pb-4 pt-1 flex flex-col items-center",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative aspect-[3/4] w-full max-w-[260px] mx-auto touch-pan-x",
+                onTouchStart: onStackTouchStart,
+                onTouchEnd: onStackTouchEnd,
+                children: reversed.map((img, revIdx)=>{
+                    const depth = stack.length - 1 - revIdx;
+                    const ty = depth * 11;
+                    const tx = Math.sin(depth * 0.95) * 7;
+                    const rot = Math.sin(depth * 0.7) * 2.2;
+                    const sc = 1 - depth * 0.032;
+                    const isTop = revIdx === stack.length - 1;
+                    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        type: "button",
+                        "aria-label": img.alt,
+                        className: "absolute left-1/2 top-1/2 aspect-[3/4] w-[88%] overflow-hidden rounded-xl border-2 border-white bg-muted shadow-xl ring-1 ring-black/5 origin-center",
+                        style: {
+                            transform: `translate(-50%, -50%) translate(${tx}px, ${ty}px) rotate(${rot}deg) scale(${sc})`,
+                            zIndex: revIdx + 1,
+                            pointerEvents: isTop ? 'auto' : 'none'
+                        },
+                        onClick: ()=>onOpen(img),
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: img.src,
+                            alt: img.alt,
+                            fill: true,
+                            className: "object-cover",
+                            sizes: "(max-width: 640px) 85vw, 280px",
+                            placeholder: "blur",
+                            blurDataURL: BLUR_DATA
+                        }, void 0, false, {
+                            fileName: "[project]/components/GallerySection.tsx",
+                            lineNumber: 110,
+                            columnNumber: 15
+                        }, this)
+                    }, `${img.id}-${safeTop}`, false, {
+                        fileName: "[project]/components/GallerySection.tsx",
+                        lineNumber: 98,
+                        columnNumber: 13
+                    }, this);
+                })
+            }, void 0, false, {
+                fileName: "[project]/components/GallerySection.tsx",
+                lineNumber: 84,
+                columnNumber: 7
+            }, this),
+            total > 1 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "mt-2 px-2 text-center text-[0.7rem] text-muted-foreground leading-snug",
+                        children: "Glissez gauche / droite sur la pile, ou faites défiler les miniatures ci‑dessous. Appuyez sur la carte du dessus pour agrandir."
+                    }, void 0, false, {
+                        fileName: "[project]/components/GallerySection.tsx",
+                        lineNumber: 126,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        ref: thumbRef,
+                        className: "mt-3 flex w-full max-w-[min(100vw-2rem,320px)] snap-x snap-mandatory gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain px-1 py-1 [-webkit-overflow-scrolling:touch] [scrollbar-width:thin]",
+                        style: {
+                            touchAction: 'pan-x'
+                        },
+                        children: images.map((img, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                type: "button",
+                                "data-thumb-index": i,
+                                onClick: ()=>{
+                                    setTopIndex(i);
+                                    scrollThumbIntoView(i);
+                                },
+                                className: `relative h-14 w-14 shrink-0 snap-center overflow-hidden rounded-lg border-2 transition-shadow ${i === safeTop ? 'border-primary ring-2 ring-primary/30 shadow-md' : 'border-border opacity-80 active:opacity-100'}`,
+                                "aria-label": `Photo ${i + 1}`,
+                                "aria-current": i === safeTop ? 'true' : undefined,
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    src: img.src,
+                                    alt: "",
+                                    fill: true,
+                                    className: "object-cover",
+                                    sizes: "56px",
+                                    "aria-hidden": true
+                                }, void 0, false, {
+                                    fileName: "[project]/components/GallerySection.tsx",
+                                    lineNumber: 151,
+                                    columnNumber: 17
+                                }, this)
+                            }, img.id, false, {
+                                fileName: "[project]/components/GallerySection.tsx",
+                                lineNumber: 135,
+                                columnNumber: 15
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/components/GallerySection.tsx",
+                        lineNumber: 129,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "mt-1.5 text-center text-[0.65rem] text-muted-foreground",
+                        children: [
+                            safeTop + 1,
+                            " / ",
+                            total
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/GallerySection.tsx",
+                        lineNumber: 155,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                className: "mt-2 text-center text-xs text-muted-foreground",
+                children: "Appuyez pour agrandir"
+            }, void 0, false, {
+                fileName: "[project]/components/GallerySection.tsx",
+                lineNumber: 160,
+                columnNumber: 9
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/GallerySection.tsx",
+        lineNumber: 82,
+        columnNumber: 5
+    }, this);
+}
+_s(AlbumStack, "8YboUgXNcrs2lUWMYkE79oY5hoo=");
+_c = AlbumStack;
+function GalleryLightbox({ state, setLightbox, onClose }) {
+    _s1();
+    const { images, index } = state;
+    const current = images[index];
+    const touchStart = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const thumbsRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const wheelAccum = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(0);
+    const goPrev = ()=>setLightbox((l)=>l && l.index > 0 ? {
+                ...l,
+                index: l.index - 1
+            } : l);
+    const goNext = ()=>setLightbox((l)=>l && l.index < l.images.length - 1 ? {
+                ...l,
+                index: l.index + 1
+            } : l);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "GalleryLightbox.useEffect": ()=>{
+            const onKey = {
+                "GalleryLightbox.useEffect.onKey": (e)=>{
+                    if (e.key === 'Escape') onClose();
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        setLightbox({
+                            "GalleryLightbox.useEffect.onKey": (l)=>l && l.index > 0 ? {
+                                    ...l,
+                                    index: l.index - 1
+                                } : l
+                        }["GalleryLightbox.useEffect.onKey"]);
+                    }
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        setLightbox({
+                            "GalleryLightbox.useEffect.onKey": (l)=>l && l.index < l.images.length - 1 ? {
+                                    ...l,
+                                    index: l.index + 1
+                                } : l
+                        }["GalleryLightbox.useEffect.onKey"]);
+                    }
+                }
+            }["GalleryLightbox.useEffect.onKey"];
+            window.addEventListener('keydown', onKey);
+            return ({
+                "GalleryLightbox.useEffect": ()=>window.removeEventListener('keydown', onKey)
+            })["GalleryLightbox.useEffect"];
+        }
+    }["GalleryLightbox.useEffect"], [
+        onClose,
+        setLightbox
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "GalleryLightbox.useEffect": ()=>{
+            const el = thumbsRef.current?.querySelector(`[data-lb-thumb="${index}"]`);
+            el?.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'nearest'
+            });
+        }
+    }["GalleryLightbox.useEffect"], [
+        index
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "GalleryLightbox.useEffect": ()=>{
+            const prev = document.body.style.overflow;
+            document.body.style.overflow = 'hidden';
+            return ({
+                "GalleryLightbox.useEffect": ()=>{
+                    document.body.style.overflow = prev;
+                }
+            })["GalleryLightbox.useEffect"];
+        }
+    }["GalleryLightbox.useEffect"], []);
+    if (!current) return null;
+    const onTouchStart = (e)=>{
+        const t = e.changedTouches[0];
+        touchStart.current = {
+            x: t.clientX,
+            y: t.clientY
+        };
+    };
+    const onTouchEnd = (e)=>{
+        if (!touchStart.current || images.length <= 1) return;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - touchStart.current.x;
+        const dy = t.clientY - touchStart.current.y;
+        touchStart.current = null;
+        if (Math.abs(dx) < 45 || Math.abs(dx) < Math.abs(dy)) return;
+        if (dx < 0) goNext();
+        else goPrev();
+    };
+    const onWheelMain = (e)=>{
+        if (images.length <= 1) return;
+        e.preventDefault();
+        wheelAccum.current += e.deltaY;
+        if (wheelAccum.current > 60) {
+            wheelAccum.current = 0;
+            goNext();
+        } else if (wheelAccum.current < -60) {
+            wheelAccum.current = 0;
+            goPrev();
+        }
+    };
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-3 sm:p-4",
+        onClick: onClose,
+        role: "presentation",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "relative flex w-full max-w-4xl max-h-[92vh] min-w-0 flex-col",
+            onClick: (e)=>e.stopPropagation(),
+            role: "dialog",
+            "aria-modal": "true",
+            "aria-label": "Visionneuse photos",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                    type: "button",
+                    className: "absolute -top-1 right-0 z-20 rounded-lg bg-black/50 p-2 text-white hover:bg-black/70 sm:-top-2 sm:right-0",
+                    "aria-label": "Fermer",
+                    onClick: onClose,
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                        className: "h-6 w-6 sm:h-7 sm:w-7",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        stroke: "currentColor",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                            strokeLinecap: "round",
+                            strokeLinejoin: "round",
+                            strokeWidth: 2,
+                            d: "M6 18L18 6M6 6l12 12"
+                        }, void 0, false, {
+                            fileName: "[project]/components/GallerySection.tsx",
+                            lineNumber: 269,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/GallerySection.tsx",
+                        lineNumber: 268,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/GallerySection.tsx",
+                    lineNumber: 262,
+                    columnNumber: 9
+                }, this),
+                images.length > 1 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            type: "button",
+                            "aria-label": "Photo précédente",
+                            disabled: index <= 0,
+                            onClick: (e)=>{
+                                e.stopPropagation();
+                                goPrev();
+                            },
+                            className: "absolute left-1 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/55 p-2.5 text-white shadow-lg transition-opacity hover:bg-black/75 disabled:pointer-events-none disabled:opacity-30 sm:left-2",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                className: "h-6 w-6",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                stroke: "currentColor",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    strokeWidth: 2,
+                                    d: "M15 19l-7-7 7-7"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/GallerySection.tsx",
+                                    lineNumber: 286,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/GallerySection.tsx",
+                                lineNumber: 285,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/GallerySection.tsx",
+                            lineNumber: 275,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            type: "button",
+                            "aria-label": "Photo suivante",
+                            disabled: index >= images.length - 1,
+                            onClick: (e)=>{
+                                e.stopPropagation();
+                                goNext();
+                            },
+                            className: "absolute right-1 top-1/2 z-20 -translate-y-1/2 rounded-full bg-black/55 p-2.5 text-white shadow-lg transition-opacity hover:bg-black/75 disabled:pointer-events-none disabled:opacity-30 sm:right-2",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                                className: "h-6 w-6",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                stroke: "currentColor",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    strokeWidth: 2,
+                                    d: "M9 5l7 7-7 7"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/GallerySection.tsx",
+                                    lineNumber: 300,
+                                    columnNumber: 17
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/GallerySection.tsx",
+                                lineNumber: 299,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/GallerySection.tsx",
+                            lineNumber: 289,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true) : null,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "relative mt-8 w-full shrink-0 touch-pan-x sm:mt-10",
+                    onTouchStart: onTouchStart,
+                    onTouchEnd: onTouchEnd,
+                    onWheel: onWheelMain,
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "relative mx-auto w-full max-h-[55vh] min-h-[200px] sm:max-h-[60vh]",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-gray-900 sm:aspect-video",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                src: current.src,
+                                alt: current.alt,
+                                fill: true,
+                                className: "object-contain",
+                                sizes: "100vw",
+                                placeholder: "blur",
+                                blurDataURL: BLUR_DATA,
+                                priority: true
+                            }, current.id, false, {
+                                fileName: "[project]/components/GallerySection.tsx",
+                                lineNumber: 314,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/GallerySection.tsx",
+                            lineNumber: 313,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/GallerySection.tsx",
+                        lineNumber: 312,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/GallerySection.tsx",
+                    lineNumber: 306,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "mt-2 shrink-0 text-center text-white",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-sm font-medium sm:text-base",
+                            children: [
+                                "Édition ",
+                                current.edition,
+                                " — ",
+                                index + 1,
+                                " / ",
+                                images.length
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/GallerySection.tsx",
+                            lineNumber: 330,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-xs text-white/70 sm:text-sm",
+                            children: "Flèches, molette sur l’image, ← → au clavier, miniatures ci‑dessous ou glissez gauche / droite"
+                        }, void 0, false, {
+                            fileName: "[project]/components/GallerySection.tsx",
+                            lineNumber: 333,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/GallerySection.tsx",
+                    lineNumber: 329,
+                    columnNumber: 9
+                }, this),
+                images.length > 1 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    ref: thumbsRef,
+                    className: "mt-3 flex max-h-[22vh] snap-x snap-mandatory gap-2 overflow-x-auto overflow-y-hidden overscroll-x-contain px-1 pb-1 [-webkit-overflow-scrolling:touch] [scrollbar-width:thin]",
+                    style: {
+                        touchAction: 'pan-x'
+                    },
+                    children: images.map((img, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            type: "button",
+                            "data-lb-thumb": i,
+                            onClick: ()=>setLightbox({
+                                    images,
+                                    index: i
+                                }),
+                            className: `relative h-16 w-16 shrink-0 snap-center overflow-hidden rounded-lg border-2 transition-all sm:h-[4.5rem] sm:w-[4.5rem] ${i === index ? 'border-primary ring-2 ring-primary/40 scale-[1.02]' : 'border-white/20 opacity-75 hover:opacity-100'}`,
+                            "aria-label": `Voir la photo ${i + 1}`,
+                            "aria-current": i === index ? 'true' : undefined,
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                src: img.src,
+                                alt: "",
+                                fill: true,
+                                className: "object-cover",
+                                sizes: "72px"
+                            }, void 0, false, {
+                                fileName: "[project]/components/GallerySection.tsx",
+                                lineNumber: 358,
+                                columnNumber: 17
+                            }, this)
+                        }, img.id, false, {
+                            fileName: "[project]/components/GallerySection.tsx",
+                            lineNumber: 345,
+                            columnNumber: 15
+                        }, this))
+                }, void 0, false, {
+                    fileName: "[project]/components/GallerySection.tsx",
+                    lineNumber: 339,
+                    columnNumber: 11
+                }, this) : null
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/GallerySection.tsx",
+            lineNumber: 255,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/GallerySection.tsx",
+        lineNumber: 250,
+        columnNumber: 5
+    }, this);
+}
+_s1(GalleryLightbox, "REv8enZebsIISvldAwmwmJ3fIHI=");
+_c1 = GalleryLightbox;
 // Images des éditions
 const generateGalleryImages = ()=>{
     return [
@@ -785,18 +1313,77 @@ const generateGalleryImages = ()=>{
             src: '/images/editions/edition14-3.jpeg',
             alt: 'Édition 2025-2026 - Page 3',
             edition: 14
+        },
+        {
+            id: 4,
+            src: '/1.jpeg',
+            alt: 'Édition 2025-2026 - Page 4',
+            edition: 14
+        },
+        {
+            id: 5,
+            src: '/6.jpeg',
+            alt: 'Édition 2025-2026 - Page 5',
+            edition: 14
+        },
+        {
+            id: 6,
+            src: '/7.jpeg',
+            alt: 'Édition 2025-2026 - Page 6',
+            edition: 14
+        },
+        {
+            id: 7,
+            src: '/4.jpeg',
+            alt: 'Édition 2025-2026 - Page 7',
+            edition: 14
+        },
+        {
+            id: 8,
+            src: '/5.jpeg',
+            alt: 'Édition 2025-2026 - Page 8',
+            edition: 14
+        },
+        {
+            id: 9,
+            src: '/8.jpeg',
+            alt: 'Édition 2025-2026 - Page 9',
+            edition: 14
         }
     ];
 };
 function GallerySection() {
-    _s();
+    _s2();
     const TOTAL_EDITIONS = 14;
     const [selectedEdition, setSelectedEdition] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(TOTAL_EDITIONS); // Dernière édition par défaut
-    const [selectedImage, setSelectedImage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [lightbox, setLightbox] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const [showAllEditions, setShowAllEditions] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [visibleEditionCount, setVisibleEditionCount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(PHOTOS_INITIAL);
+    const [visibleAllEditionsCount, setVisibleAllEditionsCount] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(PHOTOS_INITIAL);
     const allImages = generateGalleryImages();
     const filteredImages = allImages.filter((img)=>img.edition === selectedEdition);
     const allEditionsImages = showAllEditions ? allImages : [];
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "GallerySection.useEffect": ()=>{
+            setVisibleEditionCount(PHOTOS_INITIAL);
+        }
+    }["GallerySection.useEffect"], [
+        selectedEdition
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "GallerySection.useEffect": ()=>{
+            setLightbox(null);
+        }
+    }["GallerySection.useEffect"], [
+        selectedEdition
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "GallerySection.useEffect": ()=>{
+            if (showAllEditions) setVisibleAllEditionsCount(PHOTOS_INITIAL);
+        }
+    }["GallerySection.useEffect"], [
+        showAllEditions
+    ]);
     const editions = Array.from({
         length: TOTAL_EDITIONS
     }, (_, i)=>i + 1);
@@ -804,20 +1391,40 @@ function GallerySection() {
     const toggleAllEditions = ()=>{
         setShowAllEditions((prev)=>!prev);
     };
+    const visibleFiltered = filteredImages.slice(0, visibleEditionCount);
+    const hasMoreEdition = filteredImages.length > visibleEditionCount;
+    const visibleAllSlice = allEditionsImages.slice(0, visibleAllEditionsCount);
+    const hasMoreAllEditions = allEditionsImages.length > visibleAllEditionsCount;
+    const gridClass = 'grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-2.5 w-full min-w-0';
+    const tileClass = 'group relative overflow-hidden rounded-lg sm:rounded-xl aspect-square cursor-pointer transition-transform duration-200 hover:scale-[1.02] hover:shadow-md';
+    const openLightboxEdition = (img)=>{
+        const idx = filteredImages.findIndex((i)=>i.id === img.id);
+        setLightbox({
+            images: filteredImages,
+            index: idx >= 0 ? idx : 0
+        });
+    };
+    const openLightboxAllEditions = (img)=>{
+        const idx = allEditionsImages.findIndex((i)=>i.id === img.id);
+        setLightbox({
+            images: allEditionsImages,
+            index: idx >= 0 ? idx : 0
+        });
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
         className: "w-full pt-7 pb-10 sm:pt-9 sm:pb-12 md:pt-10 md:pb-14 bg-background",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full min-w-0",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "text-center mb-6 sm:mb-8 max-w-3xl mx-auto px-0 sm:px-2",
+                    className: "text-center mb-5 sm:mb-6 max-w-3xl mx-auto px-0 sm:px-2",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                             className: "inline-block text-primary font-bold text-[0.7rem] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-1.5 sm:mb-2",
                             children: "Galeries Photos"
                         }, void 0, false, {
                             fileName: "[project]/components/GallerySection.tsx",
-                            lineNumber: 60,
+                            lineNumber: 502,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -829,20 +1436,20 @@ function GallerySection() {
                                     children: "Éditions"
                                 }, void 0, false, {
                                     fileName: "[project]/components/GallerySection.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 506,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/GallerySection.tsx",
-                            lineNumber: 63,
+                            lineNumber: 505,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "w-14 sm:w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-2.5 sm:mb-4 md:mb-5 rounded-full"
                         }, void 0, false, {
                             fileName: "[project]/components/GallerySection.tsx",
-                            lineNumber: 66,
+                            lineNumber: 508,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -850,7 +1457,7 @@ function GallerySection() {
                             children: "Revivez les moments forts de nos 14 éditions de formation et explorez les éditions passées."
                         }, void 0, false, {
                             fileName: "[project]/components/GallerySection.tsx",
-                            lineNumber: 67,
+                            lineNumber: 509,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -866,20 +1473,20 @@ function GallerySection() {
                                             children: showAllEditions ? 'Voir moins' : 'Voir toutes les éditions'
                                         }, void 0, false, {
                                             fileName: "[project]/components/GallerySection.tsx",
-                                            lineNumber: 73,
+                                            lineNumber: 515,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block"
                                         }, void 0, false, {
                                             fileName: "[project]/components/GallerySection.tsx",
-                                            lineNumber: 84,
+                                            lineNumber: 526,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/GallerySection.tsx",
-                                    lineNumber: 72,
+                                    lineNumber: 514,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -892,7 +1499,7 @@ function GallerySection() {
                                                 children: "Édition"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/GallerySection.tsx",
-                                                lineNumber: 89,
+                                                lineNumber: 531,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -909,39 +1516,39 @@ function GallerySection() {
                                                         ]
                                                     }, edition, true, {
                                                         fileName: "[project]/components/GallerySection.tsx",
-                                                        lineNumber: 96,
+                                                        lineNumber: 538,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/components/GallerySection.tsx",
-                                                lineNumber: 90,
+                                                lineNumber: 532,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/GallerySection.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 530,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/GallerySection.tsx",
-                                    lineNumber: 87,
+                                    lineNumber: 529,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/GallerySection.tsx",
-                            lineNumber: 71,
+                            lineNumber: 513,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/GallerySection.tsx",
-                    lineNumber: 59,
+                    lineNumber: 501,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/10 p-3.5 sm:p-5 rounded-lg sm:rounded-xl mb-5 sm:mb-7 border border-blue-200 dark:border-blue-800 shadow-sm w-full min-w-0",
+                    className: "bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/10 p-3 sm:p-4 rounded-lg sm:rounded-xl mb-4 sm:mb-6 border border-blue-200 dark:border-blue-800 shadow-sm w-full min-w-0",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "text-center space-y-3 sm:space-y-5",
                         children: [
@@ -950,7 +1557,7 @@ function GallerySection() {
                                 children: "Allez dans tout le monde entier et proclamez la Bonne Nouvelle à toute la création"
                             }, void 0, false, {
                                 fileName: "[project]/components/GallerySection.tsx",
-                                lineNumber: 110,
+                                lineNumber: 552,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -958,7 +1565,7 @@ function GallerySection() {
                                 children: "« Allez dans le monde entier, proclamez l'Évangile à toute la création. » — Marc 16:15"
                             }, void 0, false, {
                                 fileName: "[project]/components/GallerySection.tsx",
-                                lineNumber: 113,
+                                lineNumber: 555,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -969,7 +1576,7 @@ function GallerySection() {
                                         children: "Partagez votre lumière avec le monde"
                                     }, void 0, false, {
                                         fileName: "[project]/components/GallerySection.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 560,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -977,37 +1584,37 @@ function GallerySection() {
                                         children: "Témoignez de la gloire de Dieu en partageant vos moments de grâce et de louange avec nos frères et sœurs du monde entier."
                                     }, void 0, false, {
                                         fileName: "[project]/components/GallerySection.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 563,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/GallerySection.tsx",
-                                lineNumber: 117,
+                                lineNumber: 559,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/GallerySection.tsx",
-                        lineNumber: 109,
+                        lineNumber: 551,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/GallerySection.tsx",
-                    lineNumber: 108,
+                    lineNumber: 550,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "space-y-7 sm:space-y-9 md:space-y-10 w-full min-w-0",
+                    className: "space-y-6 sm:space-y-7 md:space-y-8 w-full min-w-0",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "space-y-3.5 sm:space-y-5",
+                            className: "space-y-3 sm:space-y-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                            className: "text-lg sm:text-xl font-bold text-foreground leading-tight",
+                                            className: "text-base sm:text-lg font-bold text-foreground leading-tight",
                                             children: [
                                                 "Édition ",
                                                 selectedEdition,
@@ -1019,13 +1626,13 @@ function GallerySection() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/GallerySection.tsx",
-                                                    lineNumber: 136,
+                                                    lineNumber: 578,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/GallerySection.tsx",
-                                            lineNumber: 133,
+                                            lineNumber: 575,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1036,118 +1643,184 @@ function GallerySection() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/components/GallerySection.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 584,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/components/GallerySection.tsx",
-                                    lineNumber: 132,
+                                    lineNumber: 574,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 w-full min-w-0",
-                                    children: filteredImages.length > 0 ? filteredImages.map((image)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "group relative overflow-hidden rounded-xl sm:rounded-2xl aspect-square cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl",
-                                            onClick: ()=>setSelectedImage(image),
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col justify-between p-4",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex justify-end",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "px-3 py-1 bg-black/50 backdrop-blur-sm text-white text-xs font-medium rounded-full",
-                                                                children: [
-                                                                    "Édition ",
-                                                                    image.edition
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/components/GallerySection.tsx",
-                                                                lineNumber: 157,
-                                                                columnNumber: 27
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/GallerySection.tsx",
-                                                            lineNumber: 156,
-                                                            columnNumber: 25
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300",
+                                    className: "min-w-0",
+                                    children: filteredImages.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "sm:hidden flex flex-col items-center",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AlbumStack, {
+                                                        images: visibleFiltered,
+                                                        onOpen: openLightboxEdition
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/components/GallerySection.tsx",
+                                                        lineNumber: 594,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    hasMoreEdition ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        type: "button",
+                                                        onClick: ()=>setVisibleEditionCount((c)=>Math.min(c + PHOTOS_STEP, filteredImages.length)),
+                                                        className: "mt-2 px-4 py-2 rounded-lg text-sm font-medium border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-colors",
+                                                        children: [
+                                                            "Afficher plus (",
+                                                            filteredImages.length - visibleEditionCount,
+                                                            " restantes)"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/GallerySection.tsx",
+                                                        lineNumber: 596,
+                                                        columnNumber: 23
+                                                    }, this) : null
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/GallerySection.tsx",
+                                                lineNumber: 593,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: `hidden sm:grid ${gridClass}`,
+                                                children: [
+                                                    visibleFiltered.map((image)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: tileClass,
+                                                            onClick: ()=>openLightboxEdition(image),
                                                             children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-white font-medium text-base mb-0.5",
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col justify-between p-2 sm:p-3",
                                                                     children: [
-                                                                        "Édition ",
-                                                                        image.edition
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "flex justify-end",
+                                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                                className: "px-2 py-0.5 bg-black/50 backdrop-blur-sm text-white text-[0.65rem] font-medium rounded-full",
+                                                                                children: [
+                                                                                    "Édition ",
+                                                                                    image.edition
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/components/GallerySection.tsx",
+                                                                                lineNumber: 621,
+                                                                                columnNumber: 29
+                                                                            }, this)
+                                                                        }, void 0, false, {
+                                                                            fileName: "[project]/components/GallerySection.tsx",
+                                                                            lineNumber: 620,
+                                                                            columnNumber: 27
+                                                                        }, this),
+                                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                            className: "transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300",
+                                                                            children: [
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                    className: "text-white font-medium text-xs mb-0",
+                                                                                    children: [
+                                                                                        "Édition ",
+                                                                                        image.edition
+                                                                                    ]
+                                                                                }, void 0, true, {
+                                                                                    fileName: "[project]/components/GallerySection.tsx",
+                                                                                    lineNumber: 626,
+                                                                                    columnNumber: 29
+                                                                                }, this),
+                                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                    className: "text-white/80 text-[0.65rem]",
+                                                                                    children: [
+                                                                                        "Photo ",
+                                                                                        image.id % 3 || 3
+                                                                                    ]
+                                                                                }, void 0, true, {
+                                                                                    fileName: "[project]/components/GallerySection.tsx",
+                                                                                    lineNumber: 627,
+                                                                                    columnNumber: 29
+                                                                                }, this)
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/GallerySection.tsx",
+                                                                            lineNumber: 625,
+                                                                            columnNumber: 27
+                                                                        }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/components/GallerySection.tsx",
-                                                                    lineNumber: 162,
-                                                                    columnNumber: 27
+                                                                    lineNumber: 619,
+                                                                    columnNumber: 25
                                                                 }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-white/80 text-xs",
-                                                                    children: [
-                                                                        "Photo ",
-                                                                        image.id % 3 || 3
-                                                                    ]
-                                                                }, void 0, true, {
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30 group-hover:bg-black/40 transition-all duration-300 z-0"
+                                                                }, void 0, false, {
                                                                     fileName: "[project]/components/GallerySection.tsx",
-                                                                    lineNumber: 163,
-                                                                    columnNumber: 27
+                                                                    lineNumber: 630,
+                                                                    columnNumber: 25
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                    className: "relative w-full h-full",
+                                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                        src: image.src,
+                                                                        alt: image.alt,
+                                                                        fill: true,
+                                                                        sizes: "(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw",
+                                                                        className: "object-cover",
+                                                                        placeholder: "blur",
+                                                                        blurDataURL: BLUR_DATA
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/GallerySection.tsx",
+                                                                        lineNumber: 632,
+                                                                        columnNumber: 27
+                                                                    }, this)
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/GallerySection.tsx",
+                                                                    lineNumber: 631,
+                                                                    columnNumber: 25
                                                                 }, this)
+                                                            ]
+                                                        }, image.id, true, {
+                                                            fileName: "[project]/components/GallerySection.tsx",
+                                                            lineNumber: 614,
+                                                            columnNumber: 23
+                                                        }, this)),
+                                                    hasMoreEdition ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "col-span-full flex justify-center pt-2",
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                            type: "button",
+                                                            onClick: ()=>setVisibleEditionCount((c)=>Math.min(c + PHOTOS_STEP, filteredImages.length)),
+                                                            className: "px-4 py-2 rounded-lg text-sm font-medium border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-colors",
+                                                            children: [
+                                                                "Afficher plus (",
+                                                                filteredImages.length - visibleEditionCount,
+                                                                " restantes)"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/components/GallerySection.tsx",
-                                                            lineNumber: 161,
+                                                            lineNumber: 646,
                                                             columnNumber: 25
                                                         }, this)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "[project]/components/GallerySection.tsx",
-                                                    lineNumber: 155,
-                                                    columnNumber: 23
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30 group-hover:bg-black/40 transition-all duration-300 z-0"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/GallerySection.tsx",
-                                                    lineNumber: 166,
-                                                    columnNumber: 23
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative w-full h-full",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                        src: image.src,
-                                                        alt: image.alt,
-                                                        fill: true,
-                                                        className: "object-cover",
-                                                        placeholder: "blur",
-                                                        blurDataURL: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/GallerySection.tsx",
-                                                        lineNumber: 168,
-                                                        columnNumber: 25
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/GallerySection.tsx",
-                                                    lineNumber: 167,
-                                                    columnNumber: 23
-                                                }, this)
-                                            ]
-                                        }, image.id, true, {
-                                            fileName: "[project]/components/GallerySection.tsx",
-                                            lineNumber: 150,
-                                            columnNumber: 21
-                                        }, this)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "col-span-full text-center py-8 sm:py-12",
+                                                        lineNumber: 645,
+                                                        columnNumber: 23
+                                                    }, this) : null
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/components/GallerySection.tsx",
+                                                lineNumber: 612,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "col-span-full text-center py-6 sm:py-8",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "mx-auto w-16 h-16 bg-white/5 rounded-full flex items-center justify-center mb-4",
+                                                className: "mx-auto w-12 h-12 bg-white/5 rounded-full flex items-center justify-center mb-3",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
                                                     xmlns: "http://www.w3.org/2000/svg",
-                                                    className: "h-8 w-8 text-foreground/30",
+                                                    className: "h-6 w-6 text-foreground/30",
                                                     fill: "none",
                                                     viewBox: "0 0 24 24",
                                                     stroke: "currentColor",
@@ -1158,285 +1831,259 @@ function GallerySection() {
                                                         d: "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/GallerySection.tsx",
-                                                        lineNumber: 183,
+                                                        lineNumber: 666,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/GallerySection.tsx",
-                                                    lineNumber: 182,
+                                                    lineNumber: 665,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/GallerySection.tsx",
-                                                lineNumber: 181,
+                                                lineNumber: 664,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-foreground/60",
+                                                className: "text-sm text-foreground/60",
                                                 children: "Aucune photo disponible pour cette édition"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/GallerySection.tsx",
-                                                lineNumber: 186,
+                                                lineNumber: 669,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/GallerySection.tsx",
-                                        lineNumber: 180,
+                                        lineNumber: 663,
                                         columnNumber: 19
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/GallerySection.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 589,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/GallerySection.tsx",
-                            lineNumber: 131,
+                            lineNumber: 573,
                             columnNumber: 11
                         }, this),
                         showAllEditions && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "space-y-3.5 sm:space-y-5",
+                            className: "space-y-3 sm:space-y-4",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                    className: "text-lg sm:text-xl font-bold text-foreground",
+                                    className: "text-base sm:text-lg font-bold text-foreground",
                                     children: "Toutes les éditions"
                                 }, void 0, false, {
                                     fileName: "[project]/components/GallerySection.tsx",
-                                    lineNumber: 195,
+                                    lineNumber: 678,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-5 w-full min-w-0",
-                                    children: allEditionsImages.map((image)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "group relative overflow-hidden rounded-xl sm:rounded-2xl aspect-square cursor-pointer transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl",
-                                            onClick: ()=>setSelectedImage(image),
+                                    className: "min-w-0",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "sm:hidden flex flex-col items-center",
                                             children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col justify-between p-4",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(AlbumStack, {
+                                                    images: visibleAllSlice,
+                                                    onOpen: openLightboxAllEditions
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/GallerySection.tsx",
+                                                    lineNumber: 681,
+                                                    columnNumber: 19
+                                                }, this),
+                                                hasMoreAllEditions ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    onClick: ()=>setVisibleAllEditionsCount((c)=>Math.min(c + PHOTOS_STEP, allEditionsImages.length)),
+                                                    className: "mt-2 px-4 py-2 rounded-lg text-sm font-medium border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-colors",
                                                     children: [
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "flex justify-end",
-                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                className: "px-3 py-1 bg-black/50 backdrop-blur-sm text-white text-xs font-medium rounded-full",
-                                                                children: [
-                                                                    "Édition ",
-                                                                    image.edition
-                                                                ]
-                                                            }, void 0, true, {
-                                                                fileName: "[project]/components/GallerySection.tsx",
-                                                                lineNumber: 205,
-                                                                columnNumber: 25
-                                                            }, this)
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/components/GallerySection.tsx",
-                                                            lineNumber: 204,
-                                                            columnNumber: 23
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-white font-medium text-base mb-0.5",
-                                                                    children: [
-                                                                        "Édition ",
-                                                                        image.edition
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/components/GallerySection.tsx",
-                                                                    lineNumber: 210,
-                                                                    columnNumber: 25
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-white/80 text-xs",
-                                                                    children: [
-                                                                        "Photo ",
-                                                                        image.id % 3 || 3
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/components/GallerySection.tsx",
-                                                                    lineNumber: 211,
-                                                                    columnNumber: 25
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/components/GallerySection.tsx",
-                                                            lineNumber: 209,
-                                                            columnNumber: 23
-                                                        }, this)
+                                                        "Afficher plus (",
+                                                        allEditionsImages.length - visibleAllEditionsCount,
+                                                        " restantes)"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/components/GallerySection.tsx",
-                                                    lineNumber: 203,
+                                                    lineNumber: 683,
                                                     columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30 group-hover:bg-black/40 transition-all duration-300 z-0"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/components/GallerySection.tsx",
-                                                    lineNumber: 214,
-                                                    columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "relative w-full h-full",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                        src: image.src,
-                                                        alt: image.alt,
-                                                        fill: true,
-                                                        className: "object-cover",
-                                                        placeholder: "blur",
-                                                        blurDataURL: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-                                                    }, void 0, false, {
+                                                }, this) : null
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/GallerySection.tsx",
+                                            lineNumber: 680,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: `hidden sm:grid ${gridClass}`,
+                                            children: [
+                                                visibleAllSlice.map((image)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: tileClass,
+                                                        onClick: ()=>openLightboxAllEditions(image),
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10 flex flex-col justify-between p-2 sm:p-3",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex justify-end",
+                                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                            className: "px-2 py-0.5 bg-black/50 backdrop-blur-sm text-white text-[0.65rem] font-medium rounded-full",
+                                                                            children: [
+                                                                                "Édition ",
+                                                                                image.edition
+                                                                            ]
+                                                                        }, void 0, true, {
+                                                                            fileName: "[project]/components/GallerySection.tsx",
+                                                                            lineNumber: 706,
+                                                                            columnNumber: 27
+                                                                        }, this)
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/components/GallerySection.tsx",
+                                                                        lineNumber: 705,
+                                                                        columnNumber: 25
+                                                                    }, this),
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300",
+                                                                        children: [
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                className: "text-white font-medium text-xs mb-0",
+                                                                                children: [
+                                                                                    "Édition ",
+                                                                                    image.edition
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/components/GallerySection.tsx",
+                                                                                lineNumber: 711,
+                                                                                columnNumber: 27
+                                                                            }, this),
+                                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                                className: "text-white/80 text-[0.65rem]",
+                                                                                children: [
+                                                                                    "Photo ",
+                                                                                    image.id % 3 || 3
+                                                                                ]
+                                                                            }, void 0, true, {
+                                                                                fileName: "[project]/components/GallerySection.tsx",
+                                                                                lineNumber: 712,
+                                                                                columnNumber: 27
+                                                                            }, this)
+                                                                        ]
+                                                                    }, void 0, true, {
+                                                                        fileName: "[project]/components/GallerySection.tsx",
+                                                                        lineNumber: 710,
+                                                                        columnNumber: 25
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/components/GallerySection.tsx",
+                                                                lineNumber: 704,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/30 group-hover:bg-black/40 transition-all duration-300 z-0"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/GallerySection.tsx",
+                                                                lineNumber: 715,
+                                                                columnNumber: 23
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "relative w-full h-full",
+                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                                    src: image.src,
+                                                                    alt: image.alt,
+                                                                    fill: true,
+                                                                    sizes: "(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 20vw",
+                                                                    className: "object-cover",
+                                                                    placeholder: "blur",
+                                                                    blurDataURL: BLUR_DATA
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/components/GallerySection.tsx",
+                                                                    lineNumber: 717,
+                                                                    columnNumber: 25
+                                                                }, this)
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/components/GallerySection.tsx",
+                                                                lineNumber: 716,
+                                                                columnNumber: 23
+                                                            }, this)
+                                                        ]
+                                                    }, `all-${image.id}`, true, {
                                                         fileName: "[project]/components/GallerySection.tsx",
-                                                        lineNumber: 216,
+                                                        lineNumber: 699,
+                                                        columnNumber: 21
+                                                    }, this)),
+                                                hasMoreAllEditions ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "col-span-full flex justify-center pt-2",
+                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        type: "button",
+                                                        onClick: ()=>setVisibleAllEditionsCount((c)=>Math.min(c + PHOTOS_STEP, allEditionsImages.length)),
+                                                        className: "px-4 py-2 rounded-lg text-sm font-medium border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition-colors",
+                                                        children: [
+                                                            "Afficher plus (",
+                                                            allEditionsImages.length - visibleAllEditionsCount,
+                                                            " restantes)"
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/components/GallerySection.tsx",
+                                                        lineNumber: 731,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/GallerySection.tsx",
-                                                    lineNumber: 215,
+                                                    lineNumber: 730,
                                                     columnNumber: 21
-                                                }, this)
+                                                }, this) : null
                                             ]
-                                        }, image.id, true, {
+                                        }, void 0, true, {
                                             fileName: "[project]/components/GallerySection.tsx",
-                                            lineNumber: 198,
-                                            columnNumber: 19
-                                        }, this))
-                                }, void 0, false, {
+                                            lineNumber: 697,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
                                     fileName: "[project]/components/GallerySection.tsx",
-                                    lineNumber: 196,
+                                    lineNumber: 679,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/GallerySection.tsx",
-                            lineNumber: 194,
+                            lineNumber: 677,
                             columnNumber: 13
                         }, this),
-                        selectedImage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-3 sm:p-4",
-                            onClick: ()=>setSelectedImage(null),
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative w-full max-w-4xl max-h-[90vh] min-w-0",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        type: "button",
-                                        className: "absolute top-0 right-0 z-10 p-2 sm:p-0 sm:-top-10 sm:right-0 text-white hover:text-primary transition-colors rounded-lg sm:rounded-none bg-black/40 sm:bg-transparent",
-                                        "aria-label": "Fermer",
-                                        onClick: (e)=>{
-                                            e.stopPropagation();
-                                            setSelectedImage(null);
-                                        },
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                            xmlns: "http://www.w3.org/2000/svg",
-                                            className: "h-7 w-7 sm:h-8 sm:w-8",
-                                            fill: "none",
-                                            viewBox: "0 0 24 24",
-                                            stroke: "currentColor",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                strokeLinecap: "round",
-                                                strokeLinejoin: "round",
-                                                strokeWidth: 2,
-                                                d: "M6 18L18 6M6 6l12 12"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/GallerySection.tsx",
-                                                lineNumber: 248,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/GallerySection.tsx",
-                                            lineNumber: 247,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/GallerySection.tsx",
-                                        lineNumber: 238,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "relative w-full h-0 pb-[75%] bg-gray-800 rounded-lg overflow-hidden mt-10 sm:mt-0",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                            src: selectedImage.src,
-                                            alt: selectedImage.alt,
-                                            fill: true,
-                                            className: "object-contain",
-                                            placeholder: "blur",
-                                            blurDataURL: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/GallerySection.tsx",
-                                            lineNumber: 252,
-                                            columnNumber: 17
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/GallerySection.tsx",
-                                        lineNumber: 251,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mt-3 sm:mt-4 text-center text-white px-2",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm sm:text-base font-medium",
-                                                children: [
-                                                    "Édition ",
-                                                    selectedImage.edition
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/components/GallerySection.tsx",
-                                                lineNumber: 262,
-                                                columnNumber: 17
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-white/70 text-xs sm:text-sm",
-                                                children: [
-                                                    "Photo ",
-                                                    selectedImage.id % 3 || 3
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/components/GallerySection.tsx",
-                                                lineNumber: 263,
-                                                columnNumber: 17
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/GallerySection.tsx",
-                                        lineNumber: 261,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/GallerySection.tsx",
-                                lineNumber: 237,
-                                columnNumber: 13
-                            }, this)
+                        lightbox ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(GalleryLightbox, {
+                            state: lightbox,
+                            setLightbox: setLightbox,
+                            onClose: ()=>setLightbox(null)
                         }, void 0, false, {
                             fileName: "[project]/components/GallerySection.tsx",
-                            lineNumber: 233,
-                            columnNumber: 11
-                        }, this)
+                            lineNumber: 751,
+                            columnNumber: 13
+                        }, this) : null
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/GallerySection.tsx",
-                    lineNumber: 129,
+                    lineNumber: 571,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/components/GallerySection.tsx",
-            lineNumber: 58,
+            lineNumber: 500,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/GallerySection.tsx",
-        lineNumber: 57,
+        lineNumber: 499,
         columnNumber: 5
     }, this);
 }
-_s(GallerySection, "1lX1112cqya83/7mD/ckTHxp9IQ=");
-_c = GallerySection;
-var _c;
-__turbopack_context__.k.register(_c, "GallerySection");
+_s2(GallerySection, "oMtPqd7k717ZW4YuwJXuVvV5w5Y=");
+_c2 = GallerySection;
+var _c, _c1, _c2;
+__turbopack_context__.k.register(_c, "AlbumStack");
+__turbopack_context__.k.register(_c1, "GalleryLightbox");
+__turbopack_context__.k.register(_c2, "GallerySection");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

@@ -1,12 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import Script from "next/script"
 import { Poppins, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import WhatsAppButton from "@/components/WhatsAppButton"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import AdsterraSlot from "@/components/AdsterraSlot"
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-sans" })
 const inter = Inter({ subsets: ["latin"], variable: "--font-mono" })
@@ -29,6 +29,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const adsterraMidContainerId = process.env.NEXT_PUBLIC_ADSTERRA_MID_CONTAINER_ID
+  const adsterraMidScriptSrc = process.env.NEXT_PUBLIC_ADSTERRA_MID_SCRIPT_SRC
+
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={`${poppins.variable} ${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
@@ -38,6 +41,11 @@ export default function RootLayout({
           </header>
           <main className="flex-grow print:min-h-0 print:flex-none">
             {children}
+            {adsterraMidContainerId && adsterraMidScriptSrc ? (
+              <div className="print:hidden mt-6">
+                <AdsterraSlot containerId={adsterraMidContainerId} scriptSrc={adsterraMidScriptSrc} />
+              </div>
+            ) : null}
           </main>
           <footer className="w-full mt-auto print:hidden">
             <Footer />
@@ -46,12 +54,9 @@ export default function RootLayout({
             <WhatsAppButton />
           </div>
           <div className="print:hidden">
-            <div id="container-079b172066bdbf0435820f6f662228f0" />
-            <Script
-              async
-              data-cfasync="false"
-              src="https://pl29334649.profitablecpmratenetwork.com/079b172066bdbf0435820f6f662228f0/invoke.js"
-              strategy="afterInteractive"
+            <AdsterraSlot
+              containerId="container-079b172066bdbf0435820f6f662228f0"
+              scriptSrc="https://pl29334649.profitablecpmratenetwork.com/079b172066bdbf0435820f6f662228f0/invoke.js"
             />
           </div>
           <Analytics />
