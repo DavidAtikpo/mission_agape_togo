@@ -29,9 +29,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const adsterraMidContainerId = process.env.NEXT_PUBLIC_ADSTERRA_MID_CONTAINER_ID
-  const adsterraMidScriptSrc = process.env.NEXT_PUBLIC_ADSTERRA_MID_SCRIPT_SRC
-
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className={`${poppins.variable} ${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
@@ -41,23 +38,12 @@ export default function RootLayout({
           </header>
           <main className="flex-grow print:min-h-0 print:flex-none">
             {children}
-            {adsterraMidContainerId && adsterraMidScriptSrc ? (
-              <div className="print:hidden mt-6">
-                <AdsterraSlot containerId={adsterraMidContainerId} scriptSrc={adsterraMidScriptSrc} />
-              </div>
-            ) : null}
           </main>
           <footer className="w-full mt-auto print:hidden">
             <Footer />
           </footer>
           <div className="print:hidden">
             <WhatsAppButton />
-          </div>
-          <div className="print:hidden">
-            <AdsterraSlot
-              containerId="container-079b172066bdbf0435820f6f662228f0"
-              scriptSrc="https://pl29334649.profitablecpmratenetwork.com/079b172066bdbf0435820f6f662228f0/invoke.js"
-            />
           </div>
           <Analytics />
         </div>
