@@ -1,10 +1,10 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { headers } from "next/headers"
+import Script from "next/script"
 import { Poppins, Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-import WhatsAppButton from "@/components/WhatsAppButton"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 
@@ -55,9 +55,15 @@ export default async function RootLayout({
             </footer>
           ) : null}
           {!isAdmin ? (
-            <div className="print:hidden">
-              <WhatsAppButton />
-            </div>
+            <>
+              <Script id="chatagent-boot" strategy="beforeInteractive">
+                {`window.ChatAgentBoot = { key: "wk_63b6395f204d4385a9532999", api: "https://chatagentapi.onrender.com/api/v1" };`}
+              </Script>
+              <Script
+                src="https://chatagentcides.qrthecode2.com/widget.js"
+                strategy="afterInteractive"
+              />
+            </>
           ) : null}
           <Analytics />
         </div>
