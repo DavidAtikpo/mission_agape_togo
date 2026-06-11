@@ -1,189 +1,167 @@
-import { ArrowLeft, Calendar, CheckCircle, Clock, Users, MapPin, BookOpen, Globe, Users2, MessageCircle, Lightbulb, Cross, Megaphone, Wind, Church, MessageSquare } from "lucide-react"
+import { ArrowLeft, Calendar, CheckCircle, Clock, Users, MapPin, BookOpen, Globe, Users2, MessageCircle, Lightbulb, Cross, Church } from "lucide-react"
 import Link from "next/link"
 // import Edition14Gallery from "@/components/Edition14Gallery"
 
-export default function BibleInductive() {
+export default function FormationEnCours() {
   const courses = [
     {
-      title: "Fondements bibliques de l'évangélisation",
+      title: "Fondements bibliques du discipolat",
       icon: <BookOpen className="w-6 h-6 text-blue-600" />,
-      description: "Comprendre les bases bibliques de la mission évangélique"
+      description: "Comprendre le modèle de Jésus-Christ pour former des disciples"
     },
     {
-      title: "L'appel à l'évangélisation",
-      icon: <MessageCircle className="w-6 h-6 text-green-600" />,
-      description: "Découvrir son appel personnel dans la mission"
-    },
-    {
-      title: "La personne de l'évangéliste",
-      icon: <Users className="w-6 h-6 text-purple-600" />,
-      description: "Développer le caractère et les compétences nécessaires"
-    },
-    {
-      title: "L'évangile de Jésus-Christ",
+      title: "Vie de disciple",
       icon: <Cross className="w-6 h-6 text-red-600" />,
-      description: "Maîtriser le message central de l'évangile"
+      description: "Grandir dans la foi, la prière et l'obéissance à la Parole"
     },
     {
-      title: "L'évangélisation personnelle",
-      icon: <Users2 className="w-6 h-6 text-amber-600" />,
-      description: "Apprendre à partager sa foi au quotidien"
+      title: "Accompagnement personnel",
+      icon: <Users className="w-6 h-6 text-purple-600" />,
+      description: "Apprendre à marcher aux côtés de nouveaux croyants"
     },
     {
-      title: "L'évangélisation de masse",
-      icon: <Megaphone className="w-6 h-6 text-orange-600" />,
-      description: "Organiser et animer des campagnes d'évangélisation"
-    },
-    {
-      title: "L'évangélisation interculturelle",
-      icon: <Globe className="w-6 h-6 text-cyan-600" />,
-      description: "Adapter son approche à différents contextes culturels"
-    },
-    {
-      title: "L'évangélisation et le Saint-Esprit",
-      icon: <Wind className="w-6 h-6 text-blue-400" />,
-      description: "La dimension spirituelle de l'évangélisation"
-    },
-    {
-      title: "Le discipolat",
+      title: "Formation au leadership",
       icon: <Users2 className="w-6 h-6 text-green-600" />,
-      description: "Accompagner les nouveaux croyants dans leur foi"
+      description: "Développer le caractère et la responsabilité du serviteur"
     },
     {
-      title: "L'implantation d'églises",
-      icon: <Church className="w-6 h-6 text-purple-600" />,
-      description: "Stratégies pour fonder de nouvelles communautés"
+      title: "Étude biblique approfondie",
+      icon: <BookOpen className="w-6 h-6 text-amber-600" />,
+      description: "Approfondir les Écritures pour enseigner et transmettre"
     },
     {
-      title: "La prière et le jeûne",
-      icon: <MessageCircle className="w-6 h-6 text-indigo-600" />,
-      description: "La dimension spirituelle du ministère"
+      title: "Mission et service",
+      icon: <Globe className="w-6 h-6 text-cyan-600" />,
+      description: "Mettre le discipolat au service de l'évangélisation"
     },
     {
-      title: "La gestion des objections",
-      icon: <MessageSquare className="w-6 h-6 text-rose-600" />,
-      description: "Répondre aux questions difficiles sur la foi"
+      title: "Vie communautaire",
+      icon: <Church className="w-6 h-6 text-indigo-600" />,
+      description: "Vivre la fraterné et l'édification dans le corps de Christ"
     },
     {
-      title: "L'évangélisation créative",
+      title: "Prière et jeûne",
+      icon: <MessageCircle className="w-6 h-6 text-rose-600" />,
+      description: "Cultiver une vie spirituelle forte au quotidien"
+    },
+    {
+      title: "Transmission de la foi",
       icon: <Lightbulb className="w-6 h-6 text-yellow-500" />,
-      description: "Méthodes innovantes pour partager l'évangile"
+      description: "Former d'autres disciples selon le modèle reçu"
     }
   ]
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-background to-blue-50/30">
-      {/* Back Button */}
-      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-3 md:pt-6">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6 py-3 sm:py-4 pb-6">
         <Link
           href="/ecoles"
-          className="inline-flex items-center gap-1.5 md:gap-2 text-sm md:text-base text-primary hover:text-primary/80 transition mb-4 md:mb-8"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-primary hover:text-primary/80 transition mb-3"
         >
-          <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 shrink-0" />
+          <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
           Retour aux formations
         </Link>
-      </div>
 
-      {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-5 md:py-9">
-        <div className="space-y-3 md:space-y-5">
-          <div className="flex flex-wrap items-center gap-2 md:gap-4">
-            <div className="text-2xl md:text-4xl leading-none" aria-hidden>
-              📖
+        {/* Hero */}
+        <div className="space-y-2 mb-4">
+          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <div className="text-xl sm:text-2xl leading-none" aria-hidden>
+              ✝️
             </div>
-            <div className="flex flex-wrap gap-1.5 md:gap-2">
-              <span className="inline-flex items-center gap-1 bg-emerald-100 text-emerald-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full">
-                <Clock className="w-3 h-3 md:w-4 md:h-4 shrink-0" />
-                Formation terminée
+            <div className="flex flex-wrap gap-1.5">
+              <span className="inline-flex items-center gap-1 bg-green-100 text-green-800 text-[10px] sm:text-xs font-medium px-2 py-0.5 rounded-full">
+                <Clock className="w-3 h-3 shrink-0" />
+                Inscriptions ouvertes
               </span>
-              <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full">
-                <Calendar className="w-3 h-3 md:w-4 md:h-4 shrink-0" />
-                Prochaine rentrée : 5 septembre 2026
+              <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-[10px] sm:text-xs font-medium px-2 py-0.5 rounded-full">
+                <Calendar className="w-3 h-3 shrink-0" />
+                Rentrée le 5 septembre 2026
               </span>
-              {/* <span className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-xs md:text-sm font-medium px-2 py-0.5 md:px-3 md:py-1 rounded-full">
-                <Calendar className="w-3 h-3 md:w-4 md:h-4 shrink-0" />
-                Reprise le 4 janvier 2026
-              </span> */}
             </div>
           </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary leading-tight">
-            École d'Évangélisation 2025-2026
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary leading-tight">
+            École de Discipolat
           </h1>
-          <p className="text-sm sm:text-base md:text-[1.05rem] text-foreground/80 leading-relaxed max-w-4xl">
-            Connaitre Dieu pour mieux le servir.
+          <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed max-w-3xl">
+            Une formation pour grandir comme disciple de Jésus-Christ et apprendre à en former d&apos;autres,
+            selon le modèle de la Mission Agapé Togo.
           </p>
+          <Link
+            href="/inscription"
+            className="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm bg-green-600 text-white rounded-md font-semibold hover:bg-green-700 transition"
+          >
+            S&apos;inscrire maintenant
+          </Link>
         </div>
-      </section>
 
-      {/* Content */}
-      <section className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 py-5 md:py-9 space-y-7 md:space-y-10 pb-10 md:pb-12">
-        {/* Current Status */}
-        <div className="bg-white rounded-lg md:rounded-xl shadow-md p-4 sm:p-5 md:p-6 border border-blue-100">
-          <h2 className="text-base sm:text-lg md:text-xl font-bold text-primary mb-3 md:mb-4 flex items-center gap-2">
-            <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-green-500 shrink-0" />
-            État actuel de la formation
+        {/* Prochaine session */}
+        <div className="bg-white rounded-lg shadow-sm p-3 sm:p-4 border border-blue-100 mb-4">
+          <h2 className="text-sm sm:text-base font-bold text-primary mb-2 flex items-center gap-1.5">
+            <CheckCircle className="w-4 h-4 text-green-500 shrink-0" />
+            Prochaine session
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-4 md:gap-8">
-            <div className="space-y-4 md:space-y-6">
+          <div className="grid md:grid-cols-2 gap-3">
+            <div className="space-y-3">
               <div>
-                <h3 className="text-sm md:text-base font-semibold text-foreground/90 mb-1.5 md:mb-2">
-                  Phase théorique terminée
+                <h3 className="text-xs sm:text-sm font-semibold text-foreground/90 mb-1">
+                  Objectifs de la formation
                 </h3>
-                <div className="space-y-1.5 md:space-y-2 text-sm md:text-base text-foreground/70">
-                  <p className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>3 mois de formation intensive en salle</span>
+                <div className="space-y-1 text-xs sm:text-sm text-foreground/70">
+                  <p className="flex items-start gap-1.5">
+                    <CheckCircle className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Approfondir sa vie de disciple de Jésus-Christ</span>
                   </p>
-                  <p className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Enseignements bibliques fondamentaux</span>
+                  <p className="flex items-start gap-1.5">
+                    <CheckCircle className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Acquérir une solide fondation biblique</span>
                   </p>
-                  <p className="flex items-start gap-2">
-                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Ateliers pratiques d'évangélisation</span>
+                  <p className="flex items-start gap-1.5">
+                    <CheckCircle className="w-3.5 h-3.5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span>Apprendre à accompagner et former d&apos;autres disciples</span>
                   </p>
                 </div>
               </div>
 
               <div>
-                <h3 className="text-sm md:text-base font-semibold text-foreground/90 mb-1.5 md:mb-2">Statut</h3>
-                <p className="text-xs md:text-sm text-emerald-700 bg-emerald-50 p-3 md:p-4 rounded-lg border border-emerald-100 leading-relaxed">
-                  L’école de cette année est déjà finie.
+                <h3 className="text-xs sm:text-sm font-semibold text-foreground/90 mb-1">Inscriptions</h3>
+                <p className="text-[0.65rem] sm:text-xs text-green-800 bg-green-50 p-2 sm:p-2.5 rounded-md border border-green-100 leading-relaxed">
+                  L&apos;école de discipolat commence le <strong>5 septembre 2026</strong>. Les inscriptions sont
+                  ouvertes dès maintenant.
                 </p>
               </div>
             </div>
 
-            <div className="bg-blue-50 p-4 md:p-6 rounded-lg border border-blue-100">
-              <h3 className="text-sm md:text-base font-semibold text-foreground/90 mb-3 md:mb-4">Prochaine rentrée</h3>
-              <div className="space-y-3 md:space-y-4">
-                <div className="flex items-start gap-2 md:gap-3">
-                  <div className="bg-blue-100 p-1.5 md:p-2 rounded-md md:rounded-lg text-blue-600 shrink-0">
-                    <Calendar className="w-4 h-4 md:w-5 md:h-5" />
+            <div className="bg-blue-50 p-2.5 sm:p-3 rounded-md border border-blue-100">
+              <h3 className="text-xs sm:text-sm font-semibold text-foreground/90 mb-2">Informations pratiques</h3>
+              <div className="space-y-2">
+                <div className="flex items-start gap-2">
+                  <div className="bg-blue-100 p-1 rounded text-blue-600 shrink-0">
+                    <Calendar className="w-3.5 h-3.5" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm md:text-base font-medium">Date</p>
-                    <p className="text-foreground/70 text-xs md:text-sm">5 septembre 2026</p>
+                    <p className="text-xs sm:text-sm font-medium">Date de rentrée</p>
+                    <p className="text-foreground/70 text-[0.65rem] sm:text-xs">5 septembre 2026</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2 md:gap-3">
-                  <div className="bg-blue-100 p-1.5 md:p-2 rounded-md md:rounded-lg text-blue-600 shrink-0">
-                    <Users className="w-4 h-4 md:w-5 md:h-5" />
+                <div className="flex items-start gap-2">
+                  <div className="bg-blue-100 p-1 rounded text-blue-600 shrink-0">
+                    <Users className="w-3.5 h-3.5" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm md:text-base font-medium">École</p>
-                    <p className="text-foreground/70 text-xs md:text-sm">Évangélisation</p>
+                    <p className="text-xs sm:text-sm font-medium">École</p>
+                    <p className="text-foreground/70 text-[0.65rem] sm:text-xs">Discipolat</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2 md:gap-3">
-                  <div className="bg-blue-100 p-1.5 md:p-2 rounded-md md:rounded-lg text-blue-600 shrink-0">
-                    <MapPin className="w-4 h-4 md:w-5 md:h-5" />
+                <div className="flex items-start gap-2">
+                  <div className="bg-blue-100 p-1 rounded text-blue-600 shrink-0">
+                    <MapPin className="w-3.5 h-3.5" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-sm md:text-base font-medium">Lieu</p>
-                    <p className="text-foreground/70 text-xs md:text-sm">Aného, Togo</p>
+                    <p className="text-xs sm:text-sm font-medium">Lieu</p>
+                    <p className="text-foreground/70 text-[0.65rem] sm:text-xs">Aného, Togo</p>
                   </div>
                 </div>
               </div>
@@ -192,47 +170,44 @@ export default function BibleInductive() {
         </div>
 
         {/* Thèmes des cours */}
-        <div>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-3 md:mb-5">
-            Thèmes des cours (13 modules)
+        <div className="mb-4">
+          <h2 className="text-sm sm:text-base font-bold text-primary mb-2">
+            Thèmes des cours
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-2.5">
             {courses.map((course, index) => (
               <div
                 key={index}
-                className="border border-primary/20 rounded-lg p-3 sm:p-4 md:p-6 bg-white shadow-sm hover:shadow-md transition-shadow"
+                className="border border-primary/20 rounded-md p-2.5 sm:p-3 bg-white shadow-sm hover:shadow transition-shadow"
               >
-                <div className="flex items-start gap-2 md:gap-3 mb-2 md:mb-3">
-                  <div className="p-1.5 md:p-2 bg-primary/10 rounded-lg shrink-0 [&_svg]:w-5 [&_svg]:h-5 md:[&_svg]:w-6 md:[&_svg]:h-6">
+                <div className="flex items-start gap-2 mb-1">
+                  <div className="p-1 bg-primary/10 rounded shrink-0 [&_svg]:w-4 [&_svg]:h-4">
                     {course.icon}
                   </div>
-                  <h3 className="font-bold text-primary text-sm sm:text-base leading-snug">{course.title}</h3>
+                  <h3 className="font-bold text-primary text-xs sm:text-sm leading-snug">{course.title}</h3>
                 </div>
-                <p className="text-foreground/70 text-xs md:text-sm leading-relaxed">{course.description}</p>
+                <p className="text-foreground/70 text-[0.65rem] sm:text-xs leading-relaxed">{course.description}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Galerie de la 14e édition */}
-        {/* <Edition14Gallery /> */}
-
         {/* CTA */}
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 pt-3 md:pt-6">
+        <div className="flex flex-col sm:flex-row gap-2 pt-1">
           <Link
             href="/inscription"
-            className="px-5 py-2.5 md:px-8 md:py-3 text-sm md:text-base bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition text-center"
+            className="px-4 py-2 text-xs sm:text-sm bg-green-600 text-white rounded-md font-semibold hover:bg-green-700 transition text-center"
           >
-            Rejoindre le prochain cycle
+            S&apos;inscrire maintenant
           </Link>
           <Link
             href="/ecoles"
-            className="px-5 py-2.5 md:px-8 md:py-3 text-sm md:text-base border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition text-center"
+            className="px-4 py-2 text-xs sm:text-sm border border-primary text-primary rounded-md font-semibold hover:bg-primary/5 transition text-center"
           >
             Retour aux écoles
           </Link>
         </div>
-      </section>
+      </div>
     </main>
   )
 }

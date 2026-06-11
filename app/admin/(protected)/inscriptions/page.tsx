@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import prisma from '@/lib/prisma'
+import { DeleteInscriptionButton } from '@/components/admin/DeleteInscriptionButton'
 
 function statusBadgeClass(status: string) {
   switch (status) {
@@ -10,6 +11,10 @@ function statusBadgeClass(status: string) {
     default:
       return 'bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-200'
   }
+}
+
+function statusText(status: string) {
+  return status === 'NOUVELLE' ? 'Nouvelle' : status === 'EN_COURS' ? 'En cours' : 'Traitée'
 }
 
 export default async function AdminInscriptionsPage() {
@@ -29,75 +34,74 @@ export default async function AdminInscriptionsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-foreground mb-2">Inscriptions</h1>
-      <p className="text-sm text-muted-foreground mb-6">
+      <h1 className="text-xl sm:text-2xl font-bold text-foreground mb-1 sm:mb-2">Inscriptions</h1>
+      <p className="text-xs sm:text-sm text-muted-foreground mb-4">
         {rows.length} dossier{rows.length !== 1 ? 's' : ''} enregistré{rows.length !== 1 ? 's' : ''}
       </p>
 
-      <div className="rounded-lg border bg-card overflow-x-auto">
-        <table className="w-full text-sm min-w-[640px]">
-          <thead>
-            <tr className="border-b bg-muted/50 text-left">
-              <th className="p-3 font-medium">Date</th>
-              <th className="p-3 font-medium">Nom</th>
-              <th className="p-3 font-medium">Email</th>
-              <th className="p-3 font-medium">Téléphone</th>
-              <th className="p-3 font-medium">Formation</th>
-              <th className="p-3 font-medium">Statut</th>
-              <th className="p-3 font-medium w-24"></th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.length === 0 ? (
-              <tr>
-                <td colSpan={7} className="p-8 text-center text-muted-foreground">
-                  Aucune inscription pour le moment.
-                </td>
-              </tr>
-            ) : (
-              rows.map((r) => (
-                <tr key={r.id} className="border-b last:border-0 hover:bg-muted/30">
-                  <td className="p-3 whitespace-nowrap text-muted-foreground">
-                    {new Intl.DateTimeFormat('fr-FR', {
-                      dateStyle: 'short',
-                      timeStyle: 'short',
-                    }).format(r.createdAt)}
-                  </td>
-                  <td className="p-3 font-medium">
-                    {r.prenom} {r.nom}
-                  </td>
-                  <td className="p-3">
-                    <a href={`mailto:${r.email}`} className="text-primary hover:underline break-all">
-                      {r.email}
-                    </a>
-                  </td>
-                  <td className="p-3 whitespace-nowrap">
-                    <a href={`tel:${r.telephone.replace(/\s/g, '')}`} className="hover:underline">
-                      {r.telephone}
-                    </a>
-                  </td>
-                  <td className="p-3 max-w-[140px] truncate" title={r.formationSouhaitee ?? ''}>
-                    {r.formationSouhaitee ?? '—'}
-                  </td>
-                  <td className="p-3">
-                    <span className={`inline-flex rounded-full px-2 py-0.5 text-xs font-medium ${statusBadgeClass(r.status)}`}>
-                      {r.status === 'NOUVELLE' ? 'Nouvelle' : r.status === 'EN_COURS' ? 'En cours' : 'Traitée'}
-                    </span>
-                  </td>
-                  <td className="p-3">
+      {rows.length === 0 ? (
+        <div className="rounded-lg border p-6 text-center text-sm text-muted-foreground">
+          Aucune inscription pour le moment.
+        </div>
+      ) : (
+        <ul className="rounded-lg border divide-y">
+          {rows.map((r) => {
+            const dateLabel = new Intl.DateTimeFormat('fr-FR', {
+              dateStyle: 'short',
+              timeStyle: 'short',
+            }).format(r.createdAt)
+
+            return (
+              <li key={r.id} className="p-3 hover:bg-muted/20">
+                <div className="flex flex-col gap-2 lg:flex-row lg:items-start lg:justify-between lg:gap-4">
+                  <div className="min-w-0 flex-1 space-y-1">
+                    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <p className="font-semibold text-sm">
+                        {r.prenom} {r.nom}
+                      </p>
+                      <span
+                        className={`inline-flex rounded-full px-2 py-0.5 text-[10px] font-medium ${statusBadgeClass(r.status)}`}
+                      >
+                        {statusText(r.status)}
+                      </span>
+                      <span className="text-[10px] sm:text-xs text-muted-foreground">{dateLabel}</span>
+                    </div>
+
+                    <div className="text-xs text-muted-foreground space-y-0.5 break-words">
+                      <p>
+                        <span className="text-foreground/60">Email : </span>
+                        <a href={`mailto:${r.email}`} className="text-primary hover:underline break-all">
+                          {r.email}
+                        </a>
+                      </p>
+                      <p>
+                        <span className="text-foreground/60">Tél. : </span>
+                        <a href={`tel:${r.telephone.replace(/\s/g, '')}`} className="hover:underline">
+                          {r.telephone}
+                        </a>
+                      </p>
+                      <p>
+                        <span className="text-foreground/60">Formation : </span>
+                        {r.formationSouhaitee ?? '—'}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 shrink-0 lg:pt-0.5">
                     <Link
                       href={`/admin/inscriptions/${r.id}`}
-                      className="text-primary font-medium hover:underline whitespace-nowrap"
+                      className="inline-flex items-center rounded-md border border-primary px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/10"
                     >
                       Détails
                     </Link>
-                  </td>
-                </tr>
-              ))
-            )}
-          </tbody>
-        </table>
-      </div>
+                    <DeleteInscriptionButton id={r.id} label={`${r.prenom} ${r.nom}`} variant="table" />
+                  </div>
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      )}
     </div>
   )
 }

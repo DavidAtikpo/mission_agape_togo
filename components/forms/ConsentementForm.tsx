@@ -20,9 +20,11 @@ interface ConsentementFormData {
 }
 
 interface ConsentementFormProps {
-  onSubmit: (data: ConsentementFormData) => void;
+  onSubmit: (data: ConsentementFormData) => void | Promise<void>;
   /** Champs repris du formulaire d’inscription (évite de resaisir identité / coordonnées) */
   prefillFromInscription?: Record<string, unknown>;
+  formId?: string;
+  hideSubmitButton?: boolean;
 }
 
 function buildConsentPrefill(ins: Record<string, unknown> | undefined): Partial<{
@@ -56,7 +58,12 @@ function buildConsentPrefill(ins: Record<string, unknown> | undefined): Partial<
   return out;
 }
 
-export default function ConsentementForm({ onSubmit, prefillFromInscription }: ConsentementFormProps) {
+export default function ConsentementForm({
+  onSubmit,
+  prefillFromInscription,
+  formId = 'consentement-form',
+  hideSubmitButton = false,
+}: ConsentementFormProps) {
   const [formData, setFormData] = useState({
     nomComplet: '',
     dateNaissance: '',
@@ -89,28 +96,27 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.accepteReglement) {
       alert('Veuillez accepter le règlement intérieur pour continuer');
       return;
     }
-    onSubmit(formData as ConsentementFormData);
-    alert('Décharge de consentement enregistrée avec succès !');
+    await onSubmit(formData as ConsentementFormData);
   };
 
   return (
-    <div className="space-y-4 md:space-y-6">
-      <div className="border-b border-gray-200 pb-3 md:pb-4">
-        <h3 className="text-base md:text-lg font-medium text-foreground">
+    <div className="space-y-3">
+      <div className="border-b border-gray-200 pb-2">
+        <h3 className="text-sm font-medium text-foreground">
           Décharge de Consentement et d'Engagement
         </h3>
-        <p className="text-xs md:text-sm text-foreground/70 mt-1">
+        <p className="text-xs text-foreground/70 mt-0.5">
           Mission Agape - École de Formation et de Discipolat Missionnaire
         </p>
       </div>
 
-      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 md:p-4 mb-4 md:mb-6">
+      <div className="bg-yellow-50 border-l-4 border-yellow-400 p-2.5 mb-3">
         <div className="flex gap-2">
           <div className="flex-shrink-0">
             <svg className="h-4 w-4 md:h-5 md:w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -118,23 +124,23 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
             </svg>
           </div>
           <div className="min-w-0">
-            <p className="text-xs md:text-sm text-yellow-700 leading-snug">
+            <p className="text-xs text-yellow-700 leading-snug">
               <strong>Note importante :</strong> Cette décharge est un document légal. Veuillez la lire attentivement avant de signer.
             </p>
           </div>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5 md:space-y-8">
+      <form id={formId} onSubmit={handleSubmit} className="space-y-3">
         {/* Informations Personnelles */}
-        <div className="space-y-4 md:space-y-6">
-          <h4 className="text-sm md:text-base font-medium text-foreground border-b pb-2">
+        <div className="space-y-3">
+          <h4 className="text-sm font-medium text-foreground border-b pb-1.5">
             Informations Personnelles
           </h4>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="nomComplet" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="nomComplet" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Nom et prénoms complets *
               </label>
               <input
@@ -143,14 +149,14 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                 name="nomComplet"
                 value={formData.nomComplet}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div className="grid grid-cols-2 gap-2 sm:gap-4">
               <div>
-                <label htmlFor="dateNaissance" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+                <label htmlFor="dateNaissance" className="block text-xs font-medium text-foreground/80 mb-0.5">
                   Date de naissance *
                 </label>
                 <input
@@ -159,12 +165,12 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                   name="dateNaissance"
                   value={formData.dateNaissance}
                   onChange={handleChange}
-                  className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="lieuNaissance" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+                <label htmlFor="lieuNaissance" className="block text-xs font-medium text-foreground/80 mb-0.5">
                   Lieu de naissance *
                 </label>
                 <input
@@ -173,14 +179,14 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                   name="lieuNaissance"
                   value={formData.lieuNaissance}
                   onChange={handleChange}
-                  className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                   required
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="adresse" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="adresse" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Adresse complète *
               </label>
               <input
@@ -189,14 +195,14 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                 name="adresse"
                 value={formData.adresse}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div className="grid grid-cols-2 gap-2 sm:gap-4">
               <div>
-                <label htmlFor="telephone" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+                <label htmlFor="telephone" className="block text-xs font-medium text-foreground/80 mb-0.5">
                   Téléphone *
                 </label>
                 <input
@@ -205,12 +211,12 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                   name="telephone"
                   value={formData.telephone}
                   onChange={handleChange}
-                  className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+                <label htmlFor="email" className="block text-xs font-medium text-foreground/80 mb-0.5">
                   Email *
                 </label>
                 <input
@@ -219,7 +225,7 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                   required
                 />
               </div>
@@ -228,14 +234,14 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
         </div>
 
         {/* Responsable Légal (si mineur) */}
-        <div className="space-y-4 md:space-y-6 pt-4 md:pt-6 border-t border-gray-200">
-          <h4 className="text-sm md:text-base font-medium text-foreground">
+        <div className="space-y-3 pt-3 border-t border-gray-200">
+          <h4 className="text-sm font-medium text-foreground">
             Responsable Légal (si participant mineur)
           </h4>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="responsableLegal" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="responsableLegal" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Nom et prénoms du responsable légal
               </label>
               <input
@@ -244,12 +250,12 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                 name="responsableLegal"
                 value={formData.responsableLegal}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
 
             <div>
-              <label htmlFor="telephoneResponsable" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="telephoneResponsable" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Téléphone du responsable
               </label>
               <input
@@ -258,17 +264,17 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                 name="telephoneResponsable"
                 value={formData.telephoneResponsable}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
           </div>
         </div>
 
         {/* Engagements et Consentements */}
-        <div className="space-y-4 md:space-y-6 pt-4 md:pt-6 border-t border-gray-200">
-          <h4 className="text-sm md:text-base font-medium text-foreground">Engagements et Consentements</h4>
+        <div className="space-y-3 pt-3 border-t border-gray-200">
+          <h4 className="text-sm font-medium text-foreground">Engagements et Consentements</h4>
 
-          <div className="space-y-3 md:space-y-4">
+          <div className="space-y-2">
             <div className="flex items-start gap-2">
               <div className="flex items-center h-5 shrink-0">
                 <input
@@ -281,7 +287,7 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                   required
                 />
               </div>
-              <div className="min-w-0 text-xs md:text-sm">
+              <div className="min-w-0 text-xs">
                 <label htmlFor="accepteReglement" className="font-medium text-foreground/80">
                   J'accepte le règlement intérieur de l'école *
                 </label>
@@ -302,7 +308,7 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                   className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
                 />
               </div>
-              <div className="min-w-0 text-xs md:text-sm">
+              <div className="min-w-0 text-xs">
                 <label htmlFor="autoriseUtilisationImage" className="font-medium text-foreground/80">
                   Autorisation d'utilisation de l'image
                 </label>
@@ -312,14 +318,14 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
               </div>
             </div>
 
-            <div className="bg-gray-50 p-3 md:p-4 rounded-md">
-              <h5 className="text-xs md:text-sm font-medium text-foreground/80 mb-1.5 md:mb-2">
+            <div className="bg-gray-50 p-2.5 rounded-md">
+              <h5 className="text-xs font-medium text-foreground/80 mb-1">
                 Décharge de responsabilité :
               </h5>
-              <p className="text-xs md:text-sm text-foreground/70 mb-3 md:mb-4 leading-relaxed">
+              <p className="text-xs text-foreground/70 mb-2 leading-relaxed">
                 Je déclare que les informations fournies sont exactes et complètes. Je comprends que toute fausse déclaration peut entraîner l'annulation de mon inscription. Je m'engage à participer activement à la formation et à respecter les valeurs chrétiennes de l'école.
               </p>
-              <p className="text-xs md:text-sm text-foreground/70 leading-relaxed">
+              <p className="text-xs text-foreground/70 leading-relaxed">
                 Je reconnais avoir pris connaissance du programme, des conditions de formation et des modalités de paiement. Je m'engage à respecter les règles de l'école et à m'acquitter des frais de formation selon les modalités convenues.
               </p>
             </div>
@@ -327,10 +333,10 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
         </div>
 
         {/* Signature */}
-        <div className="space-y-4 md:space-y-6 pt-4 md:pt-6 border-t border-gray-200">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div className="space-y-3 pt-3 border-t border-gray-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="lieuDate" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="lieuDate" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Fait à (ville) *
               </label>
               <input
@@ -339,12 +345,12 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                 name="lieuDate"
                 value="Lomé"
                 readOnly
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm bg-gray-50"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm bg-gray-50"
               />
             </div>
 
             <div>
-              <label htmlFor="date" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="date" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Le *
               </label>
               <input
@@ -353,13 +359,13 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                 name="date"
                 value={formData.date}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div className="md:col-span-2">
-              <label htmlFor="signature" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="signature" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Signature (tapez votre nom complet) *
               </label>
               <input
@@ -369,22 +375,24 @@ export default function ConsentementForm({ onSubmit, prefillFromInscription }: C
                 value={formData.signature}
                 onChange={handleChange}
                 placeholder="Votre nom complet comme signature"
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
           </div>
         </div>
 
-        <div className="pt-4 md:pt-6 border-t border-gray-200 flex justify-end">
-          <Button
-            type="submit"
-            className="bg-primary hover:bg-primary/90 h-8 text-xs md:h-10 md:text-sm px-4 md:px-6"
-            disabled={!formData.accepteReglement}
-          >
-            Valider et signer la décharge
-          </Button>
-        </div>
+        {!hideSubmitButton ? (
+          <div className="pt-3 border-t border-gray-200 flex justify-end">
+            <Button
+              type="submit"
+              className="bg-primary hover:bg-primary/90 h-8 text-xs px-4"
+              disabled={!formData.accepteReglement}
+            >
+              Continuer
+            </Button>
+          </div>
+        ) : null}
       </form>
     </div>
   );

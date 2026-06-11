@@ -138,6 +138,34 @@
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
+
+  body * {
+    visibility: hidden;
+  }
+
+  #inscription-a4-export,
+  #inscription-a4-export * {
+    visibility: visible;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  #inscription-a4-export img {
+    display: block !important;
+    max-width: none !important;
+  }
+
+  #inscription-a4-export {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
 }
 
 /* Adsterra */
@@ -164,4 +192,15 @@
   .adsterra-slot > div {
     max-height: 90px !important;
   }
+}
+
+/* Espace admin — masquer le header/footer du site public */
+body.admin-section > div > header:first-of-type,
+body.admin-section > div > footer:last-of-type,
+body.admin-section > div > .print\:hidden {
+  display: none !important;
+}
+
+body.admin-section main {
+  padding: 0 !important;
 }

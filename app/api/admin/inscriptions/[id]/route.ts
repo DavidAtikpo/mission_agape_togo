@@ -52,3 +52,17 @@ export async function PATCH(request: Request, ctx: { params: Promise<{ id: strin
     return NextResponse.json({ error: 'Mise à jour impossible' }, { status: 404 })
   }
 }
+
+export async function DELETE(_request: Request, ctx: { params: Promise<{ id: string }> }) {
+  const unauthorized = await assertAdmin()
+  if (unauthorized) return unauthorized
+
+  const { id } = await ctx.params
+
+  try {
+    await prisma.inscription.delete({ where: { id } })
+    return NextResponse.json({ ok: true })
+  } catch {
+    return NextResponse.json({ error: 'Suppression impossible' }, { status: 404 })
+  }
+}

@@ -11,7 +11,7 @@ export default async function ProtectedAdminLayout({ children }: { children: Rea
   return (
     <div className="min-h-screen bg-muted/30 print:min-h-0 print:bg-white">
       <header className="border-b bg-background print:hidden">
-        <div className="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+        <div className="max-w-6xl mx-auto px-3 sm:px-4 py-3 flex flex-wrap items-center justify-between gap-2 sm:gap-3">
           <nav className="flex flex-wrap items-center gap-3 sm:gap-4 text-sm">
             <Link href="/admin/inscriptions" className="font-semibold text-primary">
               Administration
@@ -33,7 +33,7 @@ export default async function ProtectedAdminLayout({ children }: { children: Rea
           </form>
         </div>
       </header>
-      <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8 print:max-w-none print:px-0 print:py-0">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 py-3 print:max-w-none print:px-0 print:py-0">
         {children}
       </div>
     </div>

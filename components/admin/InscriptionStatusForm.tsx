@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { CheckCircle2, Loader2 } from 'lucide-react'
 
 type Status = 'NOUVELLE' | 'EN_COURS' | 'TRAITEE'
 
@@ -16,6 +17,7 @@ export function InscriptionStatusForm({ id, current }: { id: string; current: St
   const [status, setStatus] = useState<Status>(current)
   const [saving, setSaving] = useState(false)
   const [message, setMessage] = useState('')
+  const [success, setSuccess] = useState(false)
 
   useEffect(() => {
     setStatus(current)
@@ -23,6 +25,7 @@ export function InscriptionStatusForm({ id, current }: { id: string; current: St
 
   async function save() {
     setMessage('')
+    setSuccess(false)
     setSaving(true)
     try {
       const res = await fetch(`/api/admin/inscriptions/${id}`, {
@@ -35,6 +38,7 @@ export function InscriptionStatusForm({ id, current }: { id: string; current: St
         setMessage(d.error || 'Erreur')
         return
       }
+      setSuccess(true)
       setMessage('Enregistré')
       router.refresh()
     } catch {
@@ -45,30 +49,38 @@ export function InscriptionStatusForm({ id, current }: { id: string; current: St
   }
 
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-      <label className="text-sm font-medium shrink-0">Statut du dossier</label>
-      <div className="flex flex-wrap items-center gap-2">
-        <select
-          value={status}
-          onChange={(e) => setStatus(e.target.value as Status)}
-          className="rounded-md border border-input bg-background px-3 py-2 text-sm"
-        >
-          {(Object.keys(labels) as Status[]).map((s) => (
-            <option key={s} value={s}>
-              {labels[s]}
-            </option>
-          ))}
-        </select>
-        <button
-          type="button"
-          onClick={save}
-          disabled={saving || status === current}
-          className="rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
-        >
-          {saving ? '…' : 'Mettre à jour'}
-        </button>
-        {message ? <span className="text-sm text-muted-foreground">{message}</span> : null}
-      </div>
+    <div className="flex flex-wrap items-center gap-2">
+      <select
+        id="status-select"
+        value={status}
+        onChange={(e) => {
+          setStatus(e.target.value as Status)
+          setSuccess(false)
+          setMessage('')
+        }}
+        className="rounded-md border border-input bg-background px-2 py-1.5 text-xs w-full sm:w-40"
+      >
+        {(Object.keys(labels) as Status[]).map((s) => (
+          <option key={s} value={s}>
+            {labels[s]}
+          </option>
+        ))}
+      </select>
+      <button
+        type="button"
+        onClick={save}
+        disabled={saving || status === current}
+        className="inline-flex items-center gap-1 rounded-md bg-primary px-2.5 py-1.5 text-xs font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+      >
+        {saving ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : null}
+        Enregistrer
+      </button>
+      {message ? (
+        <span className={`inline-flex items-center gap-1 text-xs ${success ? 'text-emerald-600' : 'text-destructive'}`}>
+          {success ? <CheckCircle2 className="h-3.5 w-3.5" /> : null}
+          {message}
+        </span>
+      ) : null}
     </div>
   )
 }

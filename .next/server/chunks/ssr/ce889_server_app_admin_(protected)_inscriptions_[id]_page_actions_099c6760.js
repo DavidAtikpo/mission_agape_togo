@@ -1,0 +1,3 @@
+module.exports=[31603,a=>a.a(async(b,c)=>{try{var d=a.i(21044),e=b([d]);[d]=e.then?(await e)():e,a.s([]),c()}catch(a){c(a)}},!1),16179,a=>a.a(async(b,c)=>{try{var d=a.i(31603),e=a.i(21044),f=b([d,e]);[d,e]=f.then?(await f)():f,a.s(["00bd7d630faf429405327323709459b08923aff687",()=>e.logoutAdmin,"40b946875fcfb9d363ffc7f6e4e95c215b65c2e47c",()=>e.deleteInscription]),c()}catch(a){c(a)}},!1)];
+
+//# sourceMappingURL=ce889_server_app_admin_%28protected%29_inscriptions_%5Bid%5D_page_actions_099c6760.js.map

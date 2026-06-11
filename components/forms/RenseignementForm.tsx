@@ -76,26 +76,26 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
   };
 
   return (
-    <div className="space-y-4 md:space-y-6">
-      <div className="border-b border-gray-200 pb-3 md:pb-4">
-        <h3 className="text-base md:text-lg font-medium text-foreground">
+    <div className="space-y-3">
+      <div className="border-b border-gray-200 pb-2">
+        <h3 className="text-sm font-medium text-foreground">
           Fiche de Renseignements Personnels et Spirituels
         </h3>
-        <p className="text-xs md:text-sm text-foreground/70 mt-1">
+        <p className="text-xs text-foreground/70 mt-0.5">
           Ces informations resteront strictement confidentielles
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-5 md:space-y-8">
+      <form onSubmit={handleSubmit} className="space-y-3">
         {/* Section Situation Familiale et Professionnelle */}
-        <div className="space-y-4 md:space-y-6">
-          <h4 className="text-sm md:text-base font-medium text-foreground border-b pb-2">
+        <div className="space-y-3">
+          <h4 className="text-sm font-medium text-foreground border-b pb-1.5">
             Situation Familiale et Professionnelle
           </h4>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="situationFamiliale" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="situationFamiliale" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Situation familiale *
               </label>
               <select
@@ -103,7 +103,7 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 name="situationFamiliale"
                 value={formData.situationFamiliale}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               >
                 <option value="">Sélectionnez votre situation</option>
@@ -115,7 +115,7 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
             </div>
 
             <div>
-              <label htmlFor="nombreEnfants" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="nombreEnfants" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Nombre d'enfants à charge
               </label>
               <input
@@ -125,12 +125,12 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 min="0"
                 value={formData.nombreEnfants}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
 
             <div>
-              <label htmlFor="profession" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="profession" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Profession actuelle *
               </label>
               <input
@@ -139,13 +139,13 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 name="profession"
                 value={formData.profession}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="employeur" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="employeur" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Employeur actuel
               </label>
               <input
@@ -154,12 +154,12 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 name="employeur"
                 value={formData.employeur}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
 
             <div className="md:col-span-2">
-              <label htmlFor="adresseProfessionnelle" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="adresseProfessionnelle" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Adresse professionnelle
               </label>
               <textarea
@@ -168,12 +168,12 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 rows={2}
                 value={formData.adresseProfessionnelle}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
 
             <div>
-              <label htmlFor="telephoneProfessionnel" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="telephoneProfessionnel" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Téléphone professionnel
               </label>
               <input
@@ -182,19 +182,19 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 name="telephoneProfessionnel"
                 value={formData.telephoneProfessionnel}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
           </div>
         </div>
 
         {/* Section Personne à contacter en cas d'urgence */}
-        <div className="space-y-4 md:space-y-6 pt-4 md:pt-6 border-t border-gray-200">
-          <h4 className="text-sm md:text-base font-medium text-foreground">Personne à contacter en cas d'urgence</h4>
+        <div className="space-y-3 pt-3 border-t border-gray-200">
+          <h4 className="text-sm font-medium text-foreground">Personne à contacter en cas d'urgence</h4>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div>
-              <label htmlFor="personneContact" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="personneContact" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Nom et prénoms *
               </label>
               <input
@@ -203,13 +203,13 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 name="personneContact"
                 value={formData.personneContact}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="telephoneContact" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="telephoneContact" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Téléphone *
               </label>
               <input
@@ -218,13 +218,13 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 name="telephoneContact"
                 value={formData.telephoneContact}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="lienParente" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="lienParente" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Lien de parenté *
               </label>
               <input
@@ -233,7 +233,7 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 name="lienParente"
                 value={formData.lienParente}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
@@ -241,12 +241,12 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
         </div>
 
         {/* Section Santé */}
-        <div className="space-y-4 md:space-y-6 pt-4 md:pt-6 border-t border-gray-200">
-          <h4 className="text-sm md:text-base font-medium text-foreground">Informations Médicales</h4>
+        <div className="space-y-3 pt-3 border-t border-gray-200">
+          <h4 className="text-sm font-medium text-foreground">Informations Médicales</h4>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div>
-              <label htmlFor="groupeSanguin" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="groupeSanguin" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Groupe sanguin
               </label>
               <select
@@ -254,7 +254,7 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 name="groupeSanguin"
                 value={formData.groupeSanguin}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               >
                 <option value="">Non renseigné</option>
                 <option value="A+">A+</option>
@@ -269,7 +269,7 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
             </div>
 
             <div className="md:col-span-2">
-              <label htmlFor="allergies" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="allergies" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Allergies connues
               </label>
               <input
@@ -279,12 +279,12 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 value={formData.allergies}
                 onChange={handleChange}
                 placeholder="Ex: Pénicilline, arachides, poussière..."
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
 
             <div className="md:col-span-3">
-              <label htmlFor="traitementMedical" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="traitementMedical" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Traitement médical en cours
               </label>
               <textarea
@@ -294,19 +294,19 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 value={formData.traitementMedical}
                 onChange={handleChange}
                 placeholder="Médicaments, suivi médical particulier..."
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
           </div>
         </div>
 
         {/* Section Vie Spirituelle */}
-        <div className="space-y-4 md:space-y-6 pt-4 md:pt-6 border-t border-gray-200">
-          <h4 className="text-sm md:text-base font-medium text-foreground">Vie Spirituelle</h4>
+        <div className="space-y-3 pt-3 border-t border-gray-200">
+          <h4 className="text-sm font-medium text-foreground">Vie Spirituelle</h4>
 
-          <div className="space-y-4 md:space-y-6">
+          <div className="space-y-3">
             <div>
-              <label htmlFor="experienceChretienne" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="experienceChretienne" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Parlez-nous de votre expérience chrétienne *
               </label>
               <textarea
@@ -316,13 +316,13 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 value={formData.experienceChretienne}
                 onChange={handleChange}
                 placeholder="Quand et comment avez-vous rencontré Jésus-Christ ?..."
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="ministeres" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="ministeres" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Dans quels ministères ou services êtes-vous impliqué(e) dans votre église ?
               </label>
               <textarea
@@ -332,12 +332,12 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 value={formData.ministeres}
                 onChange={handleChange}
                 placeholder="Ex: Groupe de louange, école du dimanche, évangélisation..."
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               />
             </div>
 
             <div>
-              <label htmlFor="attentes" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="attentes" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Quelles sont vos attentes par rapport à cette formation ? *
               </label>
               <textarea
@@ -346,16 +346,16 @@ export default function RenseignementForm({ onSubmit, initialData }: Renseigneme
                 rows={3}
                 value={formData.attentes}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
           </div>
         </div>
 
-        <div className="pt-4 md:pt-6 border-t border-gray-200 flex justify-end">
-          <Button type="submit" className="bg-primary hover:bg-primary/90 h-8 text-xs md:h-10 md:text-sm px-4 md:px-6">
-            Soumettre la fiche
+        <div className="pt-3 border-t border-gray-200 flex justify-end">
+          <Button type="submit" className="bg-primary hover:bg-primary/90 h-8 text-xs px-4">
+            Continuer
           </Button>
         </div>
       </form>

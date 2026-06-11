@@ -1,10 +1,10 @@
 {
   "node": {
-    "00881806943599ee77b77cc4092a4da9c6bd728cee": {
+    "00bd7d630faf429405327323709459b08923aff687": {
       "workers": {
         "app/admin/(protected)/inscriptions/page": {
           "moduleId": 99149,
-          "async": false,
+          "async": true,
           "exportedName": "logoutAdmin",
           "filename": "app/admin/(protected)/actions.ts"
         }
@@ -13,6 +13,21 @@
         "app/admin/(protected)/inscriptions/page": "rsc"
       },
       "exportedName": "logoutAdmin",
+      "filename": "app/admin/(protected)/actions.ts"
+    },
+    "40b946875fcfb9d363ffc7f6e4e95c215b65c2e47c": {
+      "workers": {
+        "app/admin/(protected)/inscriptions/page": {
+          "moduleId": 99149,
+          "async": true,
+          "exportedName": "deleteInscription",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/inscriptions/page": "action-browser"
+      },
+      "exportedName": "deleteInscription",
       "filename": "app/admin/(protected)/actions.ts"
     }
   },

@@ -43,18 +43,18 @@ export default function Schools() {
   ]
 
   return (
-    <section id="ecoles" className="w-full pt-7 pb-10 sm:pt-9 sm:pb-12 md:pt-10 md:pb-14 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full min-w-0">
-        <div className="text-center mb-6 sm:mb-9 md:mb-10 max-w-3xl mx-auto px-0 sm:px-2">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold text-primary mb-2.5 sm:mb-3 leading-tight">
+    <section id="ecoles" className="w-full py-4 sm:py-5 bg-muted/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full min-w-0">
+        <div className="text-center mb-3 sm:mb-4">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-1 leading-tight">
             Nos Écoles de Formation
           </h2>
-          <p className="text-base sm:text-lg text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-            Cinq programmes spécialisés pour développer vos talents et renforcer votre impact spirituel
+          <p className="text-xs sm:text-sm text-foreground/60 max-w-xl mx-auto">
+            Cinq programmes spécialisés pour renforcer votre impact spirituel
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 w-full min-w-0">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-2.5">
           {schools.map((school) => (
             <SchoolCard key={school.id} {...school} />
           ))}

@@ -14,24 +14,20 @@ export default function SchoolCard({ title, description, gradient, link, isActiv
     <Link href={link}>
       <div
         style={gradient ? { background: gradient } : undefined}
-        className="border border-border rounded-lg p-4 sm:p-5 md:p-6 h-full min-w-0 hover:shadow-lg hover:border-primary/30 transition cursor-pointer group relative bg-white"
+        className="border border-border rounded-md p-2.5 sm:p-3 h-full min-w-0 hover:border-primary/40 transition cursor-pointer group relative bg-white"
       >
-        {isActive && (
-          <div className="absolute top-2 right-2 sm:top-3 sm:right-3">
-            <span className="inline-block bg-accent text-accent-foreground text-[0.65rem] sm:text-xs font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full">
-              En cours
-            </span>
-          </div>
-        )}
+        {isActive ? (
+          <span className="absolute top-1.5 right-1.5 inline-block bg-accent text-accent-foreground text-[0.6rem] font-bold px-1.5 py-0.5 rounded-full">
+            En cours
+          </span>
+        ) : null}
         <h3
-          className={`text-lg sm:text-xl font-bold text-primary mb-2 sm:mb-3 group-hover:text-accent transition leading-snug ${isActive ? "pr-14 sm:pr-16" : ""}`}
+          className={`text-xs sm:text-sm font-bold text-primary mb-1 leading-snug line-clamp-2 ${isActive ? "pr-10" : ""}`}
         >
           {title}
         </h3>
-        <p className="text-foreground/70 text-xs sm:text-sm leading-relaxed">{description}</p>
-        <div className="mt-3 sm:mt-4 text-primary text-xs sm:text-sm font-semibold group-hover:translate-x-1 transition">
-          En savoir plus →
-        </div>
+        <p className="text-foreground/65 text-[0.65rem] sm:text-xs leading-snug line-clamp-3">{description}</p>
+        <div className="mt-1.5 text-primary text-[0.65rem] sm:text-xs font-semibold">En savoir plus →</div>
       </div>
     </Link>
   )

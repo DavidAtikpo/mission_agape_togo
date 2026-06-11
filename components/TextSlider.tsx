@@ -63,12 +63,12 @@ export default function TextSlider() {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-700 opacity-90 backdrop-blur-sm"></div>
       <div className="relative z-10">
         <div className="container mx-auto px-2 sm:px-4">
-          <div className="flex items-center justify-center py-2">
-            <div className="relative w-full max-w-5xl h-auto min-h-[56px] sm:min-h-[56px] flex items-center justify-center">
+          <div className="flex items-center justify-center py-1.5">
+            <div className="relative w-full max-w-5xl h-auto min-h-[44px] flex items-center justify-center">
               {slides.map((slide, index) => (
                 <div
                   key={slide.id}
-                  className={`absolute inset-0 flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-3 p-2 sm:px-6 transition-all duration-1000 transform ${
+                  className={`absolute inset-0 flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2 px-2 sm:px-4 transition-all duration-1000 transform ${
                     currentSlide === index 
                       ? 'opacity-100 translate-y-0' 
                       : 'opacity-0 translate-y-2'

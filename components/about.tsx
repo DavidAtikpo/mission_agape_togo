@@ -27,35 +27,35 @@ const item = {
 
 export default function About() {
   return (
-    <section className="w-full pt-7 pb-10 sm:pt-9 sm:pb-12 md:pt-10 md:pb-14 bg-gradient-to-b from-background to-blue-50 dark:to-blue-950/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full py-4 sm:py-5 bg-gradient-to-b from-background to-blue-50 dark:to-blue-950/20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-stretch"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-5 items-start"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6 }}
         >
           {/* Texte : après l’image sur mobile, colonne gauche sur lg */}
-          <div className="order-2 lg:order-1 space-y-4 sm:space-y-5 md:space-y-6 lg:min-h-0 lg:flex lg:flex-col lg:justify-center w-full min-w-0">
+          <div className="order-2 lg:order-1 space-y-2 sm:space-y-3 w-full min-w-0">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <span className="inline-block text-[0.7rem] sm:text-xs font-semibold text-primary mb-1.5 sm:mb-2 uppercase tracking-wider">
+              <span className="inline-block text-[0.65rem] sm:text-xs font-semibold text-primary mb-1 uppercase tracking-wider">
                 À propos de nous
               </span>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground leading-tight">
+              <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight">
                 Qui <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">sommes-nous</span> ?
               </h2>
-              <div className="w-14 sm:w-16 h-1 bg-gradient-to-r from-primary to-accent my-2.5 sm:my-4 rounded-full" />
+              <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-accent my-1.5 rounded-full" />
             </motion.div>
 
-            <div className="space-y-3 sm:space-y-4 md:space-y-5">
+            <div className="space-y-1.5 sm:space-y-2">
               <motion.p 
-                className="text-sm sm:text-base md:text-[1.05rem] text-foreground/80 leading-relaxed"
+                className="text-xs sm:text-sm text-foreground/80 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -65,7 +65,7 @@ export default function About() {
               </motion.p>
               
               <motion.p 
-                className="text-sm sm:text-base md:text-[1.05rem] text-foreground/80 leading-relaxed"
+                className="text-xs sm:text-sm text-foreground/80 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -75,7 +75,7 @@ export default function About() {
               </motion.p>
               
               <motion.p 
-                className="text-sm sm:text-base md:text-[1.05rem] text-foreground/80 leading-relaxed"
+                className="text-xs sm:text-sm text-foreground/80 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function About() {
             </div>
 
             <motion.div 
-              className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 pt-2 sm:pt-3 md:pt-4 w-full"
+              className="grid grid-cols-3 gap-1.5 pt-1 w-full"
               variants={container}
               initial="hidden"
               whileInView="show"
@@ -96,13 +96,13 @@ export default function About() {
                 <motion.div 
                   key={stat.id}
                   variants={item}
-                  className="flex flex-col items-center justify-center p-2 sm:p-2.5 md:p-3 min-h-[6.5rem] sm:min-h-0 bg-white dark:bg-gray-800/50 rounded-lg sm:rounded-xl border border-gray-100 dark:border-gray-700/50 text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 min-w-0"
+                  className="flex flex-col items-center justify-center p-1.5 sm:p-2 bg-white dark:bg-gray-800/50 rounded-md border border-gray-100 dark:border-gray-700/50 text-center min-w-0"
                 >
-                  <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 mx-auto mb-1.5 sm:mb-2 rounded-full bg-primary/10 text-primary dark:bg-primary/20 flex items-center justify-center shrink-0">
-                    <stat.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 mx-auto mb-1 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                    <stat.icon className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   </div>
-                  <p className="text-base sm:text-lg md:text-xl font-bold text-foreground tabular-nums">{stat.value}</p>
-                  <p className="text-[0.6rem] sm:text-[0.7rem] md:text-xs text-foreground/70 mt-0.5 leading-tight px-0.5 line-clamp-3 sm:line-clamp-none">{stat.label}</p>
+                  <p className="text-sm sm:text-base font-bold text-foreground tabular-nums">{stat.value}</p>
+                  <p className="text-[0.55rem] sm:text-[0.65rem] text-foreground/70 leading-tight px-0.5 line-clamp-2">{stat.label}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -110,7 +110,7 @@ export default function About() {
 
           {/* Image : en premier sur mobile, colonne droite sur lg */}
           <motion.div 
-            className="order-1 lg:order-2 relative w-full aspect-[4/3] lg:aspect-auto lg:min-h-[300px] lg:max-h-[420px] lg:h-full rounded-2xl overflow-hidden shadow-xl shrink-0"
+            className="order-1 lg:order-2 relative w-full aspect-[16/10] lg:aspect-auto lg:min-h-[180px] lg:max-h-[240px] rounded-lg overflow-hidden shadow-md shrink-0"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -122,11 +122,11 @@ export default function About() {
               alt="Étude biblique et communauté Mission Agape"
               className="w-full h-full object-cover"
             />
-            <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-black/80 to-transparent z-20">
-              <h3 className="text-white text-sm sm:text-base md:text-lg font-semibold leading-snug">
+            <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 bg-gradient-to-t from-black/80 to-transparent z-20">
+              <h3 className="text-white text-xs sm:text-sm font-semibold leading-snug">
                 Une communauté qui grandit ensemble
               </h3>
-              <p className="text-white/80 text-xs mt-1 leading-relaxed">
+              <p className="text-white/80 text-[0.65rem] sm:text-xs mt-0.5">
                 Rejoignez-nous dans cette aventure spirituelle
               </p>
             </div>

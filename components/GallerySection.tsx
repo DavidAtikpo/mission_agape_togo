@@ -496,26 +496,26 @@ export default function GallerySection() {
   };
 
   return (
-    <section className="w-full pt-7 pb-10 sm:pt-9 sm:pb-12 md:pt-10 md:pb-14 bg-background">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full min-w-0">
-        <div className="text-center mb-5 sm:mb-6 max-w-3xl mx-auto px-0 sm:px-2">
-          <span className="inline-block text-primary font-bold text-[0.7rem] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-1.5 sm:mb-2">
+    <section className="w-full py-4 sm:py-5 bg-background">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 w-full min-w-0">
+        <div className="text-center mb-3 sm:mb-4 max-w-2xl mx-auto">
+          <span className="inline-block text-primary font-bold text-[0.65rem] uppercase tracking-wider mb-1">
             Galeries Photos
           </span>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl font-bold text-foreground mb-2 sm:mb-3 md:mb-4 leading-tight">
+          <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-1.5 leading-tight">
             Nos <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Éditions</span>
           </h2>
-          <div className="w-14 sm:w-16 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-2.5 sm:mb-4 md:mb-5 rounded-full" />
-          <p className="text-foreground/80 text-sm sm:text-base md:text-[1.05rem] leading-relaxed font-medium">
-            Revivez les moments forts de nos 14 éditions de formation et explorez les éditions passées.
+          <div className="w-12 h-0.5 bg-gradient-to-r from-primary to-accent mx-auto mb-1.5 rounded-full" />
+          <p className="text-foreground/75 text-xs sm:text-sm leading-relaxed">
+            Revivez les moments forts de nos 14 éditions de formation.
           </p>
 
-          <div className="mt-4 sm:mt-5 flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-2.5 sm:gap-3 w-full max-w-xl sm:max-w-none mx-auto">
+          <div className="mt-3 flex flex-col sm:flex-row flex-wrap justify-center items-stretch sm:items-center gap-2 w-full mx-auto">
             <div className="relative group w-full sm:w-auto">
               <button
                 type="button"
                 onClick={toggleAllEditions}
-                className={`w-full sm:w-auto px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
+                className={`w-full sm:w-auto px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                   showAllEditions
                     ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30'
                     : 'bg-white/5 hover:bg-white/10 text-foreground border border-white/10 hover:border-primary/30'
@@ -527,7 +527,7 @@ export default function GallerySection() {
             </div>
 
             <div className="relative w-full sm:w-auto min-w-0">
-              <div className="flex items-center justify-between sm:justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-primary/30 rounded-xl px-3 sm:px-3.5 py-2 sm:py-2.5 transition-all duration-300">
+              <div className="flex items-center justify-between sm:justify-center gap-2 bg-white/5 border border-white/10 rounded-lg px-2.5 py-1.5">
                 <span className="text-foreground/80 text-xs sm:text-sm shrink-0">Édition</span>
                 <select
                   value={selectedEdition}
@@ -547,30 +547,30 @@ export default function GallerySection() {
         </div>
 
         {/* Instructions pour l'ajout d'images */}
-        <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/10 p-3 sm:p-4 rounded-lg sm:rounded-xl mb-4 sm:mb-6 border border-blue-200 dark:border-blue-800 shadow-sm w-full min-w-0">
-          <div className="text-center space-y-3 sm:space-y-5">
-            <h3 className="text-sm sm:text-base md:text-xl font-bold text-blue-800 dark:text-blue-100 leading-snug px-1">
+        <div className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/10 p-2.5 sm:p-3 rounded-lg mb-3 border border-blue-200 dark:border-blue-800 w-full min-w-0">
+          <div className="text-center space-y-2">
+            <h3 className="text-xs sm:text-sm font-bold text-blue-800 dark:text-blue-100 leading-snug">
               Allez dans tout le monde entier et proclamez la Bonne Nouvelle à toute la création
             </h3>
-            <p className="text-blue-700 dark:text-blue-300 italic text-xs sm:text-sm md:text-base px-2">
+            <p className="text-blue-700 dark:text-blue-300 italic text-[0.65rem] sm:text-xs">
               « Allez dans le monde entier, proclamez l&apos;Évangile à toute la création. » — Marc 16:15
             </p>
 
-            <div className="max-w-2xl mx-auto bg-white/80 dark:bg-blue-900/30 p-3.5 sm:p-5 rounded-lg sm:rounded-xl border border-blue-100 dark:border-blue-700 shadow-sm text-left sm:text-center">
-              <h4 className="text-base sm:text-lg font-semibold text-blue-800 dark:text-blue-200 mb-2 sm:mb-2.5">
+            <div className="max-w-xl mx-auto bg-white/80 dark:bg-blue-900/30 p-2.5 rounded-md border border-blue-100 dark:border-blue-700 text-left sm:text-center">
+              <h4 className="text-xs sm:text-sm font-semibold text-blue-800 dark:text-blue-200 mb-1">
                 Partagez votre lumière avec le monde
               </h4>
-              <p className="text-blue-700 dark:text-blue-300 text-xs sm:text-sm leading-relaxed">
-                Témoignez de la gloire de Dieu en partageant vos moments de grâce et de louange avec nos frères et sœurs du monde entier.
+              <p className="text-blue-700 dark:text-blue-300 text-[0.65rem] sm:text-xs leading-relaxed">
+                Témoignez de la gloire de Dieu en partageant vos moments de grâce avec nos frères et sœurs.
               </p>
             </div>
           </div>
         </div>
 
         {/* Galerie d'images */}
-        <div className="space-y-6 sm:space-y-7 md:space-y-8 w-full min-w-0">
+        <div className="space-y-4 w-full min-w-0">
           {/* Édition sélectionnée */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-2">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <h3 className="text-base sm:text-lg font-bold text-foreground leading-tight">
                 Édition {selectedEdition}

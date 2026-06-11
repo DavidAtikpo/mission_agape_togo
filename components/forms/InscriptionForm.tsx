@@ -72,24 +72,24 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
   };
 
   return (
-    <div className="space-y-4 md:space-y-6">
-      <div className="border-b border-gray-200 pb-3 md:pb-4">
-        <h3 className="text-base md:text-lg font-medium text-foreground">
+    <div className="space-y-3">
+      <div className="border-b border-gray-200 pb-2">
+        <h3 className="text-sm font-medium text-foreground">
           Formulaire d'Inscription - Mission Agape
         </h3>
-        <p className="text-xs md:text-sm text-foreground/70 mt-1">
+        <p className="text-xs text-foreground/70 mt-0.5">
           Veuillez remplir tous les champs obligatoires (*)
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {/* Informations Personnelles */}
-          <div className="space-y-3 md:space-y-4">
-            <h4 className="text-sm md:text-base font-medium text-foreground">Informations Personnelles</h4>
+          <div className="space-y-2">
+            <h4 className="text-sm font-medium text-foreground">Informations Personnelles</h4>
             
             <div>
-              <label htmlFor="nom" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="nom" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Nom *
               </label>
               <input
@@ -98,13 +98,13 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                 name="nom"
                 value={formData.nom}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="prenom" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="prenom" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Prénom(s) *
               </label>
               <input
@@ -113,14 +113,14 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                 name="prenom"
                 value={formData.prenom}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div className="grid grid-cols-2 gap-2 sm:gap-4">
               <div>
-                <label htmlFor="dateNaissance" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+                <label htmlFor="dateNaissance" className="block text-xs font-medium text-foreground/80 mb-0.5">
                   Date de naissance *
                 </label>
                 <input
@@ -129,12 +129,12 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                   name="dateNaissance"
                   value={formData.dateNaissance}
                   onChange={handleChange}
-                  className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="lieuNaissance" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+                <label htmlFor="lieuNaissance" className="block text-xs font-medium text-foreground/80 mb-0.5">
                   Lieu de naissance *
                 </label>
                 <input
@@ -143,7 +143,7 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                   name="lieuNaissance"
                   value={formData.lieuNaissance}
                   onChange={handleChange}
-                  className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                   required
                 />
               </div>
@@ -151,27 +151,27 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
           </div>
 
           {/* Coordonnées */}
-          <div className="space-y-3 md:space-y-4">
-            <h4 className="text-sm md:text-base font-medium text-foreground">Coordonnées</h4>
+          <div className="space-y-2">
+            <h4 className="text-sm font-medium text-foreground">Coordonnées</h4>
             
             <div>
-              <label htmlFor="adresse" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="adresse" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Adresse complète *
               </label>
               <textarea
                 id="adresse"
                 name="adresse"
-                rows={3}
+                rows={2}
                 value={formData.adresse}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3 md:gap-4">
+            <div className="grid grid-cols-2 gap-2">
               <div>
-                <label htmlFor="telephone" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+                <label htmlFor="telephone" className="block text-xs font-medium text-foreground/80 mb-0.5">
                   Téléphone *
                 </label>
                 <input
@@ -180,12 +180,12 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                   name="telephone"
                   value={formData.telephone}
                   onChange={handleChange}
-                  className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+                <label htmlFor="email" className="block text-xs font-medium text-foreground/80 mb-0.5">
                   Email *
                 </label>
                 <input
@@ -194,7 +194,7 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                   required
                 />
               </div>
@@ -203,14 +203,14 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
         </div>
 
         {/* Informations Académiques */}
-        <div className="space-y-3 md:space-y-4 pt-3 md:pt-4 border-t border-gray-200">
-          <h4 className="text-sm md:text-base font-medium text-foreground">
+        <div className="space-y-2 pt-2 border-t border-gray-200">
+          <h4 className="text-sm font-medium text-foreground">
             Informations Académiques et Spirituelles
           </h4>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              <label htmlFor="niveauEtude" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="niveauEtude" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Dernier diplôme obtenu *
               </label>
               <select
@@ -218,7 +218,7 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                 name="niveauEtude"
                 value={formData.niveauEtude}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               >
                 <option value="">Sélectionnez un niveau</option>
@@ -232,7 +232,7 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
             </div>
 
             <div>
-              <label htmlFor="egliseLocale" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="egliseLocale" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Église locale *
               </label>
               <input
@@ -241,13 +241,13 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                 name="egliseLocale"
                 value={formData.egliseLocale}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="pasteurResponsable" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="pasteurResponsable" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Pasteur responsable *
               </label>
               <input
@@ -256,13 +256,13 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                 name="pasteurResponsable"
                 value={formData.pasteurResponsable}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               />
             </div>
 
             <div>
-              <label htmlFor="formationSouhaitee" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+              <label htmlFor="formationSouhaitee" className="block text-xs font-medium text-foreground/80 mb-0.5">
                 Formation souhaitée *
               </label>
               <select
@@ -270,7 +270,7 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
                 name="formationSouhaitee"
                 value={formData.formationSouhaitee}
                 onChange={handleChange}
-                className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
                 required
               >
                 <option value="">Sélectionnez une formation</option>
@@ -283,24 +283,24 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
           </div>
 
           <div>
-            <label htmlFor="motivation" className="block text-xs md:text-sm font-medium text-foreground/80 mb-0.5 md:mb-1">
+            <label htmlFor="motivation" className="block text-xs font-medium text-foreground/80 mb-0.5">
               Motivation (Pourquoi souhaitez-vous suivre cette formation ?) *
             </label>
             <textarea
               id="motivation"
               name="motivation"
-              rows={4}
+              rows={3}
               value={formData.motivation}
               onChange={handleChange}
-              className="w-full px-2.5 py-1.5 md:px-3 md:py-2 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+              className="w-full px-2.5 py-1.5 text-sm border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
               required
             />
           </div>
         </div>
 
-        <div className="pt-4 md:pt-6 border-t border-gray-200 flex justify-end">
-          <Button type="submit" className="bg-primary hover:bg-primary/90 h-8 text-xs md:h-10 md:text-sm px-4 md:px-6">
-            Enregistrer et continuer
+        <div className="pt-3 border-t border-gray-200 flex justify-end">
+          <Button type="submit" className="bg-primary hover:bg-primary/90 h-8 text-xs px-4">
+            Continuer
           </Button>
         </div>
       </form>
