@@ -2,9 +2,13 @@ import { PrismaPg } from '@prisma/adapter-pg'
 import { Pool } from 'pg'
 import { PrismaClient } from '@/lib/generated/prisma/client'
 
+/** Bump when new models are added — invalidates cached client in dev. */
+const PRISMA_CLIENT_VERSION = 3
+
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
   pgPool: Pool | undefined
+  prismaClientVersion: number | undefined
 }
 
 function getConnectionString(): string {
@@ -43,8 +47,43 @@ function poolConnectionString(url: string): string {
   }
 }
 
+function isClientUpToDate(client: PrismaClient): boolean {
+  const c = client as PrismaClient & {
+    edition?: { findFirst?: unknown }
+    editionPhoto?: { findMany?: unknown }
+    rapportEcole?: { findMany?: unknown }
+  }
+  return (
+    typeof c.inscription?.findMany === 'function' &&
+    typeof c.actualite?.findFirst === 'function' &&
+    typeof c.edition?.findFirst === 'function' &&
+    typeof c.editionPhoto?.findMany === 'function' &&
+    typeof c.rapportEcole?.findMany === 'function'
+  )
+}
+
+function clearCachedClient() {
+  const cached = globalForPrisma.prisma
+  if (cached) {
+    void cached.$disconnect().catch(() => {})
+  }
+  globalForPrisma.prisma = undefined
+  globalForPrisma.prismaClientVersion = undefined
+}
+
 function getClient(): PrismaClient {
-  if (globalForPrisma.prisma) return globalForPrisma.prisma
+  const cached = globalForPrisma.prisma
+  if (
+    cached &&
+    globalForPrisma.prismaClientVersion === PRISMA_CLIENT_VERSION &&
+    isClientUpToDate(cached)
+  ) {
+    return cached
+  }
+
+  if (cached) {
+    clearCachedClient()
+  }
 
   const rawUrl = getConnectionString()
   const poolUrl = poolConnectionString(rawUrl)
@@ -63,14 +102,28 @@ function getClient(): PrismaClient {
     adapter,
     log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
   })
+  globalForPrisma.prismaClientVersion = PRISMA_CLIENT_VERSION
   return globalForPrisma.prisma
 }
 
 /** Client Prisma (Neon / PostgreSQL) — initialisation au premier usage */
 export const prisma = new Proxy({} as PrismaClient, {
   get(_target, prop, receiver) {
-    const client = getClient()
-    const value = Reflect.get(client, prop, receiver)
+    let client = getClient()
+    let value = Reflect.get(client, prop, receiver)
+
+    if (
+      value === undefined &&
+      typeof prop === 'string' &&
+      prop !== 'then' &&
+      !prop.startsWith('$') &&
+      prop[0] === prop[0]?.toLowerCase()
+    ) {
+      clearCachedClient()
+      client = getClient()
+      value = Reflect.get(client, prop, receiver)
+    }
+
     if (typeof value === 'function') {
       return value.bind(client)
     }

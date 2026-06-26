@@ -9,12 +9,12 @@ export default function Hero() {
           Mission Agapé Togo
         </h1>
         <p className="mt-1.5 text-sm sm:text-base md:text-lg text-foreground/80 leading-snug">
-          Connaitre Dieu pour mieux le servir.
+          Connaître Dieu pour mieux le servir.
         </p>
         <p className="mt-1.5 text-xs sm:text-sm text-foreground/60 leading-relaxed max-w-2xl mx-auto">
           AGAPE MISSION est une mission internationale et interdénominationnelle qui forme des ouvriers,
           en particulier des missionnaires. En son sein, il y a des écoles : évangélisation, communication,
-          étude inductive de la Bible, relation d&apos;aide et intercession.
+          étude inductive de la Bible, relation d&apos;aide et intersession.
         </p>
         <div className="flex flex-col sm:flex-row gap-2 justify-center pt-3">
           <a
@@ -24,7 +24,7 @@ export default function Hero() {
             S&apos;inscrire
           </a>
           <a
-            href="#ecoles"
+            href="/ecoles"
             className="inline-flex items-center justify-center px-5 py-2 text-sm font-semibold text-primary rounded-lg border border-primary hover:bg-primary/10 transition-colors"
           >
             Découvrir les écoles

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Thecode2/Desktop/mission_agape_togo/mission-agape-togo/app/ecoles/discipolat/page.tsx"],"sourcesContent":["import { redirect } from 'next/navigation'\r\n\r\nexport default function DiscipolatRedirect() {\r\n  redirect('/ecoles')\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;AAAA;;AAEe,SAAS;IACtB,IAAA,iMAAQ,EAAC;AACX"}}]
+}

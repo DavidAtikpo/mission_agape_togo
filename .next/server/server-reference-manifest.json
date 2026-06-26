@@ -1,7 +1,55 @@
 {
   "node": {
-    "00bd7d630faf429405327323709459b08923aff687": {
+    "00ea83683f2fb973a10c69a4638afc306da33660e7": {
       "workers": {
+        "app/admin/(protected)/actualites/[id]/page": {
+          "moduleId": 18916,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        },
+        "app/admin/(protected)/actualites/new/page": {
+          "moduleId": 21424,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        },
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        },
+        "app/admin/(protected)/editions/[id]/photos/page": {
+          "moduleId": 32843,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        },
+        "app/admin/(protected)/editions/page": {
+          "moduleId": 89881,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/new/page": {
+          "moduleId": 10649,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": 41603,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        },
         "app/admin/(protected)/inscriptions/[id]/page": {
           "moduleId": 16179,
           "async": true,
@@ -16,13 +64,425 @@
         }
       },
       "layer": {
-        "app/admin/(protected)/inscriptions/[id]/page": "rsc",
-        "app/admin/(protected)/inscriptions/page": "rsc"
+        "app/admin/(protected)/actualites/[id]/page": "action-browser",
+        "app/admin/(protected)/actualites/new/page": "action-browser",
+        "app/admin/(protected)/actualites/page": "action-browser",
+        "app/admin/(protected)/editions/[id]/photos/page": "action-browser",
+        "app/admin/(protected)/editions/page": "action-browser",
+        "app/admin/(protected)/editions/rapports/[id]/page": "action-browser",
+        "app/admin/(protected)/editions/rapports/new/page": "action-browser",
+        "app/admin/(protected)/editions/rapports/page": "action-browser",
+        "app/admin/(protected)/inscriptions/[id]/page": "action-browser",
+        "app/admin/(protected)/inscriptions/page": "action-browser"
       },
       "filename": "app/admin/(protected)/actions.ts",
       "exportedName": "logoutAdmin"
     },
-    "40b946875fcfb9d363ffc7f6e4e95c215b65c2e47c": {
+    "40061b4c2a94bce453d28ef4f8049f736c6ff4339e": {
+      "workers": {
+        "app/admin/(protected)/actualites/[id]/page": {
+          "moduleId": 18916,
+          "async": true,
+          "exportedName": "deleteActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        },
+        "app/admin/(protected)/actualites/new/page": {
+          "moduleId": 21424,
+          "async": true,
+          "exportedName": "deleteActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        },
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "deleteActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/[id]/page": "rsc",
+        "app/admin/(protected)/actualites/new/page": "rsc",
+        "app/admin/(protected)/actualites/page": "action-browser"
+      },
+      "filename": "app/admin/(protected)/actualites/actions.ts",
+      "exportedName": "deleteActualite"
+    },
+    "4010bd939a769d36ae4f829359db7d476337aeeb6d": {
+      "workers": {
+        "app/admin/(protected)/actualites/[id]/page": {
+          "moduleId": 18916,
+          "async": true,
+          "exportedName": "toggleActualitePublished",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        },
+        "app/admin/(protected)/actualites/new/page": {
+          "moduleId": 21424,
+          "async": true,
+          "exportedName": "toggleActualitePublished",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        },
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "toggleActualitePublished",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/[id]/page": "rsc",
+        "app/admin/(protected)/actualites/new/page": "rsc",
+        "app/admin/(protected)/actualites/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/actualites/actions.ts",
+      "exportedName": "toggleActualitePublished"
+    },
+    "406596a7eca31c77b8ba9210ca238311a4e45d60e8": {
+      "workers": {
+        "app/admin/(protected)/actualites/[id]/page": {
+          "moduleId": 18916,
+          "async": true,
+          "exportedName": "updateActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        },
+        "app/admin/(protected)/actualites/new/page": {
+          "moduleId": 21424,
+          "async": true,
+          "exportedName": "updateActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        },
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "updateActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/[id]/page": "rsc",
+        "app/admin/(protected)/actualites/new/page": "rsc",
+        "app/admin/(protected)/actualites/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/actualites/actions.ts",
+      "exportedName": "updateActualite"
+    },
+    "40a7b0cacfaaedb7080310655f55f12eb097457a84": {
+      "workers": {
+        "app/admin/(protected)/actualites/[id]/page": {
+          "moduleId": 18916,
+          "async": true,
+          "exportedName": "createActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        },
+        "app/admin/(protected)/actualites/new/page": {
+          "moduleId": 21424,
+          "async": true,
+          "exportedName": "createActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        },
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "createActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/[id]/page": "rsc",
+        "app/admin/(protected)/actualites/new/page": "rsc",
+        "app/admin/(protected)/actualites/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/actualites/actions.ts",
+      "exportedName": "createActualite"
+    },
+    "40129b0bdd87b5c70fa25967da61b0f9955d22d592": {
+      "workers": {
+        "app/admin/(protected)/editions/[id]/photos/page": {
+          "moduleId": 32843,
+          "async": true,
+          "exportedName": "toggleEditionPhotoPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "toggleEditionPhotoPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/new/page": {
+          "moduleId": 10649,
+          "async": true,
+          "exportedName": "toggleEditionPhotoPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": 41603,
+          "async": true,
+          "exportedName": "toggleEditionPhotoPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/[id]/photos/page": "rsc",
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc",
+        "app/admin/(protected)/editions/rapports/new/page": "rsc",
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/editions/actions.ts",
+      "exportedName": "toggleEditionPhotoPublished"
+    },
+    "402879a9b59d7f56ba0889ffc1bed701c704545d2b": {
+      "workers": {
+        "app/admin/(protected)/editions/[id]/photos/page": {
+          "moduleId": 32843,
+          "async": true,
+          "exportedName": "addEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "addEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/new/page": {
+          "moduleId": 10649,
+          "async": true,
+          "exportedName": "addEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": 41603,
+          "async": true,
+          "exportedName": "addEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/[id]/photos/page": "rsc",
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc",
+        "app/admin/(protected)/editions/rapports/new/page": "rsc",
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/editions/actions.ts",
+      "exportedName": "addEditionPhoto"
+    },
+    "40403defcf511b63ad3ec150603685de6b917ade93": {
+      "workers": {
+        "app/admin/(protected)/editions/[id]/photos/page": {
+          "moduleId": 32843,
+          "async": true,
+          "exportedName": "toggleRapportPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "toggleRapportPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/new/page": {
+          "moduleId": 10649,
+          "async": true,
+          "exportedName": "toggleRapportPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": 41603,
+          "async": true,
+          "exportedName": "toggleRapportPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/[id]/photos/page": "rsc",
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc",
+        "app/admin/(protected)/editions/rapports/new/page": "rsc",
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/editions/actions.ts",
+      "exportedName": "toggleRapportPublished"
+    },
+    "4040da400ffcc5d5ef6080be4e7b1b125b685f8fbe": {
+      "workers": {
+        "app/admin/(protected)/editions/[id]/photos/page": {
+          "moduleId": 32843,
+          "async": true,
+          "exportedName": "createRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "createRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/new/page": {
+          "moduleId": 10649,
+          "async": true,
+          "exportedName": "createRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": 41603,
+          "async": true,
+          "exportedName": "createRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/[id]/photos/page": "rsc",
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc",
+        "app/admin/(protected)/editions/rapports/new/page": "rsc",
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/editions/actions.ts",
+      "exportedName": "createRapportEcole"
+    },
+    "404ab1982f41b29b1e0208f1183ab33b9f5445a6cf": {
+      "workers": {
+        "app/admin/(protected)/editions/[id]/photos/page": {
+          "moduleId": 32843,
+          "async": true,
+          "exportedName": "deleteEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "deleteEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/new/page": {
+          "moduleId": 10649,
+          "async": true,
+          "exportedName": "deleteEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": 41603,
+          "async": true,
+          "exportedName": "deleteEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/[id]/photos/page": "rsc",
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc",
+        "app/admin/(protected)/editions/rapports/new/page": "rsc",
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/editions/actions.ts",
+      "exportedName": "deleteEditionPhoto"
+    },
+    "408af842f08b0563c350049f989ed3ec4fa195a651": {
+      "workers": {
+        "app/admin/(protected)/editions/[id]/photos/page": {
+          "moduleId": 32843,
+          "async": true,
+          "exportedName": "createEdition",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "createEdition",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/new/page": {
+          "moduleId": 10649,
+          "async": true,
+          "exportedName": "createEdition",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": 41603,
+          "async": true,
+          "exportedName": "createEdition",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/[id]/photos/page": "rsc",
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc",
+        "app/admin/(protected)/editions/rapports/new/page": "rsc",
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/editions/actions.ts",
+      "exportedName": "createEdition"
+    },
+    "409d6f32022339e4e4b447b2cd89dbcbd84da4ea9e": {
+      "workers": {
+        "app/admin/(protected)/editions/[id]/photos/page": {
+          "moduleId": 32843,
+          "async": true,
+          "exportedName": "deleteRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "deleteRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/new/page": {
+          "moduleId": 10649,
+          "async": true,
+          "exportedName": "deleteRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": 41603,
+          "async": true,
+          "exportedName": "deleteRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/[id]/photos/page": "rsc",
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc",
+        "app/admin/(protected)/editions/rapports/new/page": "rsc",
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/editions/actions.ts",
+      "exportedName": "deleteRapportEcole"
+    },
+    "40aa7fbdac8983a55873a99aad0b8f41b591ae620e": {
+      "workers": {
+        "app/admin/(protected)/editions/[id]/photos/page": {
+          "moduleId": 32843,
+          "async": true,
+          "exportedName": "updateRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "updateRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/new/page": {
+          "moduleId": 10649,
+          "async": true,
+          "exportedName": "updateRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        },
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": 41603,
+          "async": true,
+          "exportedName": "updateRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/[id]/photos/page": "rsc",
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc",
+        "app/admin/(protected)/editions/rapports/new/page": "rsc",
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "filename": "app/admin/(protected)/editions/actions.ts",
+      "exportedName": "updateRapportEcole"
+    },
+    "401ae1b8bb1d32134020142bd40cb103b51f031051": {
       "workers": {
         "app/admin/(protected)/inscriptions/[id]/page": {
           "moduleId": 16179,
@@ -46,5 +506,5 @@
     }
   },
   "edge": {},
-  "encryptionKey": "DvUq14QmQO/+SuZ8h0ha8AXzYKAxBoop96wxkS+LVls="
+  "encryptionKey": "c4of2UUH9Z/Ro2BN2CnyYnSbxNGE88sfm+x7IewDIBk="
 }

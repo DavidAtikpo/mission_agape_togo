@@ -14,7 +14,7 @@ export default function SchoolCard({ title, description, gradient, link, isActiv
     <Link href={link}>
       <div
         style={gradient ? { background: gradient } : undefined}
-        className="border border-border rounded-md p-2.5 sm:p-3 h-full min-w-0 hover:border-primary/40 transition cursor-pointer group relative bg-white"
+        className="border border-border rounded-xl p-3 sm:p-4 h-full min-w-0 hover:border-primary/40 hover:shadow-md transition-all cursor-pointer group relative bg-card"
       >
         {isActive ? (
           <span className="absolute top-1.5 right-1.5 inline-block bg-accent text-accent-foreground text-[0.6rem] font-bold px-1.5 py-0.5 rounded-full">

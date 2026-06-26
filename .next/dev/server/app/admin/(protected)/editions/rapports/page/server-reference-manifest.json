@@ -1,0 +1,140 @@
+{
+  "node": {
+    "00cb1edf268e639454916bdab85daaf03392f5ff0d": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/editions/rapports/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/editions/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/page": "action-browser"
+      },
+      "exportedName": "logoutAdmin",
+      "filename": "app/admin/(protected)/actions.ts"
+    },
+    "403757964bd7a041bef6d96f734008b3ac979458ca": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/editions/rapports/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/editions/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "addEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "exportedName": "addEditionPhoto",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "404bcaabf8a4f1ac32e9bb2a10f36006152fbd4144": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/editions/rapports/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/editions/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "toggleRapportPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "exportedName": "toggleRapportPublished",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "405b4b48f616ff0bc4fc8bcf0a838c27366209c48b": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/editions/rapports/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/editions/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/page": "action-browser"
+      },
+      "exportedName": "deleteRapportEcole",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "405cecc1b7f0e070cb77ceca4c7fc2b34afcca8509": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/editions/rapports/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/editions/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "exportedName": "deleteEditionPhoto",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "40940ecf4c92a62c124743e340c7f4dd5d59cf38ab": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/editions/rapports/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/editions/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "exportedName": "updateRapportEcole",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "40b418b3564f94f7d6df63118b43dfaac718f4bbee": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/editions/rapports/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/editions/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createEdition",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "exportedName": "createEdition",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "40d5b07d1e22f82281182212c2c1790438380fc7cc": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/editions/rapports/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/editions/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "toggleEditionPhotoPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "exportedName": "toggleEditionPhotoPublished",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "40e234014459f8dbbb0668342232a4d331231860c1": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/editions/rapports/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/editions/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/page": "rsc"
+      },
+      "exportedName": "createRapportEcole",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    }
+  },
+  "edge": {}
+}

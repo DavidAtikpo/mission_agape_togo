@@ -1,0 +1,4 @@
+{
+  "/admin/(protected)/inscriptions/[id]/page": "app/admin/(protected)/inscriptions/[id]/page.js",
+  "/page": "app/page.js"
+}

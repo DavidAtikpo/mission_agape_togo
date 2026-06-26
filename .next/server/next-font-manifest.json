@@ -6,6 +6,54 @@
       "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
+    "[project]/app/admin/(protected)/actualites/[id]/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/admin/(protected)/actualites/new/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/admin/(protected)/actualites/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/admin/(protected)/editions/[id]/photos/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/admin/(protected)/editions/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/admin/(protected)/editions/rapports/[id]/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/admin/(protected)/editions/rapports/new/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/admin/(protected)/editions/rapports/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/app/admin/(protected)/inscriptions/[id]/page": [
       "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
       "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
@@ -78,7 +126,19 @@
       "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
       "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
     ],
+    "[project]/app/ecoles/bible-inductive/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
     "[project]/app/ecoles/communication/page": [
+      "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
+      "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
+      "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/app/ecoles/discipolat/page": [
       "static/media/a218039a3287bcfd-s.p.4a23d71b.woff2",
       "static/media/e2334d715941921e-s.p.d82a9aff.woff2",
       "static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2",

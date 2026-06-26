@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Thecode2/Desktop/mission_agape_togo/mission-agape-togo/.next-internal/server/app/admin/%28protected%29/inscriptions/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {logoutAdmin as '00cb1edf268e639454916bdab85daaf03392f5ff0d'} from 'ACTIONS_MODULE0'\nexport {deleteInscription as '408e71dd0d0c89c8f7077d35f13532af18da64d548'} from 'ACTIONS_MODULE0'\nexport {deleteInscription as '408e71dd0d0c89c8f7077d35f13532af18da64d548'} from 'ACTIONS_MODULE0'\n"],"names":[],"mappings":";AAAA"}}]
+}

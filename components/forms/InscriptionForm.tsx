@@ -275,7 +275,6 @@ export default function InscriptionForm({ onSubmit, initialData }: InscriptionFo
               >
                 <option value="">Sélectionnez une formation</option>
                 <option value="Théologie Fondamentale">Théologie Fondamentale</option>
-                <option value="Discipolat">Discipolat</option>
                 <option value="École d'Évangélisation">École d'Évangélisation</option>
                 <option value="Leadership Chrétien">Leadership Chrétien</option>
               </select>

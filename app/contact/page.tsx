@@ -71,7 +71,7 @@ export default function Contact() {
         <div className="mb-5 rounded-md border border-green-200 bg-green-50 px-3 py-2.5 sm:px-4 sm:py-3">
           <p className="text-xs sm:text-sm font-semibold text-green-900 mb-1.5 flex items-center gap-1.5">
             <CheckCircle className="w-4 h-4 shrink-0" />
-            Rentrée École de Discipolat — 5 septembre 2026
+            Rentrée École d&apos;Évangélisation — 5 septembre 2026
           </p>
           <p className="text-[0.65rem] sm:text-xs text-green-800 leading-relaxed mb-2">
             Inscriptions ouvertes à Aného. Contactez-nous ou inscrivez-vous en ligne.

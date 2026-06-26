@@ -1,0 +1,3 @@
+module.exports=[23563,a=>{"use strict";var b=a.i(87924),c=a.i(5050),d=(0,c.createServerReference)("409d6f32022339e4e4b447b2cd89dbcbd84da4ea9e",c.callServer,void 0,c.findSourceMapURL,"deleteRapportEcole");function e({id:a,titre:c}){return(0,b.jsxs)("form",{action:d,onSubmit:function(a){window.confirm(`Supprimer le rapport \xab ${c} \xbb ?`)||a.preventDefault()},children:[(0,b.jsx)("input",{type:"hidden",name:"id",value:a}),(0,b.jsx)("button",{type:"submit",className:"text-xs text-destructive/80 hover:text-destructive px-2 py-1",children:"Supprimer"})]})}a.s(["DeleteRapportButton",()=>e],23563)}];
+
+//# sourceMappingURL=components_admin_DeleteRapportButton_tsx_9648617f._.js.map

@@ -1,0 +1,140 @@
+{
+  "node": {
+    "00ea83683f2fb973a10c69a4638afc306da33660e7": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/[id]/page": "action-browser"
+      },
+      "exportedName": "logoutAdmin",
+      "filename": "app/admin/(protected)/actions.ts"
+    },
+    "40129b0bdd87b5c70fa25967da61b0f9955d22d592": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "toggleEditionPhotoPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc"
+      },
+      "exportedName": "toggleEditionPhotoPublished",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "402879a9b59d7f56ba0889ffc1bed701c704545d2b": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "addEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc"
+      },
+      "exportedName": "addEditionPhoto",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "40403defcf511b63ad3ec150603685de6b917ade93": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "toggleRapportPublished",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc"
+      },
+      "exportedName": "toggleRapportPublished",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "4040da400ffcc5d5ef6080be4e7b1b125b685f8fbe": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "createRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc"
+      },
+      "exportedName": "createRapportEcole",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "404ab1982f41b29b1e0208f1183ab33b9f5445a6cf": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "deleteEditionPhoto",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc"
+      },
+      "exportedName": "deleteEditionPhoto",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "408af842f08b0563c350049f989ed3ec4fa195a651": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "createEdition",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc"
+      },
+      "exportedName": "createEdition",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "409d6f32022339e4e4b447b2cd89dbcbd84da4ea9e": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "deleteRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc"
+      },
+      "exportedName": "deleteRapportEcole",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    },
+    "40aa7fbdac8983a55873a99aad0b8f41b591ae620e": {
+      "workers": {
+        "app/admin/(protected)/editions/rapports/[id]/page": {
+          "moduleId": 32003,
+          "async": true,
+          "exportedName": "updateRapportEcole",
+          "filename": "app/admin/(protected)/editions/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/rapports/[id]/page": "rsc"
+      },
+      "exportedName": "updateRapportEcole",
+      "filename": "app/admin/(protected)/editions/actions.ts"
+    }
+  },
+  "edge": {}
+}

@@ -47,6 +47,78 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 }
 
 
+// Validate ../../app/admin/(protected)/actualites/[id]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/actualites/[id]">> = Specific
+  const handler = {} as typeof import("../../app/admin/(protected)/actualites/[id]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/admin/(protected)/actualites/new/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/actualites/new">> = Specific
+  const handler = {} as typeof import("../../app/admin/(protected)/actualites/new/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/admin/(protected)/actualites/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/actualites">> = Specific
+  const handler = {} as typeof import("../../app/admin/(protected)/actualites/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/admin/(protected)/editions/[id]/photos/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/editions/[id]/photos">> = Specific
+  const handler = {} as typeof import("../../app/admin/(protected)/editions/[id]/photos/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/admin/(protected)/editions/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/editions">> = Specific
+  const handler = {} as typeof import("../../app/admin/(protected)/editions/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/admin/(protected)/editions/rapports/[id]/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/editions/rapports/[id]">> = Specific
+  const handler = {} as typeof import("../../app/admin/(protected)/editions/rapports/[id]/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/admin/(protected)/editions/rapports/new/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/editions/rapports/new">> = Specific
+  const handler = {} as typeof import("../../app/admin/(protected)/editions/rapports/new/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/admin/(protected)/editions/rapports/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/editions/rapports">> = Specific
+  const handler = {} as typeof import("../../app/admin/(protected)/editions/rapports/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/admin/(protected)/inscriptions/[id]/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/admin/inscriptions/[id]">> = Specific
@@ -155,10 +227,28 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/ecoles/bible-inductive/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ecoles/bible-inductive">> = Specific
+  const handler = {} as typeof import("../../app/ecoles/bible-inductive/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/ecoles/communication/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/ecoles/communication">> = Specific
   const handler = {} as typeof import("../../app/ecoles/communication/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/ecoles/discipolat/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ecoles/discipolat">> = Specific
+  const handler = {} as typeof import("../../app/ecoles/discipolat/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

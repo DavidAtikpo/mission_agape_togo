@@ -57,7 +57,7 @@ export default async function RootLayout({
           {!isAdmin ? (
             <>
               <Script id="chatagent-boot" strategy="beforeInteractive">
-                {`window.ChatAgentBoot = { key: "wk_63b6395f204d4385a9532999", api: "https://chatagentapi.onrender.com/api/v1" };`}
+                {`window.ChatAgentBoot = { key: "wk_63b6395f204d4385a9532999", api: "https://chatagentapi-1.onrender.com/api/v1" };`}
               </Script>
               <Script
                 src="https://chatagentcides.qrthecode2.com/widget.js"

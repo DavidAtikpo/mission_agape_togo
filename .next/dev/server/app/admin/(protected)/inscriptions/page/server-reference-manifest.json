@@ -1,0 +1,35 @@
+{
+  "node": {
+    "00cb1edf268e639454916bdab85daaf03392f5ff0d": {
+      "workers": {
+        "app/admin/(protected)/inscriptions/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/inscriptions/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/inscriptions/page": "action-browser"
+      },
+      "exportedName": "logoutAdmin",
+      "filename": "app/admin/(protected)/actions.ts"
+    },
+    "408e71dd0d0c89c8f7077d35f13532af18da64d548": {
+      "workers": {
+        "app/admin/(protected)/inscriptions/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/inscriptions/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteInscription",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/inscriptions/page": "action-browser"
+      },
+      "exportedName": "deleteInscription",
+      "filename": "app/admin/(protected)/actions.ts"
+    }
+  },
+  "edge": {}
+}

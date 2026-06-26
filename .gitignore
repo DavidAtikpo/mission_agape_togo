@@ -7,3 +7,6 @@ node_modules
 # SQLite local
 *.db
 *.db-journal
+
+# Images téléversées via l'admin
+/public/uploads/

@@ -1,0 +1,80 @@
+{
+  "node": {
+    "00cb1edf268e639454916bdab85daaf03392f5ff0d": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/actualites/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/actualites/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "action-browser"
+      },
+      "exportedName": "logoutAdmin",
+      "filename": "app/admin/(protected)/actions.ts"
+    },
+    "40085ba59b9116cb25c3f17c1a621c0bf5ac0c2917": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/actualites/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/actualites/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "toggleActualitePublished",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "rsc"
+      },
+      "exportedName": "toggleActualitePublished",
+      "filename": "app/admin/(protected)/actualites/actions.ts"
+    },
+    "405481195e0c5a593ecc2c23d89bdd9c84d40868ba": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/actualites/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/actualites/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "updateActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "rsc"
+      },
+      "exportedName": "updateActualite",
+      "filename": "app/admin/(protected)/actualites/actions.ts"
+    },
+    "407d70b5b8790a93d87a9c01da905fca135b215bbc": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/actualites/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/actualites/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "deleteActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "action-browser"
+      },
+      "exportedName": "deleteActualite",
+      "filename": "app/admin/(protected)/actualites/actions.ts"
+    },
+    "40a3829914ba0d69907ffdf2bc98cc56694fc407ef": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/(protected)/actualites/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/(protected)/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/(protected)/actualites/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": true,
+          "exportedName": "createActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "rsc"
+      },
+      "exportedName": "createActualite",
+      "filename": "app/admin/(protected)/actualites/actions.ts"
+    }
+  },
+  "edge": {}
+}

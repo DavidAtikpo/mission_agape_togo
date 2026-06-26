@@ -1,0 +1,20 @@
+{
+  "node": {
+    "00ea83683f2fb973a10c69a4638afc306da33660e7": {
+      "workers": {
+        "app/admin/(protected)/editions/page": {
+          "moduleId": 89881,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/editions/page": "action-browser"
+      },
+      "exportedName": "logoutAdmin",
+      "filename": "app/admin/(protected)/actions.ts"
+    }
+  },
+  "edge": {}
+}

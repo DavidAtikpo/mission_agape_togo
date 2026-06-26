@@ -1,6 +1,6 @@
 {
   "node": {
-    "00bd7d630faf429405327323709459b08923aff687": {
+    "00ea83683f2fb973a10c69a4638afc306da33660e7": {
       "workers": {
         "app/admin/(protected)/inscriptions/page": {
           "moduleId": 99149,
@@ -10,12 +10,12 @@
         }
       },
       "layer": {
-        "app/admin/(protected)/inscriptions/page": "rsc"
+        "app/admin/(protected)/inscriptions/page": "action-browser"
       },
       "exportedName": "logoutAdmin",
       "filename": "app/admin/(protected)/actions.ts"
     },
-    "40b946875fcfb9d363ffc7f6e4e95c215b65c2e47c": {
+    "401ae1b8bb1d32134020142bd40cb103b51f031051": {
       "workers": {
         "app/admin/(protected)/inscriptions/page": {
           "moduleId": 99149,

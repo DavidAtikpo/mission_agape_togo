@@ -1,0 +1,80 @@
+{
+  "node": {
+    "00ea83683f2fb973a10c69a4638afc306da33660e7": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "logoutAdmin",
+          "filename": "app/admin/(protected)/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "action-browser"
+      },
+      "exportedName": "logoutAdmin",
+      "filename": "app/admin/(protected)/actions.ts"
+    },
+    "40061b4c2a94bce453d28ef4f8049f736c6ff4339e": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "deleteActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "action-browser"
+      },
+      "exportedName": "deleteActualite",
+      "filename": "app/admin/(protected)/actualites/actions.ts"
+    },
+    "4010bd939a769d36ae4f829359db7d476337aeeb6d": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "toggleActualitePublished",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "rsc"
+      },
+      "exportedName": "toggleActualitePublished",
+      "filename": "app/admin/(protected)/actualites/actions.ts"
+    },
+    "406596a7eca31c77b8ba9210ca238311a4e45d60e8": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "updateActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "rsc"
+      },
+      "exportedName": "updateActualite",
+      "filename": "app/admin/(protected)/actualites/actions.ts"
+    },
+    "40a7b0cacfaaedb7080310655f55f12eb097457a84": {
+      "workers": {
+        "app/admin/(protected)/actualites/page": {
+          "moduleId": 78737,
+          "async": true,
+          "exportedName": "createActualite",
+          "filename": "app/admin/(protected)/actualites/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/(protected)/actualites/page": "rsc"
+      },
+      "exportedName": "createActualite",
+      "filename": "app/admin/(protected)/actualites/actions.ts"
+    }
+  },
+  "edge": {}
+}

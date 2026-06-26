@@ -1,23 +1,34 @@
-import Hero from "@/components/hero"
-// import Testimonials from "@/components/Testimonials"
-import About from "@/components/about"
-import Schools from "@/components/schools"
-import FormationPracticalInfo from "@/components/FormationPracticalInfo"
-import TextSlider from "@/components/TextSlider"
-import TeamSection from "@/components/TeamSection"
-import GallerySection from "@/components/GallerySection"
+import Hero from '@/components/hero'
+import TextSlider from '@/components/TextSlider'
+import About from '@/components/about'
+import Schools from '@/components/schools'
+import HomeCtaSection from '@/components/HomeCtaSection'
+import TeamSection from '@/components/TeamSection'
+import EditionsTeaser from '@/components/EditionsTeaser'
+import ActualiteBanner from '@/components/ActualiteBanner'
+import { getPublishedActualite } from '@/lib/actualites'
 
-export default function Home() {
+export default async function Home() {
+  const actualite = await getPublishedActualite()
+
   return (
     <>
-      <TextSlider />
+      {actualite ? (
+        <ActualiteBanner
+          titre={actualite.titre}
+          contenu={actualite.contenu}
+          imageUrl={actualite.imageUrl}
+          lienLabel={actualite.lienLabel}
+          lienUrl={actualite.lienUrl}
+        />
+      ) : null}
+      {/* <TextSlider /> */}
       <Hero />
       <About />
-      <FormationPracticalInfo />
-      <TeamSection />
       <Schools />
-      {/* <Testimonials /> */}
-      <GallerySection />
+      <HomeCtaSection />
+      <TeamSection />
+      <EditionsTeaser />
     </>
   )
 }

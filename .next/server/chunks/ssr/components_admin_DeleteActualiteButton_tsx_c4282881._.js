@@ -1,0 +1,3 @@
+module.exports=[71682,a=>{"use strict";var b=a.i(87924),c=a.i(5050),d=(0,c.createServerReference)("40061b4c2a94bce453d28ef4f8049f736c6ff4339e",c.callServer,void 0,c.findSourceMapURL,"deleteActualite");function e({id:a,titre:c}){return(0,b.jsxs)("form",{action:d,onSubmit:function(a){window.confirm(`Supprimer l'actualit\xe9 \xab ${c} \xbb ?`)||a.preventDefault()},className:"w-full",children:[(0,b.jsx)("input",{type:"hidden",name:"id",value:a}),(0,b.jsx)("button",{type:"submit",className:"w-full text-xs text-destructive/80 hover:text-destructive px-3 py-1.5",children:"Supprimer"})]})}a.s(["DeleteActualiteButton",()=>e],71682)}];
+
+//# sourceMappingURL=components_admin_DeleteActualiteButton_tsx_c4282881._.js.map

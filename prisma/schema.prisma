@@ -35,3 +35,71 @@ model Inscription {
   @@index([createdAt])
   @@index([status])
 }
+
+/// Carte d'actualité affichée sur la page d'accueil (avant le hero)
+model Actualite {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  titre     String
+  contenu   String
+  imageUrl  String?
+  lienLabel String?
+  lienUrl   String?
+  publiee   Boolean  @default(false)
+
+  @@schema("missionagape")
+  @@index([publiee])
+  @@index([updatedAt])
+}
+
+/// Édition de formation (ex. Édition 14)
+model Edition {
+  id          String         @id @default(cuid())
+  numero      Int            @unique
+  titre       String
+  description String?
+  estCourante Boolean        @default(false)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  photos      EditionPhoto[]
+  rapports    RapportEcole[]
+
+  @@schema("missionagape")
+  @@index([estCourante])
+}
+
+/// Photo de galerie liée à une édition
+model EditionPhoto {
+  id        String   @id @default(cuid())
+  editionId String
+  edition   Edition  @relation(fields: [editionId], references: [id], onDelete: Cascade)
+  imageUrl  String
+  legende   String?
+  ordre     Int      @default(0)
+  publiee   Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@schema("missionagape")
+  @@index([editionId])
+  @@index([publiee])
+}
+
+/// Petit rapport historique de l'école (texte + 1 image)
+model RapportEcole {
+  id            String   @id @default(cuid())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  titre         String
+  contenu       String
+  imageUrl      String?
+  dateEvenement DateTime
+  editionId     String?
+  edition       Edition? @relation(fields: [editionId], references: [id], onDelete: SetNull)
+  publiee       Boolean  @default(false)
+
+  @@schema("missionagape")
+  @@index([publiee])
+  @@index([dateEvenement])
+  @@index([editionId])
+}

@@ -21,6 +21,30 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/admin/actualites/[id]",
+      "regex": "^/admin/actualites/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/admin/actualites/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/admin/editions/rapports/[id]",
+      "regex": "^/admin/editions/rapports/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/admin/editions/rapports/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/admin/editions/[id]/photos",
+      "regex": "^/admin/editions/([^/]+?)/photos(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/admin/editions/(?<nxtPid>[^/]+?)/photos(?:/)?$"
+    },
+    {
       "page": "/admin/inscriptions/[id]",
       "regex": "^/admin/inscriptions/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -55,6 +79,36 @@
       "regex": "^/_not\\-found(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/admin/actualites",
+      "regex": "^/admin/actualites(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/actualites(?:/)?$"
+    },
+    {
+      "page": "/admin/actualites/new",
+      "regex": "^/admin/actualites/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/actualites/new(?:/)?$"
+    },
+    {
+      "page": "/admin/editions",
+      "regex": "^/admin/editions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/editions(?:/)?$"
+    },
+    {
+      "page": "/admin/editions/rapports",
+      "regex": "^/admin/editions/rapports(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/editions/rapports(?:/)?$"
+    },
+    {
+      "page": "/admin/editions/rapports/new",
+      "regex": "^/admin/editions/rapports/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/editions/rapports/new(?:/)?$"
     },
     {
       "page": "/admin/inscriptions",
@@ -147,10 +201,22 @@
       "namedRegex": "^/ecoles(?:/)?$"
     },
     {
+      "page": "/ecoles/bible-inductive",
+      "regex": "^/ecoles/bible\\-inductive(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ecoles/bible\\-inductive(?:/)?$"
+    },
+    {
       "page": "/ecoles/communication",
       "regex": "^/ecoles/communication(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/ecoles/communication(?:/)?$"
+    },
+    {
+      "page": "/ecoles/discipolat",
+      "regex": "^/ecoles/discipolat(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ecoles/discipolat(?:/)?$"
     },
     {
       "page": "/ecoles/evangelisation",

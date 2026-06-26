@@ -1,0 +1,19 @@
+[00:00:01.247] Server  WARN     ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+[00:00:01.467] Server  LOG      ✓ Ready in 1089ms
+[00:00:04.650] Server  LOG      ○ Compiling / ...
+[00:00:09.707] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:09.912] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:10.067] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:10.067] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:10.067] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"2.0.1","sv":"0.1.3","ts":1782479426942} /_vercel/insights/view
+[00:00:11.211] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:11.211] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin/inscriptions/cmqa1xeow000004kzyj9x0brg","route":"/admin/inscriptions/[id]"}
+[00:00:11.212] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/admin/inscriptions/cmqa1xeow000004kzyj9x0brg color: rgb(120, 120, 120) color: inherit {"dp":"/admin/inscriptions/[id]","o":"http://localhost:3000/admin/inscriptions/cmqa1xeow000004kzyj9x0brg","sdkn":"@vercel/analytics/next","sdkv":"2.0.1","sv":"0.1.3","ts":1782479427461} /_vercel/insights/view
+[00:00:18.898] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:19.540] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:19.540] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin/inscriptions/cmqa1xeow000004kzyj9x0brg","route":"/admin/inscriptions/[id]"}
+[00:00:19.541] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/admin/inscriptions/cmqa1xeow000004kzyj9x0brg color: rgb(120, 120, 120) color: inherit {"dp":"/admin/inscriptions/[id]","o":"http://localhost:3000/admin/inscriptions/cmqa1xeow000004kzyj9x0brg","sdkn":"@vercel/analytics/next","sdkv":"2.0.1","sv":"0.1.3","ts":1782479436489} /_vercel/insights/view
+[00:00:27.249] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:28.086] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:28.086] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/admin/inscriptions/cmqa1xeow000004kzyj9x0brg","route":"/admin/inscriptions/[id]"}
+[00:00:28.086] Browser LOG     %c[Vercel Web Analytics]%c [view] http://localhost:3000/admin/inscriptions/cmqa1xeow000004kzyj9x0brg color: rgb(120, 120, 120) color: inherit {"dp":"/admin/inscriptions/[id]","o":"http://localhost:3000/admin/inscriptions/cmqa1xeow000004kzyj9x0brg","sdkn":"@vercel/analytics/next","sdkv":"2.0.1","sv":"0.1.3","ts":1782479445033} /_vercel/insights/view
