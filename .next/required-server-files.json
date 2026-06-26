@@ -65,6 +65,10 @@
       "remotePatterns": [
         {
           "protocol": "https",
+          "hostname": "**.public.blob.vercel-storage.com"
+        },
+        {
+          "protocol": "https",
           "hostname": "images.unsplash.com"
         },
         {
@@ -230,6 +234,9 @@
       "proxyClientMaxBodySize": 10485760,
       "hideLogsAfterAbort": false,
       "mcpServer": true,
+      "serverActions": {
+        "bodySizeLimit": "6mb"
+      },
       "optimizePackageImports": [
         "lucide-react",
         "date-fns",

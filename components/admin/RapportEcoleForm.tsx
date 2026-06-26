@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { createEdition, createRapportEcole, updateRapportEcole } from '@/app/admin/(protected)/editions/actions'
+import { isManagedUploadUrl } from '@/lib/upload-image'
 
 type EditionOption = { id: string; numero: number; titre: string; estCourante?: boolean }
 
@@ -129,7 +130,7 @@ export function RapportEcoleForm({ mode, editions, redirectPath, initial }: Rapp
           <input
             name="imageUrl"
             type="url"
-            defaultValue={initial?.imageUrl?.startsWith('/uploads/') ? '' : (initial?.imageUrl ?? '')}
+            defaultValue={isManagedUploadUrl(initial?.imageUrl) ? '' : (initial?.imageUrl ?? '')}
             placeholder="Ou URL d'image https://…"
             className="w-full rounded-md border bg-background px-3 py-2 text-sm"
           />

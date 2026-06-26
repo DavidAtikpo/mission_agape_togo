@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation'
 import { revalidatePath } from 'next/cache'
 import { getAdminSessionValid } from '@/lib/admin-auth'
 import prisma from '@/lib/prisma'
-import { deleteLocalUpload, saveUploadedImage } from '@/lib/upload-image'
+import { deleteUploadedImage, saveUploadedImage } from '@/lib/upload-image'
 
 const PHOTO_UPLOAD = 'editions'
 const RAPPORT_UPLOAD = 'rapports'
@@ -37,11 +37,11 @@ async function resolveImage(
   const imageFile = formData.get('image')
 
   if (removeImage) {
-    await deleteLocalUpload(existingUrl, subdir)
+    await deleteUploadedImage(existingUrl, subdir)
     return null
   }
   if (imageFile instanceof File && imageFile.size > 0) {
-    await deleteLocalUpload(existingUrl, subdir)
+    await deleteUploadedImage(existingUrl, subdir)
     return saveUploadedImage(imageFile, subdir)
   }
   if (imageUrl) return imageUrl
@@ -126,7 +126,7 @@ export async function deleteRapportEcole(formData: FormData) {
   const existing = await prisma.rapportEcole.findUnique({ where: { id } })
   if (!existing) return
 
-  await deleteLocalUpload(existing.imageUrl, RAPPORT_UPLOAD)
+  await deleteUploadedImage(existing.imageUrl, RAPPORT_UPLOAD)
   await prisma.rapportEcole.delete({ where: { id } })
 
   revalidateHistorique()
@@ -189,7 +189,7 @@ export async function deleteEditionPhoto(formData: FormData) {
   const existing = await prisma.editionPhoto.findUnique({ where: { id } })
   if (!existing) return
 
-  await deleteLocalUpload(existing.imageUrl, PHOTO_UPLOAD)
+  await deleteUploadedImage(existing.imageUrl, PHOTO_UPLOAD)
   await prisma.editionPhoto.delete({ where: { id } })
 
   revalidateHistorique()

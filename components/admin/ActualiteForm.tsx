@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { createActualite, updateActualite } from '@/app/admin/(protected)/actualites/actions'
+import { isManagedUploadUrl } from '@/lib/upload-image'
 
 type ActualiteFormProps = {
   mode: 'create' | 'edit'
@@ -95,7 +96,7 @@ export function ActualiteForm({ mode, initial }: ActualiteFormProps) {
             name="imageUrl"
             type="url"
             defaultValue={
-              initial?.imageUrl?.startsWith('/uploads/') ? '' : (initial?.imageUrl ?? '')
+              isManagedUploadUrl(initial?.imageUrl) ? '' : (initial?.imageUrl ?? '')
             }
             placeholder="https://…"
             className="w-full rounded-md border bg-background px-3 py-2 text-sm"
