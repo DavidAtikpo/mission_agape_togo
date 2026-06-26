@@ -1,12 +1,14 @@
 'use server'
 
-import { redirect } from 'next/navigation'
+import { redirect, unstable_rethrow } from 'next/navigation'
 import { revalidatePath } from 'next/cache'
 import { getAdminSessionValid } from '@/lib/admin-auth'
 import prisma from '@/lib/prisma'
 import { deleteUploadedImage, saveUploadedImage } from '@/lib/upload-image'
 
 const UPLOAD_SUBDIR = 'actualites'
+
+export type ActualiteActionState = { error?: string } | null
 
 async function assertAdmin() {
   if (!(await getAdminSessionValid())) {
@@ -19,72 +21,114 @@ function readField(formData: FormData, key: string): string {
   return typeof value === 'string' ? value.trim() : ''
 }
 
-export async function createActualite(formData: FormData) {
-  await assertAdmin()
-
-  const titre = readField(formData, 'titre')
-  const contenu = readField(formData, 'contenu')
-  if (!titre || !contenu) return
-
-  let imageUrl = readField(formData, 'imageUrl') || null
-  const imageFile = formData.get('image')
-  if (imageFile instanceof File && imageFile.size > 0) {
-    imageUrl = await saveUploadedImage(imageFile, UPLOAD_SUBDIR)
-  }
-
-  const lienLabel = readField(formData, 'lienLabel') || null
-  const lienUrl = readField(formData, 'lienUrl') || null
-  const publiee = formData.get('publiee') === 'on'
-
-  await prisma.actualite.create({
-    data: { titre, contenu, imageUrl, lienLabel, lienUrl, publiee },
-  })
-
-  revalidatePath('/')
-  revalidatePath('/admin/actualites')
-  redirect('/admin/actualites')
-}
-
-export async function updateActualite(formData: FormData) {
-  await assertAdmin()
-
-  const id = readField(formData, 'id')
-  if (!id) return
-
-  const existing = await prisma.actualite.findUnique({ where: { id } })
-  if (!existing) return
-
-  const titre = readField(formData, 'titre')
-  const contenu = readField(formData, 'contenu')
-  if (!titre || !contenu) return
-
-  let imageUrl = readField(formData, 'imageUrl') || null
+async function resolveImageUrl(
+  formData: FormData,
+  existingUrl: string | null,
+): Promise<string | null> {
   const removeImage = formData.get('removeImage') === 'on'
-  const imageFile = formData.get('image')
 
   if (removeImage) {
-    await deleteUploadedImage(existing.imageUrl, UPLOAD_SUBDIR)
-    imageUrl = null
-  } else if (imageFile instanceof File && imageFile.size > 0) {
-    await deleteUploadedImage(existing.imageUrl, UPLOAD_SUBDIR)
-    imageUrl = await saveUploadedImage(imageFile, UPLOAD_SUBDIR)
-  } else if (!imageUrl) {
-    imageUrl = existing.imageUrl
+    await deleteUploadedImage(existingUrl, UPLOAD_SUBDIR)
+    return null
   }
 
-  const lienLabel = readField(formData, 'lienLabel') || null
-  const lienUrl = readField(formData, 'lienUrl') || null
-  const publiee = formData.get('publiee') === 'on'
+  const uploadedImageUrl = readField(formData, 'uploadedImageUrl')
+  if (uploadedImageUrl) {
+    if (existingUrl && existingUrl !== uploadedImageUrl) {
+      await deleteUploadedImage(existingUrl, UPLOAD_SUBDIR)
+    }
+    return uploadedImageUrl
+  }
 
-  await prisma.actualite.update({
-    where: { id },
-    data: { titre, contenu, imageUrl, lienLabel, lienUrl, publiee },
-  })
+  const imageFile = formData.get('image')
+  if (imageFile instanceof File && imageFile.size > 0) {
+    await deleteUploadedImage(existingUrl, UPLOAD_SUBDIR)
+    return saveUploadedImage(imageFile, UPLOAD_SUBDIR)
+  }
 
-  revalidatePath('/')
-  revalidatePath('/admin/actualites')
-  revalidatePath(`/admin/actualites/${id}`)
-  redirect('/admin/actualites')
+  const imageUrl = readField(formData, 'imageUrl') || null
+  if (imageUrl) {
+    if (existingUrl && existingUrl !== imageUrl) {
+      await deleteUploadedImage(existingUrl, UPLOAD_SUBDIR)
+    }
+    return imageUrl
+  }
+
+  return existingUrl
+}
+
+export async function createActualite(
+  _prev: ActualiteActionState,
+  formData: FormData,
+): Promise<ActualiteActionState> {
+  try {
+    await assertAdmin()
+
+    const titre = readField(formData, 'titre')
+    const contenu = readField(formData, 'contenu')
+    if (!titre || !contenu) {
+      return { error: 'Le titre et le texte sont obligatoires.' }
+    }
+
+    const imageUrl = await resolveImageUrl(formData, null)
+    const lienLabel = readField(formData, 'lienLabel') || null
+    const lienUrl = readField(formData, 'lienUrl') || null
+    const publiee = formData.get('publiee') === 'on'
+
+    await prisma.actualite.create({
+      data: { titre, contenu, imageUrl, lienLabel, lienUrl, publiee },
+    })
+
+    revalidatePath('/')
+    revalidatePath('/admin/actualites')
+    redirect('/admin/actualites')
+  } catch (error) {
+    unstable_rethrow(error)
+    const message =
+      error instanceof Error ? error.message : 'Erreur lors de la création de l’actualité.'
+    return { error: message }
+  }
+}
+
+export async function updateActualite(
+  _prev: ActualiteActionState,
+  formData: FormData,
+): Promise<ActualiteActionState> {
+  try {
+    await assertAdmin()
+
+    const id = readField(formData, 'id')
+    if (!id) return { error: 'Actualité introuvable.' }
+
+    const existing = await prisma.actualite.findUnique({ where: { id } })
+    if (!existing) return { error: 'Actualité introuvable.' }
+
+    const titre = readField(formData, 'titre')
+    const contenu = readField(formData, 'contenu')
+    if (!titre || !contenu) {
+      return { error: 'Le titre et le texte sont obligatoires.' }
+    }
+
+    const imageUrl = await resolveImageUrl(formData, existing.imageUrl)
+    const lienLabel = readField(formData, 'lienLabel') || null
+    const lienUrl = readField(formData, 'lienUrl') || null
+    const publiee = formData.get('publiee') === 'on'
+
+    await prisma.actualite.update({
+      where: { id },
+      data: { titre, contenu, imageUrl, lienLabel, lienUrl, publiee },
+    })
+
+    revalidatePath('/')
+    revalidatePath('/admin/actualites')
+    revalidatePath(`/admin/actualites/${id}`)
+    redirect('/admin/actualites')
+  } catch (error) {
+    unstable_rethrow(error)
+    const message =
+      error instanceof Error ? error.message : 'Erreur lors de l’enregistrement.'
+    return { error: message }
+  }
 }
 
 export async function deleteActualite(formData: FormData) {

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { createEdition, createRapportEcole, updateRapportEcole } from '@/app/admin/(protected)/editions/actions'
-import { isManagedUploadUrl } from '@/lib/upload-image'
+import { isManagedUploadUrl } from '@/lib/upload-image-utils'
 
 type EditionOption = { id: string; numero: number; titre: string; estCourante?: boolean }
 

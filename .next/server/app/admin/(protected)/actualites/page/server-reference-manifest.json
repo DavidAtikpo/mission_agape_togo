@@ -45,7 +45,7 @@
       "exportedName": "toggleActualitePublished",
       "filename": "app/admin/(protected)/actualites/actions.ts"
     },
-    "406596a7eca31c77b8ba9210ca238311a4e45d60e8": {
+    "606596a7eca31c77b8ba9210ca238311a4e45d60e8": {
       "workers": {
         "app/admin/(protected)/actualites/page": {
           "moduleId": 78737,
@@ -60,7 +60,7 @@
       "exportedName": "updateActualite",
       "filename": "app/admin/(protected)/actualites/actions.ts"
     },
-    "40a7b0cacfaaedb7080310655f55f12eb097457a84": {
+    "60a7b0cacfaaedb7080310655f55f12eb097457a84": {
       "workers": {
         "app/admin/(protected)/actualites/page": {
           "moduleId": 78737,

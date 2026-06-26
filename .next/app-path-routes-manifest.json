@@ -15,6 +15,7 @@
   "/api/admin/inscriptions/[id]/route": "/api/admin/inscriptions/[id]",
   "/api/admin/login/route": "/api/admin/login",
   "/api/admin/logout/route": "/api/admin/logout",
+  "/api/admin/upload-image/route": "/api/admin/upload-image",
   "/api/inscriptions/route": "/api/inscriptions",
   "/besoins/page": "/besoins",
   "/contact/page": "/contact",

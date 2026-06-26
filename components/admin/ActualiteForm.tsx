@@ -1,7 +1,9 @@
-import Image from 'next/image'
+'use client'
+
 import Link from 'next/link'
-import { createActualite, updateActualite } from '@/app/admin/(protected)/actualites/actions'
-import { isManagedUploadUrl } from '@/lib/upload-image'
+import { useActionState } from 'react'
+import { createActualite, updateActualite, type ActualiteActionState } from '@/app/admin/(protected)/actualites/actions'
+import { AdminImageUploadField } from '@/components/admin/AdminImageUploadField'
 
 type ActualiteFormProps = {
   mode: 'create' | 'edit'
@@ -18,10 +20,17 @@ type ActualiteFormProps = {
 
 export function ActualiteForm({ mode, initial }: ActualiteFormProps) {
   const action = mode === 'create' ? createActualite : updateActualite
+  const [state, formAction, pending] = useActionState<ActualiteActionState, FormData>(action, null)
 
   return (
-    <form action={action} className="space-y-5 max-w-2xl">
+    <form action={formAction} encType="multipart/form-data" className="space-y-5 max-w-2xl">
       {mode === 'edit' && initial ? <input type="hidden" name="id" value={initial.id} /> : null}
+
+      {state?.error ? (
+        <div className="rounded-md border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+          {state.error}
+        </div>
+      ) : null}
 
       <div className="space-y-1.5">
         <label htmlFor="titre" className="text-sm font-medium">
@@ -53,56 +62,7 @@ export function ActualiteForm({ mode, initial }: ActualiteFormProps) {
         />
       </div>
 
-      <div className="space-y-3 rounded-lg border p-4 bg-muted/20">
-        <p className="text-sm font-medium">Image (optionnelle)</p>
-
-        {initial?.imageUrl ? (
-          <div className="flex flex-col sm:flex-row gap-3 items-start">
-            <div className="relative w-32 h-24 rounded-md overflow-hidden border shrink-0">
-              <Image
-                src={initial.imageUrl}
-                alt="Aperçu"
-                fill
-                className="object-cover"
-                sizes="128px"
-              />
-            </div>
-            <label className="flex items-center gap-2 text-sm text-muted-foreground cursor-pointer">
-              <input type="checkbox" name="removeImage" className="rounded border" />
-              Supprimer l&apos;image actuelle
-            </label>
-          </div>
-        ) : null}
-
-        <div className="space-y-1.5">
-          <label htmlFor="image" className="text-xs text-muted-foreground">
-            Téléverser une image (JPEG, PNG, WebP, GIF — max. 5 Mo)
-          </label>
-          <input
-            id="image"
-            name="image"
-            type="file"
-            accept="image/jpeg,image/png,image/webp,image/gif"
-            className="w-full text-sm file:mr-3 file:rounded-md file:border-0 file:bg-primary file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-primary-foreground"
-          />
-        </div>
-
-        <div className="space-y-1.5">
-          <label htmlFor="imageUrl" className="text-xs text-muted-foreground">
-            Ou coller une URL d&apos;image
-          </label>
-          <input
-            id="imageUrl"
-            name="imageUrl"
-            type="url"
-            defaultValue={
-              isManagedUploadUrl(initial?.imageUrl) ? '' : (initial?.imageUrl ?? '')
-            }
-            placeholder="https://…"
-            className="w-full rounded-md border bg-background px-3 py-2 text-sm"
-          />
-        </div>
-      </div>
+      <AdminImageUploadField initialUrl={initial?.imageUrl} subdir="actualites" />
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
@@ -149,9 +109,10 @@ export function ActualiteForm({ mode, initial }: ActualiteFormProps) {
       <div className="flex flex-wrap gap-3 pt-2">
         <button
           type="submit"
-          className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
+          disabled={pending}
+          className="rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
         >
-          {mode === 'create' ? 'Créer l’actualité' : 'Enregistrer'}
+          {pending ? 'Enregistrement…' : mode === 'create' ? 'Créer l’actualité' : 'Enregistrer'}
         </button>
         <Link
           href="/admin/actualites"

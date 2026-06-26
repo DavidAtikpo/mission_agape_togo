@@ -80,18 +80,6 @@
     },
     "40061b4c2a94bce453d28ef4f8049f736c6ff4339e": {
       "workers": {
-        "app/admin/(protected)/actualites/[id]/page": {
-          "moduleId": 18916,
-          "async": true,
-          "exportedName": "deleteActualite",
-          "filename": "app/admin/(protected)/actualites/actions.ts"
-        },
-        "app/admin/(protected)/actualites/new/page": {
-          "moduleId": 21424,
-          "async": true,
-          "exportedName": "deleteActualite",
-          "filename": "app/admin/(protected)/actualites/actions.ts"
-        },
         "app/admin/(protected)/actualites/page": {
           "moduleId": 78737,
           "async": true,
@@ -100,8 +88,6 @@
         }
       },
       "layer": {
-        "app/admin/(protected)/actualites/[id]/page": "rsc",
-        "app/admin/(protected)/actualites/new/page": "rsc",
         "app/admin/(protected)/actualites/page": "action-browser"
       },
       "filename": "app/admin/(protected)/actualites/actions.ts",
@@ -109,18 +95,6 @@
     },
     "4010bd939a769d36ae4f829359db7d476337aeeb6d": {
       "workers": {
-        "app/admin/(protected)/actualites/[id]/page": {
-          "moduleId": 18916,
-          "async": true,
-          "exportedName": "toggleActualitePublished",
-          "filename": "app/admin/(protected)/actualites/actions.ts"
-        },
-        "app/admin/(protected)/actualites/new/page": {
-          "moduleId": 21424,
-          "async": true,
-          "exportedName": "toggleActualitePublished",
-          "filename": "app/admin/(protected)/actualites/actions.ts"
-        },
         "app/admin/(protected)/actualites/page": {
           "moduleId": 78737,
           "async": true,
@@ -129,14 +103,12 @@
         }
       },
       "layer": {
-        "app/admin/(protected)/actualites/[id]/page": "rsc",
-        "app/admin/(protected)/actualites/new/page": "rsc",
         "app/admin/(protected)/actualites/page": "rsc"
       },
       "filename": "app/admin/(protected)/actualites/actions.ts",
       "exportedName": "toggleActualitePublished"
     },
-    "406596a7eca31c77b8ba9210ca238311a4e45d60e8": {
+    "606596a7eca31c77b8ba9210ca238311a4e45d60e8": {
       "workers": {
         "app/admin/(protected)/actualites/[id]/page": {
           "moduleId": 18916,
@@ -158,14 +130,14 @@
         }
       },
       "layer": {
-        "app/admin/(protected)/actualites/[id]/page": "rsc",
-        "app/admin/(protected)/actualites/new/page": "rsc",
+        "app/admin/(protected)/actualites/[id]/page": "action-browser",
+        "app/admin/(protected)/actualites/new/page": "action-browser",
         "app/admin/(protected)/actualites/page": "rsc"
       },
       "filename": "app/admin/(protected)/actualites/actions.ts",
       "exportedName": "updateActualite"
     },
-    "40a7b0cacfaaedb7080310655f55f12eb097457a84": {
+    "60a7b0cacfaaedb7080310655f55f12eb097457a84": {
       "workers": {
         "app/admin/(protected)/actualites/[id]/page": {
           "moduleId": 18916,
@@ -187,8 +159,8 @@
         }
       },
       "layer": {
-        "app/admin/(protected)/actualites/[id]/page": "rsc",
-        "app/admin/(protected)/actualites/new/page": "rsc",
+        "app/admin/(protected)/actualites/[id]/page": "action-browser",
+        "app/admin/(protected)/actualites/new/page": "action-browser",
         "app/admin/(protected)/actualites/page": "rsc"
       },
       "filename": "app/admin/(protected)/actualites/actions.ts",

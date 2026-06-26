@@ -1,6 +1,7 @@
 import { del, put } from '@vercel/blob'
 import { mkdir, unlink, writeFile } from 'fs/promises'
 import path from 'path'
+import { isManagedUploadUrl } from './upload-image-utils'
 
 const MAX_IMAGE_BYTES = 5 * 1024 * 1024
 const ALLOWED_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif'])
@@ -29,12 +30,6 @@ function validateImage(file: File) {
   }
 }
 
-export function isManagedUploadUrl(imageUrl: string | null | undefined): boolean {
-  if (!imageUrl) return false
-  if (imageUrl.startsWith('/uploads/')) return true
-  return imageUrl.includes('.blob.vercel-storage.com')
-}
-
 export async function saveUploadedImage(file: File, subdir: string): Promise<string> {
   validateImage(file)
 
@@ -44,6 +39,12 @@ export async function saveUploadedImage(file: File, subdir: string): Promise<str
   if (process.env.BLOB_READ_WRITE_TOKEN) {
     const blob = await put(filename, file, { access: 'public' })
     return blob.url
+  }
+
+  if (process.env.VERCEL) {
+    throw new Error(
+      'Stockage d’images non configuré. Dans Vercel : Storage → Blob → Connecter au projet, puis redéployer. Vous pouvez aussi coller une URL d’image.',
+    )
   }
 
   const uploadDir = path.join(process.cwd(), 'public', 'uploads', subdir)

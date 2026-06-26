@@ -135,6 +135,12 @@
       "namedRegex": "^/api/admin/logout(?:/)?$"
     },
     {
+      "page": "/api/admin/upload-image",
+      "regex": "^/api/admin/upload\\-image(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/upload\\-image(?:/)?$"
+    },
+    {
       "page": "/api/inscriptions",
       "regex": "^/api/inscriptions(?:/)?$",
       "routeKeys": {},

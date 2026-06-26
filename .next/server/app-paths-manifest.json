@@ -15,6 +15,7 @@
   "/api/admin/inscriptions/[id]/route": "app/api/admin/inscriptions/[id]/route.js",
   "/api/admin/login/route": "app/api/admin/login/route.js",
   "/api/admin/logout/route": "app/api/admin/logout/route.js",
+  "/api/admin/upload-image/route": "app/api/admin/upload-image/route.js",
   "/api/inscriptions/route": "app/api/inscriptions/route.js",
   "/besoins/page": "app/besoins/page.js",
   "/contact/page": "app/contact/page.js",
