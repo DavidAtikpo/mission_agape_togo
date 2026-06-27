@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { CheckCircle, AlertCircle, ArrowLeft, Check, Mail, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import InscriptionForm from '@/components/forms/InscriptionForm';
@@ -31,6 +32,7 @@ function validateFormComplete(data: FormData): string | null {
 }
 
 export default function InscriptionPage() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(0);
   const [formData, setFormData] = useState<FormData>({
     inscription: {},
@@ -66,14 +68,20 @@ export default function InscriptionPage() {
           consentement: data.consentement,
         }),
       });
-      const payload = (await res.json().catch(() => ({}))) as { error?: string; ok?: boolean };
+      const payload = (await res.json().catch(() => ({}))) as {
+        error?: string
+        ok?: boolean
+        setupToken?: string
+      };
       if (!res.ok) {
         setSubmitError(payload.error || "L'enregistrement a échoué. Réessayez plus tard.");
         return;
       }
-      alert('Votre inscription a été enregistrée avec succès. Nous vous contacterons bientôt.');
-      setFormData({ inscription: {}, renseignements: {}, consentement: {} });
-      setCurrentStep(0);
+      if (payload.setupToken) {
+        router.push(`/inscription/compte?token=${encodeURIComponent(payload.setupToken)}`);
+        return;
+      }
+      router.push('/inscription/compte');
     } catch {
       setSubmitError('Erreur réseau. Vérifiez votre connexion et réessayez.');
     } finally {

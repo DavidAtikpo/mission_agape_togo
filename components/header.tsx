@@ -10,6 +10,7 @@ import {
   GraduationCap,
   History,
   Home,
+  User,
 } from 'lucide-react'
 import MobileSidebar from '@/components/MobileSidebar'
 
@@ -74,7 +75,14 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex items-center ml-3">
+              <div className="flex items-center gap-3 ml-3">
+                <Link
+                  href="/connexion"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  <User className="w-4 h-4" />
+                  Mon compte
+                </Link>
                 <Link
                   href="/inscription"
                   className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white bg-primary hover:bg-primary/90 transition-colors"
@@ -94,14 +102,24 @@ export default function Header() {
         subtitle="Menu de navigation"
         items={sidebarItems}
         footer={
-          <Link
-            href="/inscription"
-            onClick={() => setSidebarOpen(false)}
-            className="flex items-center justify-center gap-2 w-full rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
-            <GraduationCap className="w-4 h-4" />
-            S&apos;inscrire
-          </Link>
+          <div className="space-y-2">
+            <Link
+              href="/connexion"
+              onClick={() => setSidebarOpen(false)}
+              className="flex items-center justify-center gap-2 w-full rounded-lg border px-4 py-3 text-sm font-medium hover:bg-muted transition-colors"
+            >
+              <User className="w-4 h-4" />
+              Mon compte
+            </Link>
+            <Link
+              href="/inscription"
+              onClick={() => setSidebarOpen(false)}
+              className="flex items-center justify-center gap-2 w-full rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              <GraduationCap className="w-4 h-4" />
+              S&apos;inscrire
+            </Link>
+          </div>
         }
       />
     </>

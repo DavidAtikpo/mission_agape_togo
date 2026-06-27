@@ -13,9 +13,9 @@ datasource db {
 
 /// Inscription complète (3 étapes) — champs principaux indexés pour l’admin
 model Inscription {
-  id                   String   @id @default(cuid())
-  createdAt            DateTime @default(now())
-  updatedAt            DateTime @updatedAt
+  id                   String        @id @default(cuid())
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
   email                String
   nom                  String
   prenom               String
@@ -28,12 +28,27 @@ model Inscription {
   /// Étape 3 — consentement
   consentementData     Json
   /// NOUVELLE | EN_COURS | TRAITEE (suivi admin)
-  status               String   @default("NOUVELLE")
+  status               String        @default("NOUVELLE")
+  participantId        String?
+  participant          Participant?  @relation(fields: [participantId], references: [id], onDelete: SetNull)
 
   @@schema("missionagape")
   @@index([email])
   @@index([createdAt])
   @@index([status])
+  @@index([participantId])
+}
+
+/// Compte participant — consultation du statut d'inscription
+model Participant {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  passwordHash  String
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  inscriptions  Inscription[]
+
+  @@schema("missionagape")
 }
 
 /// Carte d'actualité affichée sur la page d'accueil (avant le hero)

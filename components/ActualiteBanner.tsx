@@ -25,9 +25,9 @@ export default function ActualiteBanner({
       aria-label="Actualité"
     >
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-start">
+        <div className="flex flex-row gap-3 sm:gap-5 items-start">
           {imageUrl ? (
-            <div className="w-full sm:w-40 md:w-48 shrink-0 aspect-[4/3] sm:aspect-square rounded-lg overflow-hidden border border-border shadow-sm">
+            <div className="w-24 h-24 sm:w-40 sm:h-40 md:w-48 md:h-48 shrink-0 rounded-lg overflow-hidden border border-border shadow-sm">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={imageUrl}

@@ -3,7 +3,7 @@ import { Pool } from 'pg'
 import { PrismaClient } from '@/lib/generated/prisma/client'
 
 /** Bump when new models are added — invalidates cached client in dev. */
-const PRISMA_CLIENT_VERSION = 3
+const PRISMA_CLIENT_VERSION = 4
 
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined
@@ -58,7 +58,8 @@ function isClientUpToDate(client: PrismaClient): boolean {
     typeof c.actualite?.findFirst === 'function' &&
     typeof c.edition?.findFirst === 'function' &&
     typeof c.editionPhoto?.findMany === 'function' &&
-    typeof c.rapportEcole?.findMany === 'function'
+    typeof c.rapportEcole?.findMany === 'function' &&
+    typeof c.participant?.findUnique === 'function'
   )
 }
 

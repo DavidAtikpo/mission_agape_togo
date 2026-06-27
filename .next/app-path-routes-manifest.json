@@ -16,8 +16,13 @@
   "/api/admin/login/route": "/api/admin/login",
   "/api/admin/logout/route": "/api/admin/logout",
   "/api/admin/upload-image/route": "/api/admin/upload-image",
+  "/api/auth/login/route": "/api/auth/login",
+  "/api/auth/logout/route": "/api/auth/logout",
+  "/api/auth/register/route": "/api/auth/register",
+  "/api/auth/setup/route": "/api/auth/setup",
   "/api/inscriptions/route": "/api/inscriptions",
   "/besoins/page": "/besoins",
+  "/connexion/page": "/connexion",
   "/contact/page": "/contact",
   "/documents/efdm/page": "/documents/efdm",
   "/documents/formulaires/page": "/documents/formulaires",
@@ -35,6 +40,8 @@
   "/ecoles/page": "/ecoles",
   "/ecoles/relation-aide/page": "/ecoles/relation-aide",
   "/editions/page": "/editions",
+  "/inscription/compte/page": "/inscription/compte",
   "/inscription/page": "/inscription",
+  "/mon-compte/page": "/mon-compte",
   "/page": "/"
 }

@@ -16,8 +16,13 @@
   "/api/admin/login/route": "app/api/admin/login/route.js",
   "/api/admin/logout/route": "app/api/admin/logout/route.js",
   "/api/admin/upload-image/route": "app/api/admin/upload-image/route.js",
+  "/api/auth/login/route": "app/api/auth/login/route.js",
+  "/api/auth/logout/route": "app/api/auth/logout/route.js",
+  "/api/auth/register/route": "app/api/auth/register/route.js",
+  "/api/auth/setup/route": "app/api/auth/setup/route.js",
   "/api/inscriptions/route": "app/api/inscriptions/route.js",
   "/besoins/page": "app/besoins/page.js",
+  "/connexion/page": "app/connexion/page.js",
   "/contact/page": "app/contact/page.js",
   "/documents/efdm/page": "app/documents/efdm/page.js",
   "/documents/formulaires/page": "app/documents/formulaires/page.js",
@@ -35,6 +40,8 @@
   "/ecoles/page": "app/ecoles/page.js",
   "/ecoles/relation-aide/page": "app/ecoles/relation-aide/page.js",
   "/editions/page": "app/editions/page.js",
+  "/inscription/compte/page": "app/inscription/compte/page.js",
   "/inscription/page": "app/inscription/page.js",
+  "/mon-compte/page": "app/mon-compte/page.js",
   "/page": "app/page.js"
 }

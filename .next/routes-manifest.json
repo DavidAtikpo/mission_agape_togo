@@ -141,6 +141,30 @@
       "namedRegex": "^/api/admin/upload\\-image(?:/)?$"
     },
     {
+      "page": "/api/auth/login",
+      "regex": "^/api/auth/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/login(?:/)?$"
+    },
+    {
+      "page": "/api/auth/logout",
+      "regex": "^/api/auth/logout(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/logout(?:/)?$"
+    },
+    {
+      "page": "/api/auth/register",
+      "regex": "^/api/auth/register(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/register(?:/)?$"
+    },
+    {
+      "page": "/api/auth/setup",
+      "regex": "^/api/auth/setup(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/auth/setup(?:/)?$"
+    },
+    {
       "page": "/api/inscriptions",
       "regex": "^/api/inscriptions(?:/)?$",
       "routeKeys": {},
@@ -151,6 +175,12 @@
       "regex": "^/besoins(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/besoins(?:/)?$"
+    },
+    {
+      "page": "/connexion",
+      "regex": "^/connexion(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/connexion(?:/)?$"
     },
     {
       "page": "/contact",
@@ -259,6 +289,18 @@
       "regex": "^/inscription(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/inscription(?:/)?$"
+    },
+    {
+      "page": "/inscription/compte",
+      "regex": "^/inscription/compte(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/inscription/compte(?:/)?$"
+    },
+    {
+      "page": "/mon-compte",
+      "regex": "^/mon\\-compte(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mon\\-compte(?:/)?$"
     }
   ],
   "dataRoutes": [],

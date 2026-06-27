@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import prisma from '@/lib/prisma'
+import { createInscriptionSetupToken } from '@/lib/participant-session'
 
 const payloadSchema = z.object({
   inscription: z.record(z.unknown()),
@@ -54,7 +55,9 @@ export async function POST(request: Request) {
       },
     })
 
-    return NextResponse.json({ ok: true, id: row.id })
+    const setupToken = createInscriptionSetupToken(row.id, row.email)
+
+    return NextResponse.json({ ok: true, id: row.id, setupToken })
   } catch (e) {
     console.error(e)
     return NextResponse.json({ error: 'Erreur serveur lors de l’enregistrement.' }, { status: 500 })

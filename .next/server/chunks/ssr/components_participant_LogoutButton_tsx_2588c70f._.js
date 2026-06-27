@@ -1,0 +1,3 @@
+module.exports=[50015,a=>{"use strict";var b=a.i(87924),c=a.i(50944);function d(){let a=(0,c.useRouter)();async function d(){await fetch("/api/auth/logout",{method:"POST"}),a.push("/connexion"),a.refresh()}return(0,b.jsx)("button",{type:"button",onClick:d,className:"rounded-md border px-3 py-1.5 text-sm font-medium hover:bg-muted transition-colors",children:"Déconnexion"})}a.s(["LogoutButton",()=>d])}];
+
+//# sourceMappingURL=components_participant_LogoutButton_tsx_2588c70f._.js.map
