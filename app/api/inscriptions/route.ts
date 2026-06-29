@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import prisma from '@/lib/prisma'
 import { createInscriptionSetupToken } from '@/lib/participant-session'
+import { isMailConfigured } from '@/lib/mail'
+import { notifyInscriptionSubmitted } from '@/lib/emails/inscription-notifications'
 
 const payloadSchema = z.object({
   inscription: z.record(z.unknown()),
@@ -56,6 +58,24 @@ export async function POST(request: Request) {
     })
 
     const setupToken = createInscriptionSetupToken(row.id, row.email)
+
+    if (isMailConfigured()) {
+      try {
+        await notifyInscriptionSubmitted({
+          prenom: row.prenom,
+          nom: row.nom,
+          email: row.email,
+          telephone: row.telephone,
+          formationSouhaitee: row.formationSouhaitee,
+          inscriptionId: row.id,
+          setupToken,
+        })
+      } catch (mailError) {
+        console.error('Échec envoi e-mails inscription:', mailError)
+      }
+    } else {
+      console.warn('SMTP non configuré — aucun e-mail envoyé pour l’inscription', row.id)
+    }
 
     return NextResponse.json({ ok: true, id: row.id, setupToken })
   } catch (e) {

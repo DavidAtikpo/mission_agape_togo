@@ -7,6 +7,8 @@ import {
   PARTICIPANT_SESSION_COOKIE,
   verifyInscriptionSetupToken,
 } from '@/lib/participant-session'
+import { isMailConfigured } from '@/lib/mail'
+import { sendAccountCreatedToUser } from '@/lib/emails/inscription-notifications'
 
 const registerSchema = z.object({
   setupToken: z.string().min(1),
@@ -83,6 +85,18 @@ export async function POST(request: Request) {
         inscriptions: { connect: { id: inscription.id } },
       },
     })
+
+    if (isMailConfigured()) {
+      try {
+        await sendAccountCreatedToUser({
+          prenom: inscription.prenom,
+          nom: inscription.nom,
+          email: inscription.email,
+        })
+      } catch (mailError) {
+        console.error('Échec envoi e-mail compte créé:', mailError)
+      }
+    }
 
     const token = createParticipantSessionToken(participant.id)
     const res = NextResponse.json({ ok: true })
